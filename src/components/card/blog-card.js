@@ -34,7 +34,7 @@ class BlogCard extends React.Component
           <Link to={this.props.url} style={{textDecoration: 'none'}}>
             <h2 className="blog-title">{this.props.title}</h2>
           </Link>
-          <span className="chip"><i className="far fa-calendar-alt" aria-hidden="true"></i>&nbsp;<b>Published:</b> {this.props.published_date}</span>
+          <span className="chip"><i className="fa fa-calendar-alt" aria-hidden="true"></i>&nbsp;<b>Published:</b> {this.props.published_date}</span>
           <span className="chip"><i className="fa fa-clock-o" aria-hidden="true"></i>&nbsp;~{this.props.timeToRead} min read</span>
           <span style={{float: 'right', cursor: 'pointer', marginRight: '0.5rem'}} onClick={this.revealBlogCard.bind(this)}><i className="zmdi zmdi-more-vert zmdi-hc-2x"></i></span>
           <div>
