@@ -42,7 +42,7 @@ class ProjectCard extends React.Component
           <Link to={this.props.slug} style={{textDecoration: 'none'}}>
             <h2 className="blog-title">{this.props.title}</h2>
           </Link>
-          <span className="chip"><i className="fa fa-calendar" aria-hidden="true"></i>&nbsp;<b>Published:</b> {this.props.published_date}</span>
+          <span className="chip"><i className="far fa-calendar-alt" aria-hidden="true"></i>&nbsp;<b>Published:</b> {this.props.published_date}</span>
           {this.props.institution != null &&
           <span className="chip"><i className="fa fa-university" aria-hidden="true"></i>&nbsp;{this.props.institution}</span>}
           <span style={{float: 'right', cursor: 'pointer', marginRight: '0.5rem'}} onClick={this.revealProjectCard.bind(this)}><i className="zmdi zmdi-more-vert zmdi-hc-2x"></i></span>
@@ -105,7 +105,7 @@ export default ProjectCard;
           <h2>{this.props.title}</h2>
         </Link>
         <div>
-          <span className="chip"><i className="fa fa-calendar" aria-hidden="true"></i>&nbsp;<b>Published:</b> {this.props.published_date}</span>
+          <span className="chip"><i className="far fa-calendar-alt" aria-hidden="true"></i>&nbsp;<b>Published:</b> {this.props.published_date}</span>
           {this.props.institution != null &&
           <span className="chip"><i className="fa fa-university" aria-hidden="true"></i>&nbsp;{this.props.institution}</span>
           }

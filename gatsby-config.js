@@ -66,7 +66,7 @@ module.exports = {
       },
       {
         name: "Projects",
-        icon: "file-code-o",
+        icon: "file-code",
         url: "/projects/",
         submenu:
         [
@@ -82,14 +82,14 @@ module.exports = {
           },
           {
             name: "Archives",
-            icon: "file-archive-o",
+            icon: "file-archive",
             url: "/projects/archives/",
           },
         ]
       },
       {
         name: "Blog",
-        icon: "pencil",
+        icon: "pencil-alt",
         url: "/blog/",
         submenu:
         [
@@ -105,14 +105,14 @@ module.exports = {
           },
           {
             name: "Archives",
-            icon: "file-archive-o",
+            icon: "file-archive",
             url: "/blog/archives/",
           },
         ]
       },
       {
         name: "Contact",
-        icon: "phone",
+        icon: "mobile-alt",
         url: "/contact/",
         submenu: [],
       },

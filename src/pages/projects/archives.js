@@ -87,7 +87,7 @@ class ProjectArchivePage extends React.Component
           description={"This page contains the details of all the tags for the projects undertaken by " + this.props.data.site.siteMetadata.author}
           keywords={"projects, archives, " + this.props.data.site.siteMetadata.author}
         />
-        <div className="page-title"><i className="fa fa-file-archive-o fa-1" aria-hidden="true"></i>&nbsp;&nbsp;Project - Archives</div>
+        <div className="page-title"><i className="fa fa-file-archive fa-1" aria-hidden="true"></i>&nbsp;&nbsp;Project - Archives</div>
         <div style={{display: 'inline-flex', flexWrap: 'wrap'}}>
         {/* Generates the list of years and their counts in all the project posts */}
         {
@@ -99,7 +99,7 @@ class ProjectArchivePage extends React.Component
                 key={"/projects/archives/#"+year_slug}
                 url={"/projects/archives/#"+year_slug}
                 content={project_years[index_i]}
-                icon={"file-archive-o"}
+                icon={"file-archive"}
                 count={year_info[index_i].length}
               />
             );

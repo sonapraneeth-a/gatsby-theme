@@ -32,7 +32,7 @@ class Index extends React.Component
           site_name={"Homepage of " + this.props.data.site.siteMetadata.author}
           twitter_username={this.props.data.site.siteMetadata.social.twitter.username}
         />
-        <div className="page-title"><i className="fa fa-home fa-1" aria-hidden="true"></i>&nbsp;&nbsp;Home</div>
+        <div className="page-title"><i className="fas fa-home fa-1" aria-hidden="true"></i>&nbsp;&nbsp;Home</div>
         <ProfileCard
           github_username={github_username}
           linkedin_username={linkedin_username}

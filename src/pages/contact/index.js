@@ -31,7 +31,7 @@ class ContactIndex extends React.Component
           twitter_username={this.props.data.site.siteMetadata.social.twitter.username}
         />
         {/*<h2 style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'center', verticalAlign: 'middle'}}><i className="material-icons">call</i>&nbsp;&nbsp;<span>Contact</span></h2>*/}
-        <div className="page-title"><i className="fa fa-phone fa-1" aria-hidden="true"></i>&nbsp;&nbsp;Contact</div>
+        <div className="page-title"><i className="fa fa-mobile-alt fa-1" aria-hidden="true"></i>&nbsp;&nbsp;Contact</div>
         <form action="https://getsimpleform.com/messages?form_api_token=64314f114eee2fa0a0b0d381d681cb02" method="post">
             <input type="hidden" name="redirect_to" value="/contact/thankyou/" />
             <div className="form-item">

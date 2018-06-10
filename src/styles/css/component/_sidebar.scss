@@ -5,7 +5,7 @@
   position: fixed;
   cursor: pointer;
   color: $sidebar-background-color;
-  top: 1.7rem;
+  top: 1.5rem;
   @if $sidebar-pos == left
   {
     left: 1.2rem;
@@ -15,10 +15,12 @@
     right: 1.2rem;
   }
   z-index: 2;
+  font-size: $sidebar-hamburger-size;
+  color: $navbar-foreground-color;
   &::before
   {
-    font-family: FontAwesome;
-    content: "\f0c9";
+    /*font-family: "Font Awesome 5 Free";
+    content: "\f0c9";*/
     font-size: $sidebar-hamburger-size;
     color: $navbar-foreground-color;
   }
@@ -67,11 +69,12 @@
   cursor: pointer;
   color: $sidebar-foreground-color;
   margin: 0;
+  font-size: $sidebar-hamburger-size;
   &::before
   {
-    font-family: FontAwesome;
+    /*font-family: "Font Awesome 5 Free";
     content: "\f00d";
-    font-size: $sidebar-hamburger-size;
+    font-size: $sidebar-hamburger-size;*/
   }
 }
 

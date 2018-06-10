@@ -70,10 +70,14 @@ class Sidebar extends React.Component
     console.log(typeof(sidebar_menu));*/
     return (
       <div className="sidebar-content">
-        <label className="sidebar-toggle" onClick={() => this.updateRevealStatus()}></label>
+        <label className="sidebar-toggle" onClick={() => this.updateRevealStatus()}>
+          <i className="fas fa-bars"></i>
+        </label>
         <aside className={`sidebar ${this.state.reveal_status}`} style={{display: {}}} role="navigation">
           <div className="sidebar-item" style={{textAlign: 'right'}}>
-            <p className="sidebar-close" onClick={() => this.updateRevealStatus()}></p>
+            <p className="sidebar-close" onClick={() => this.updateRevealStatus()}>
+              <i className="fas fa-times"></i>
+            </p>
           </div>
           <ul className="sidebar-menu">
           {
