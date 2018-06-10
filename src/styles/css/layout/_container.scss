@@ -1,0 +1,29 @@
+.container
+{
+    position: relative;
+    margin: 0 auto;
+    @include until($mobile)
+    {
+        width: 90%;
+    }
+    @include within($mobile, $minitablet)
+    {
+        width: 85%;
+    }
+    @include within($minitablet, $tablet)
+    {
+        width: 85%;
+    }
+    @include within($tablet, $laptop)
+    {
+        width: 85%;
+    }
+    @include within($laptop, $desktop)
+    {
+        width: 85%;
+    }
+    @include within($desktop, $fullhd)
+    {
+        width: 80%;
+    }
+}

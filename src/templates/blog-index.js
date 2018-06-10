@@ -1,0 +1,115 @@
+import React from 'react'
+import Link from "gatsby-link";
+import moment from "moment";
+import moment_tz from "moment-timezone";
+
+import InfoCard from "../components/card/info-card";
+import Grid from "../components/grid";
+import GridItem from "../components/grid-item";
+import HeadMeta from "../components/head-meta";
+import SEO from "../components/seo";
+
+//export default ({ pathContext, data }) => {
+class BlogIndex extends React.Component
+{
+  constructor(props)
+  {
+    super(props)
+  }
+
+  render()
+  {
+    const { edges } = this.props.data.allMarkdownRemark;
+    let { prevPage, currentPage, nextPage, totalNumberOfPages} = this.props.pathContext;
+    let { minNumberOfPages, blogs} = this.props.pathContext;
+    let dispPrevPage = prevPage >= 1 ? prevPage : '';
+    prevPage = prevPage > 1 ? prevPage : '';
+    nextPage = nextPage <= totalNumberOfPages ? nextPage : '';
+
+    return (
+      <div>
+        <HeadMeta
+          title={"Blog | " + this.props.data.site.siteMetadata.author}
+          description={"This page contains the details of blogs written by " + this.props.data.site.siteMetadata.author}
+          keywords={"blogs, " + this.props.data.site.siteMetadata.author}
+        />
+        <div className="page-title"><i className="fa fa-pencil fa-1"></i>&nbsp;&nbsp;Blog</div>
+        <Grid>
+        { edges != null &&
+          edges.map(({ node }) => {
+            const { title, tags, categories, published_date } = node.frontmatter;
+            const {slug, date} = node.fields;
+            const excerptLength = node.html.indexOf("<!--more-->") > -1 ? node.html.indexOf("<!--more-->"): this.props.pathContext.excerptLength;
+            return (
+              <GridItem key={"blog"+title}>
+                <InfoCard
+                  card_type={"blog"}
+                  key={"blog-card-"+slug}
+                  url={slug}
+                  title={title}
+                  tags={tags}
+                  categories={categories}
+                  timeToRead={node.timeToRead}
+                  published_date={moment.tz(published_date, 'Asia/Kolkata').format("DD MMMM YYYY, HH:mm:ss z", "en")}
+                  excerpt={node.html.substr(0, excerptLength)}
+                />
+              </GridItem>
+            );
+          })
+        }
+        </Grid>
+      </div>
+    )
+  }
+}
+
+export default BlogIndex;
+
+export const query = graphql`
+  query BlogPostPageQuery($limit: Int, $skip: Int)
+  {
+    allMarkdownRemark: allMarkdownRemark
+    (
+      sort: {  fields: [fields___date], order: DESC},
+      filter:
+      {
+        frontmatter:
+        {
+          type: { regex: "/blog-post/" },
+          publish: {eq: true}
+        }
+      },
+      limit: $limit,
+      skip: $skip
+    )
+    {
+      edges
+      {
+        node
+        {
+          fields
+          {
+            slug
+            date(formatString: "DD MMMM YYYY, h:mm:ss", locale: "en")
+          }
+          frontmatter
+          {
+            title
+            tags
+            categories
+            published_date
+          }
+          timeToRead
+          html
+        }
+      }
+    }
+    site: site
+    {
+      siteMetadata
+      {
+        author
+      }
+    }
+  }
+`;

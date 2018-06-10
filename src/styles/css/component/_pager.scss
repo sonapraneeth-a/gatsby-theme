@@ -1,0 +1,92 @@
+.pager
+{
+    display: flex;
+    @include until($minitablet)
+    {
+        flex-direction: column;
+    }
+    width: 100%;
+    a
+    {
+        text-decoration: none;
+        padding: 0.5rem;
+        background-color: white;
+        color: grey;
+        &:hover
+        {
+            text-decoration: none;
+            background-color: grey;
+            color: white;
+        }
+    }
+}
+.post-page
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 50%;
+    @include until($minitablet)
+    {
+        width: 100%;
+    }
+    /*border: 1px solid $foreground-dark-color;*/
+    box-sizing: border-box;
+    margin: 0.25rem 0;
+    p 
+    {
+        margin: 0;
+    }
+    &.hidden
+    {
+        visibility: hidden;
+    }
+}
+.previous-post
+{
+    margin: auto;
+    text-align: left;
+    /*justify-content: left;*/
+    /*text-align: center;
+    &::before
+    {
+        content: "< ";
+        white-space: pre;
+    }*/
+    /*&::before
+    {
+        @include left-icon;
+    }
+    &::after
+    {
+        content: " ";
+    }*/
+}
+.previous-post-title
+{
+    text-align: left;
+}
+.next-post
+{
+    /*justify-content: right;*/
+    /*text-align: right;
+    &::after
+    {
+        content: " >";
+        white-space: pre;
+    }*/
+    margin: auto;
+    text-align: right;
+    /*&::before
+    {
+        content: " ";
+    }
+    &::after
+    {
+        @include right-icon;
+    }*/
+}
+.next-post-title
+{
+    text-align: right;
+}

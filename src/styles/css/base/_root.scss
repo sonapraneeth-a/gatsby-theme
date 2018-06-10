@@ -1,0 +1,28 @@
+*
+{
+    box-sizing: border-box;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+html
+{
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI SemiBold",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+body
+{
+    margin: 0;
+    background-color: $background-color;
+    color: $primary-text-color;
+}
+
+a
+{
+    text-decoration: none;
+    color: $link-text-color;
+}

@@ -1,0 +1,15 @@
+.footer
+{
+  z-index: 1;
+  width: 100%;
+  background-color: $primary-background-color;
+  color: $primary-foreground-color;
+  p 
+  {
+    margin: 0.2rem auto;
+  }
+  @include until($mobile)
+  {
+    display: none;
+  }
+}

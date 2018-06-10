@@ -1,0 +1,29 @@
+$monokai-background : hsl(70, 8.1%, 14.5%);/*#272822;*/
+$monokai-foreground : hsl(60, 30%, 96.1%);/*#f8f8f2;*/
+
+$black              : hsl(0, 0%, 0%);/*rgb(0, 0, 0);*/
+$white              : hsl(0, 0%, 100%);/*rgb(255, 255, 255);*/
+
+$red                : hsl(0, 100%, 50%);/*rgb(255, 0, 0);*/
+$green              : hsl(120, 100%, 50%);/*rgb(0, 255, 0);*/
+$blue               : hsl(240, 100%, 50%);/*rgb(0, 0, 255);*/
+
+$smooth-blue        : hsl(211, 90.9%, 65.7%);/*rgb(88, 164, 247);*/
+
+$facebook-color     : hsl(221, 44%, 41%);/*rgb(59,89,152)*/
+$gplus-color        : hsl(7, 64%, 52%);/*rgb(211, 72, 54)*/
+$twitter-color      : hsl(203, 89%, 53%);/*rgb(29, 161, 242)*/
+$linkedin-color     : hsl(201, 100%, 35%);/*rgb(0, 119, 181)*/
+$email-color        : $black;
+$print-color        : $black;
+$rss-color          : hsl(19, 89%, 54%);/*rgb(242, 101, 34)*/
+$github-color       : hsl(214, 50%, 50%);/*rgb(64, 120, 192)*/
+
+$info               : hsl(203, 93%, 54%);/*#1EA5F7*/
+$danger             : hsl(354, 70%, 54%);/*#DC3545*/
+$success            : hsl(134, 61%, 41%);/*#28a745 */
+$warning            : hsl(45, 100%, 51%);/*#ffc107 */
+$primary            : hsl(0, 0%, 0%);
+$secondary          : hsl(0, 0%, 100%);
+
+.red { color: red; }

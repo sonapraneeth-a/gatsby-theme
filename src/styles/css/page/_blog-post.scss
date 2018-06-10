@@ -1,0 +1,30 @@
+.blog-toc-title
+{
+  border: 0.01rem solid black;
+  margin: 0;
+  padding: 1rem;
+  background-color: $primary-background-color;
+  color: $primary-foreground-color;
+}
+
+.blog-toc-contents
+{
+  ul 
+  {
+    list-style-type: none;
+    margin: 0.5rem;
+    padding: 0;
+  }
+  a 
+  {
+    text-decoration: none;
+  }
+  li
+  {
+    ul 
+    {
+      margin: 1rem;
+    }
+  }
+  border: 0.1rem solid black;
+}

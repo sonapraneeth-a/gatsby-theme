@@ -1,0 +1,96 @@
+/* vertical-ribbon implementation taken from https://wncc-iitb.org/ */
+/* http://www.cssportal.com/css-ribbon-generator/ */
+.vertical-ribbon
+{
+    /*border: 1px solid black;
+    position: absolute;
+    left: -0.32rem;
+    top: -0.38rem;
+    z-index: 1;
+    overflow: hidden;
+    width: 4rem;
+    bottom: -0.38rem;
+    text-align: right;*/
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    width: 0;
+    height: 100px;
+    border: 50px dashed #1abc9c;
+    border-top: 0 dashed;
+    border-bottom: 35px dashed rgba(0,0,0,0);
+    font: normal 100%/normal "amaranth", Helvetica, sans-serif;
+    color: rgba(0,0,0,1);
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    -webkit-transform: rotateZ(-90deg)   ;
+    transform: rotateZ(-90deg);
+}
+/*.vertical-ribbon span
+{
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #FFF;
+    text-align: center;
+    line-height: 2rem;
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-shadow: 0 3px 10px -5px #000;
+    position: absolute;
+    top: 0.2rem;
+    left: 0.2rem;
+
+}
+.vertical-ribbon span::before
+{
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 100%;
+    z-index: -1;
+    border-right: 0.2rem solid transparent;
+    border-bottom: 0.2rem solid transparent;
+}
+.vertical-ribbon span::after
+{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: -1;
+    border-left: 0.2rem solid transparent;
+    border-bottom: 0.2rem solid transparent;
+}
+
+.status-ongoing span
+{
+    background: $info;
+    background: linear-gradient(lighten($info, 10%) 0%, $info 100%);
+}
+.status-ongoing span::after
+{
+    border-right: 0.2rem solid $info;
+    border-top: 0.2rem solid $info;
+}
+.status-ongoing span::before
+{
+    border-left: 0.2rem solid $info;
+    border-top: 0.2rem solid $info;
+}
+
+.status-complete span
+{
+    background: $success;
+    background: linear-gradient(lighten($success, 10%) 0%, $success 100%);
+}
+.status-complete span::before
+{
+    border-left: 0.2rem solid $success;
+    border-top: 0.2rem solid $success;
+}
+.status-complete span::after
+{
+    border-right: 0.2rem solid $success;
+    border-top: 0.2rem solid $success;
+}*/

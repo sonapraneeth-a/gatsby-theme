@@ -1,0 +1,23 @@
+.grid
+{
+    display: grid;
+    @include until($tablet)
+    {
+        grid-template-columns: 100%;
+    }
+    @include from($tablet)
+    {
+        grid-template-columns: 50% 50%;
+    }
+    grid-gap: 0.7rem;
+    padding: 0.5rem 0;
+}
+
+.grid-item
+{
+    /*@include from($tablet)
+    {
+        margin: 0.5rem;
+    }*/
+    margin: 0.5rem;
+}

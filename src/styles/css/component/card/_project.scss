@@ -1,0 +1,46 @@
+.project-card
+{
+    @extend .card;
+    padding: 0.5rem;
+    position: relative;
+    @include from($laptop)
+    {
+        &:nth-child(odd)
+        {
+            margin: 0.5rem 0.5rem 0.5rem 0;
+        }
+        &:nth-child(even)
+        {
+            margin: 0.5rem 0 0.5rem 0.5rem;
+        }
+        width: 49%;
+        float: left;
+        box-sizing: border-box;
+        min-height: 18rem;
+    }
+    @include until($laptop)
+    {
+        min-height: 10rem;
+        margin-bottom: 0.5rem;
+    }
+    @include clearfix;
+}
+
+.project-card a
+{
+    text-decoration: none;
+}
+
+.project-header
+{
+    margin-bottom: 0.4rem;
+    @include until($laptop)
+    {
+        width: 80%;
+    }
+    @include from($laptop)
+    {
+        width: 75%;
+    }
+}
+

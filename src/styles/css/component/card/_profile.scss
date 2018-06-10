@@ -1,0 +1,105 @@
+.profile-card
+{
+    position: relative;
+    display: flex;
+    @include until($tablet)
+    {
+        flex-direction: column;
+    }
+    @include from($tablet)
+    {
+        flex-direction: row;
+    }
+    background-color: white;
+    transition: box-shadow .25s, -webkit-box-shadow .25s;
+    @if $flat == true 
+    {
+        border-radius: 0px;
+    }
+    @else
+    {
+        border-radius: 5px;
+    }
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+    &:hover
+    {
+        box-shadow: 0 5px 5px 0 rgba(0,0,0,0.14), 0 3px 8px 0 rgba(0,0,0,0.12), 0 5px 3px -4px rgba(0,0,0,0.2);
+    }
+    width: 100%;
+    height: 100%;
+    @include clearfix;
+
+    .profile-card-image
+    {
+        @if $flat == true 
+        {
+            border-radius: 0px;
+        }
+        @else
+        {
+            @include until($tablet)
+            {
+                border-radius: 5px 5px 0 0;
+            }
+            @include from($tablet)
+            {
+                border-radius: 5px 0 0 5px;
+            }
+        }
+    }
+
+    .profile-card-image
+    {
+        @include until($tablet)
+        {
+            width: 100%;
+        }
+        @include from($tablet)
+        {
+            width: 25%;
+        }
+    }
+
+    .profile-card-info
+    {
+        @include from($tablet)
+        {
+            width: 70%;
+        }
+        flex-direction: column;
+    }
+
+    .profile-card-content
+    {
+        padding: 1rem;
+    }
+
+    .profile-card-details
+    {
+        padding-bottom: 2rem;
+    }
+
+    .profile-card-footer
+    {
+        position: relative;
+        //width: 100%;
+        padding: 0 1rem;
+        border-top: 0.1rem solid rgba(160,160,160,0.2);
+        bottom: 0;
+    }
+
+    .profile-card-reveal
+    {
+        padding: 1% 4%;
+        position: absolute;
+        background-color: white;
+        width: 100%;
+        overflow-y: auto;
+        left: 0;
+        top: 100%;
+        height: 100%;
+        z-index: 3;
+        display: none;
+        border-radius: 5px;
+    }
+}

@@ -1,0 +1,144 @@
+/* http://negomi.github.io/react-burger-menu/ */
+
+.sidebar-toggle
+{
+  position: fixed;
+  cursor: pointer;
+  color: $sidebar-background-color;
+  top: 1.7rem;
+  @if $sidebar-pos == left
+  {
+    left: 1.2rem;
+  }
+  @else
+  {
+    right: 1.2rem;
+  }
+  z-index: 2;
+  &::before
+  {
+    font-family: FontAwesome;
+    content: "\f0c9";
+    font-size: $sidebar-hamburger-size;
+    color: $navbar-foreground-color;
+  }
+}
+
+.sidebar
+{
+  position: fixed;
+  width: $sidebar-width;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  background-color: $sidebar-background-color;
+  color: $sidebar-foreground-color;
+  border-right: 0.3rem solid $secondary-foreground-color-dark;
+  @if $sidebar-pos == left
+  {
+    left: -$sidebar-width;
+  }
+  @else
+  {
+    right: -$sidebar-width;
+  }
+  z-index: 3;
+  overflow-y: auto;
+  @include transition(all 0.3s ease-in-out);
+  &.on
+  {
+    @if $sidebar-pos == left
+    {
+      @include transform(translateX($sidebar-width));
+    }
+    @else
+    {
+      @include transform(translateX(-$sidebar-width));
+    }
+  }
+  &.off
+  {
+    //display: none;
+  }
+}
+
+.sidebar-close
+{
+  cursor: pointer;
+  color: $sidebar-foreground-color;
+  margin: 0;
+  &::before
+  {
+    font-family: FontAwesome;
+    content: "\f00d";
+    font-size: $sidebar-hamburger-size;
+  }
+}
+
+.content
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar-menu
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  li 
+  {
+    &:hover
+    {
+      .sidebar-dropdown-menu
+      {
+        display: flex;
+      }
+    }
+  }
+  li a
+  {
+    font-size: 1.05rem;
+    text-decoration: none;
+    padding: $sidebar-item-padding;
+    display: block;
+    background-color: $sidebar-background-color;
+    color: $sidebar-foreground-color;
+    &:hover
+    {
+      background-color: darken($sidebar-background-color, 25%);
+      color: $sidebar-foreground-color;
+    }
+  }
+  .active
+  {
+    background-color: darken($sidebar-background-color, 25%);
+    color: $sidebar-foreground-color;
+  }
+}
+
+.sidebar-dropdown-menu
+{
+  display: none;
+  list-style-type: none;
+  margin: 0;
+  flex-direction: column;
+  padding: 0;
+  li a
+  {
+    padding-left: 2.75rem;
+    font-size: 0.9rem;
+    line-height: 0.9rem;
+  }
+}
+
+.sidebar-item
+{
+  padding: $sidebar-item-padding;
+  font-size: 1.05rem;
+  a
+  {
+    color: $sidebar-foreground-color;
+  }
+}
