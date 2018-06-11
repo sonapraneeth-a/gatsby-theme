@@ -3,7 +3,7 @@ import Link from "gatsby-link";
 import moment from "moment";
 import moment_tz from "moment-timezone";
 
-import InfoCard from "../components/card/info-card";
+import BlogCard from "../components/card/blog-card";
 import Grid from "../components/grid";
 import GridItem from "../components/grid-item";
 import HeadMeta from "../components/head-meta";
@@ -42,7 +42,7 @@ class BlogIndex extends React.Component
             const excerptLength = node.html.indexOf("<!--more-->") > -1 ? node.html.indexOf("<!--more-->"): this.props.pathContext.excerptLength;
             return (
               <GridItem key={"blog"+title}>
-                <InfoCard
+                <BlogCard
                   card_type={"blog"}
                   key={"blog-card-"+slug}
                   url={slug}

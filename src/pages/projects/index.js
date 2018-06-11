@@ -3,7 +3,7 @@ import Link from "gatsby-link";
 
 import Grid from "../../components/grid";
 import GridItem from "../../components/grid-item";
-import InfoCard from "../../components/card/info-card";
+import ProjectCard from "../../components/card/project-card";
 import HeadMeta from "../../components/head-meta";
 
 //export default ({ data }) => {
@@ -28,7 +28,7 @@ class ProjectIndex extends React.Component
         { this.props.data.projects != null &&
           this.props.data.projects.edges.map(({ node }) =>
             <GridItem key={"project"+node.frontmatter.title}>
-              <InfoCard
+              <ProjectCard
                 card_type={"projects"}
                 status={node.frontmatter.status}
                 published_date={node.frontmatter.published_date}

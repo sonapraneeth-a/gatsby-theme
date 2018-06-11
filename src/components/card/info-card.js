@@ -39,16 +39,14 @@ class InfoCard extends React.Component
     let card_type = this.props.card_type;
     return (
       <div className="card">
-        {
-          this.props.status != null &&
+        { this.props.status != null &&
           <div className={ribbon_class}>
             <span>
               {this.props.status}
             </span>
           </div>
         }
-        {
-          this.props.banner_image == null &&
+        { this.props.banner_image == null &&
           <div className="card-image">
             <img src="https://placeimg.com/320/240/nature" alt="Project banner image"></img>
           </div>
@@ -76,7 +74,7 @@ class InfoCard extends React.Component
           </div>
         </div>
         <div className="card-reveal" style={reveal_style}>
-          <span style={{float: 'right', cursor: 'pointer'}} onClick={this.revealInfoCard.bind(this)}><i className="zmdi zmdi-close zmdi-hc-2x"></i></span>
+          <span style={{float: 'right', cursor: 'pointer'}} onClick={this.revealInfoCard.bind(this)}><i className="fa fa-times"></i></span>
           {
             <table>
               <tbody>
@@ -125,8 +123,7 @@ class InfoCard extends React.Component
             </table>
           }
         </div>
-        {
-          this.props.url != null &&
+        { this.props.url != null &&
           <div className="card-footer">
             <center>
               <Link to={this.props.url} style={{textDecoration: 'none'}}>
