@@ -52,6 +52,7 @@ class ProjectCard extends React.Component
         }
         <div className="card-content">
           <h2 className="card-title">{this.props.title}</h2>
+          <span style={{float: 'right', cursor: 'pointer', marginRight: '0.5rem'}} onClick={this.revealProjectCard.bind(this)}><i className="zmdi zmdi-more-vert zmdi-hc-2x"></i></span>
           { this.props.published_date != null &&
               <SimpleChip
                 icon={"calendar"}
@@ -64,7 +65,6 @@ class ProjectCard extends React.Component
               content={this.props.institution}
             />
           }
-          <span style={{float: 'right', cursor: 'pointer', marginRight: '0.5rem'}} onClick={this.revealProjectCard.bind(this)}><i className="zmdi zmdi-more-vert zmdi-hc-2x"></i></span>
           <div className="card-details">
             <p dangerouslySetInnerHTML={{ 
               __html: this.props.excerpt}} />

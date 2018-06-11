@@ -4,10 +4,10 @@ import moment from "moment";
 import moment_tz from "moment-timezone";
 
 import BlogCard from "../components/card/blog-card";
-import Grid from "../components/grid";
-import GridItem from "../components/grid-item";
-import HeadMeta from "../components/head-meta";
-import SEO from "../components/seo";
+import Grid from "../components/grid/grid";
+import GridItem from "../components/grid/grid-item";
+import HeadMeta from "../components/head/head-meta";
+import SEO from "../components/head/seo";
 
 //export default ({ pathContext, data }) => {
 class BlogIndex extends React.Component

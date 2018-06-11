@@ -5,7 +5,7 @@ import Link from "gatsby-link";
 // Components
 import SimpleCard from "../../components/card/simple-card";
 import LinkChip from "../../components/chip/link-chip";
-import HeadMeta from "../../components/head-meta";
+import HeadMeta from "../../components/head/head-meta";
 
 // Imports
 const _ = require('lodash')

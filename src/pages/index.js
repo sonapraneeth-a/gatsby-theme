@@ -2,8 +2,8 @@ import React from "react"
 import Link from "gatsby-link";
 
 import ProfileCard from "../components/card/profile-card.js"
-import HeadMeta from "../components/head-meta";
-import SEO from "../components/seo";
+import HeadMeta from "../components/head/head-meta";
+import SEO from "../components/head/seo";
 
 class Index extends React.Component
 {

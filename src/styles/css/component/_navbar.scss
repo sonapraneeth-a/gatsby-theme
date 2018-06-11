@@ -1,166 +1,165 @@
 .navbar
 {
-    display: flex;
-    flex-direction: row;
-    background-color: $navbar-background-color;
-    color: $navbar-foreground-color;
-    border-bottom: 0.1rem solid $navbar-foreground-color;
-    position: fixed;
-    width: 100%;
-    z-index: 1;
-    top: 0;
-    .container
+  display: flex;
+  flex-direction: row;
+  background-color: $navbar-background-color;
+  color: $navbar-foreground-color;
+  border-bottom: 0.1rem solid $navbar-foreground-color;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  .container
+  {
+    @include until($navbar-visible-screen)
     {
-        @include until($tablet)
-        {
-            width: 70%;
-        }
+      width: 80%;
     }
+  }
 }
 
 .navbar-content
 {
-    display: flex;
-    @if $navbar-content-flow == reverse
-    {
-        flex-direction: row-reverse;
-    }
-    @else
-    {
-        flex-direction: row;
-    }
-    width: 100%;
+  display: flex;
+  @if $navbar-content-flow == reverse
+  {
+    flex-direction: row-reverse;
+  }
+  @else
+  {
+    flex-direction: row;
+  }
+  width: 100%;
 }
 
 .navbar-header
 {
-    display: flex;
-    margin: 1rem 0;
+  display: flex;
+  margin: 1rem 0;
+  color: $navbar-foreground-color;
+  a
+  {
+    font-size: 2rem;
+    color: $navbar-foreground-color;
+    text-decoration: none;
+    &:hover
+    {
+      text-decoration: none;
+    }
+  }
+  @include until($navbar-visible-screen)
+  {
+    width: 100%;
+    justify-content: center;
+    background-color: $navbar-background-color;
     color: $navbar-foreground-color;
     a
     {
-        font-size: 2rem;
-        color: $navbar-foreground-color;
-        text-decoration: none;
-        &:hover
-        {
-            text-decoration: none;
-        }
+      color: $navbar-foreground-color;
     }
-    @include until($tablet)
-    {
-        width: 100%;
-        justify-content: center;
-        background-color: $navbar-background-color;
-        color: $navbar-foreground-color;
-        a
-        {
-            color: $navbar-foreground-color;
-        }
-    }
+  }
 }
 
 .navbar-menu
 {
-    font-size: 1rem;
-    list-style-type: none;
-    margin: 1rem 0;
-    display: flex;
-    flex: 1;
-    @if $navbar-content-flow == reverse
+  font-size: 1rem;
+  list-style-type: none;
+  margin: 1rem 0;
+  display: flex;
+  flex: 1;
+  @if $navbar-content-flow == reverse
+  {
+    justify-content: flex-start;
+  }
+  @else
+  {
+    justify-content: flex-end;
+  }
+  padding: 0;
+  color: $navbar-foreground-color;
+  li
+  {
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    min-width: 4rem;
+    margin: auto 0;
+    // border: 0.1rem solid darken($navbar-background-color, 10%);
+    &:not(:last-child)
     {
-        justify-content: flex-start;
+      border-right: none;
     }
-    @else
+    @if $flat == false
     {
-        justify-content: flex-end;
+      &:first-child
+      {
+        border-top-left-radius: 0.05rem;
+        border-bottom-left-radius: 0.05rem;
+      }
+      &:last-child
+      {
+        border-top-right-radius: 0.05rem;
+        border-bottom-right-radius: 0.05rem;
+      }
     }
-    padding: 0;
     color: $navbar-foreground-color;
-    li
+    &:hover
     {
-        display: inline-block;
-        box-sizing: border-box;
-        position: relative;
-        min-width: 4rem;
-        margin: auto 0;
-        // border: 0.1rem solid darken($navbar-background-color, 10%);
-        &:not(:last-child)
-        {
-            border-right: none;
-        }
-        @if $flat == false
-        {
-            &:first-child
-            {
-                border-top-left-radius: 0.05rem;
-                border-bottom-left-radius: 0.05rem;
-            }
-            &:last-child
-            {
-                border-top-right-radius: 0.05rem;
-                border-bottom-right-radius: 0.05rem;
-            }
-        }
-        color: $navbar-foreground-color;
-        &:hover
-        {
-            background-color: darken($navbar-background-color, 10%);
-            .navbar-dropdown-menu
-            {
-                display: flex;
-            }
-        }
-        a
-        {
-            text-decoration: none;
-            padding: 0.5rem;
-            display: block;
-            color: $navbar-foreground-color;
-        }
-        .dropdown-icon
-        {
-            display: inline-block;
-            //border-left: 0.1rem solid darken($navbar-background-color, 10%);;
-        }
+      background-color: darken($navbar-background-color, 10%);
+      .navbar-dropdown-menu
+      {
+        display: flex;
+      }
     }
-    .active
+    a
     {
-        background-color: darken($navbar-background-color, 10%);
+      text-decoration: none;
+      padding: 0.5rem;
+      display: block;
+      color: $navbar-foreground-color;
     }
-    @include until($tablet)
+    .dropdown-icon
     {
-      display: none;
+      display: inline-block;
     }
+  }
+  .active
+  {
+    background-color: darken($navbar-background-color, 10%);
+  }
+  @include until($navbar-visible-screen)
+  {
+    display: none;
+  }
 }
 
 /* https://tympanus.net/Tutorials/CustomDropDownListStyling/index3.html */
 .navbar-dropdown-menu
 {
+  position: absolute;
+  flex-direction: column;
+  padding: 0;
+  display: none;
+  box-sizing: border-box;
+  padding-top: 0.5rem;
+  li 
+  {
+    background-color: darken($navbar-background-color, 10%);
+    width: 8rem;
+    margin: 0;
+  }
+  &::before
+  {
+    content: "";
+    width: 0;
+    height: 0;
     position: absolute;
-    flex-direction: column;
-    padding: 0;
-    display: none;
-    box-sizing: border-box;
-    padding-top: 0.5rem;
-    li 
-    {
-        background-color: darken($navbar-background-color, 10%);
-        width: 8rem;
-        margin: 0;
-    }
-    &::before
-    {
-        content: "";
-        width: 0;
-        height: 0;
-        position: absolute;
-        bottom: 100%;
-        left: 0.5rem;
-        top: 0;
-        border-width: 0 8px 8px 8px;
-        border-style: solid;
-        border-color: darken($navbar-background-color, 10%) transparent;
-    }
+    bottom: 100%;
+    left: 0.5rem;
+    top: 0;
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: darken($navbar-background-color, 10%) transparent;
+  }
 }
 

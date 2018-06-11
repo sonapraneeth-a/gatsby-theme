@@ -6,11 +6,11 @@ import moment_tz from "moment-timezone";
 
 import SimpleChip from "../components/chip/simple-chip";
 import LinkChip from "../components/chip/link-chip";
-import HeadMeta from "../components/head-meta";
-import SEO from "../components/seo";
+import HeadMeta from "../components/head/head-meta";
+import SEO from "../components/head/seo";
 import Sharing from "../components/sharing";
-import Grid from "../components/grid";
-import GridItem from "../components/grid-item";
+import Grid from "../components/grid/grid";
+import GridItem from "../components/grid/grid-item";
 
 const slugify = require('slug');
 

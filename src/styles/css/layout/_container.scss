@@ -12,18 +12,18 @@
     }
     @include within($minitablet, $tablet)
     {
-        width: 85%;
+        width: 80%;
     }
     @include within($tablet, $laptop)
     {
-        width: 85%;
+        width: 80%;
     }
     @include within($laptop, $desktop)
     {
-        width: 85%;
+        width: 75%;
     }
     @include within($desktop, $fullhd)
     {
-        width: 80%;
+        width: 65%;
     }
 }

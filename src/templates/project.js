@@ -6,8 +6,8 @@ import moment_tz from "moment-timezone";
 
 import SimpleChip from "../components/chip/simple-chip";
 import LinkChip from "../components/chip/link-chip";
-import HeadMeta from "../components/head-meta";
-import SEO from "../components/seo";
+import HeadMeta from "../components/head/head-meta";
+import SEO from "../components/head/seo";
 
 const slugify = require('slug');
 
@@ -118,6 +118,9 @@ export const query = graphql`
         title
         tags
         categories
+        brief
+        publish
+        status
       }
       tableOfContents
     }

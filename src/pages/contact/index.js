@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "gatsby-link";
 
-import HeadMeta from "../../components/head-meta";
-import SEO from "../../components/seo";
+import HeadMeta from "../../components/head/head-meta";
+import SEO from "../../components/head/seo";
 
 //export default ({ data }) => {
 

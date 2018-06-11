@@ -1,4 +1,5 @@
 ---
+type: project
 layout: project
 title: Project 02
 subtitle: 

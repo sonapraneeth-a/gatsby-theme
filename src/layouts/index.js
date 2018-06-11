@@ -8,7 +8,7 @@ import "../styles/css/main.scss";
 import "../styles/prism/solarized.scss";
 import "../styles/prism/gatsby-highlight.scss";
 
-import Container from "../components/container";
+import Container from "../components/grid/container";
 import Navbar from "../components/navbar";
 import Sidebar from "../components/sidebar";
 
