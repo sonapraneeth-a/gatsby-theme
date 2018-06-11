@@ -1,0 +1,31 @@
+.col-dp-1
+{
+  width: 8.333%;
+  float: left;
+  padding: 0 0.5rem;
+}
+.col-dp-4
+{
+  width: 33.333%;
+  float: left;
+  padding: 0 0.5rem;
+}
+.col-dp-8
+{
+  //width: 66.666%;
+  width: calc(8/12 * 100%);
+  float: left;
+  padding: 0 0.5rem;
+}
+.col-dp-11
+{
+  width: 91.666%;
+  float: left;
+  padding: 0 0.5rem;
+}
+.col-dp-12
+{
+  width: 100%;
+  float: left;
+  padding: 0 0.5rem;
+}

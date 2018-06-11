@@ -14,7 +14,7 @@
   {
     right: 1.2rem;
   }
-  z-index: 2;
+  z-index: $sidebar-toggle-zindex;
   font-size: $sidebar-hamburger-size;
   color: $navbar-foreground-color;
   &::before
@@ -44,7 +44,7 @@
   {
     right: -$sidebar-width;
   }
-  z-index: 3;
+  z-index: $sidebar-zindex;
   overflow-y: auto;
   @include transition(all 0.3s ease-in-out);
   &.on

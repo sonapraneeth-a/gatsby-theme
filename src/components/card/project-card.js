@@ -4,6 +4,8 @@ import slugify from "slug";
 
 import SimpleChip from "../chip/simple-chip";
 import LinkChip from "../chip/link-chip";
+import Row from "../grid/row";
+import Col from "../grid/col";
 
 class ProjectCard extends React.Component
 {
@@ -51,11 +53,23 @@ class ProjectCard extends React.Component
           </div>
         }
         <div className="card-content">
-          <h2 className="card-title">{this.props.title}</h2>
-          <span style={{float: 'right', cursor: 'pointer', marginRight: '0.5rem'}} onClick={this.revealProjectCard.bind(this)}><i className="zmdi zmdi-more-vert zmdi-hc-2x"></i></span>
+          <Row>
+            <Col
+              dp={11}
+            >
+              <h2 className="card-title">{this.props.title}</h2>
+            </Col>
+            <Col
+              dp={1}
+            >
+              <span className="card-reveal-icon" onClick={this.revealProjectCard.bind(this)}>
+                <i className="zmdi zmdi-more-vert zmdi-hc-2x"></i>
+              </span>
+            </Col>
+          </Row>
           { this.props.published_date != null &&
               <SimpleChip
-                icon={"calendar"}
+                icon={"calendar-alt"}
                 content={this.props.published_date}
               />
           }
@@ -71,7 +85,13 @@ class ProjectCard extends React.Component
           </div>
         </div>
         <div className="card-reveal" style={reveal_style}>
-          <span style={{float: 'right', cursor: 'pointer'}} onClick={this.revealProjectCard.bind(this)}><i className="fa fa-times"></i></span>
+          <Row>
+            <Col dp={12}>
+              <span style={{float: 'left', cursor: 'pointer'}} onClick={this.revealProjectCard.bind(this)}>
+                <i className="fa fa-times"></i>
+              </span>
+            </Col>
+          </Row>
           {
             <table>
               <tbody>

@@ -4,6 +4,8 @@ import slugify from "slug";
 
 import SimpleChip from "../chip/simple-chip";
 import LinkChip from "../chip/link-chip";
+import Row from "../grid/row";
+import Col from "../grid/col";
 
 class BlogCard extends React.Component
 {
@@ -54,7 +56,7 @@ class BlogCard extends React.Component
           <h2 className="card-title">{this.props.title}</h2>
           { this.props.published_date != null &&
               <SimpleChip
-                icon={"calendar"}
+                icon={"calendar-alt"}
                 content={this.props.published_date}
               />
           }
@@ -71,7 +73,13 @@ class BlogCard extends React.Component
           </div>
         </div>
         <div className="card-reveal" style={reveal_style}>
-          <span style={{float: 'right', cursor: 'pointer'}} onClick={this.revealBlogCard.bind(this)}><i className="fa fa-times"></i></span>
+          <Row>
+            <Col dp={12}>
+              <span style={{float: 'left', cursor: 'pointer'}} onClick={this.revealBlogCard.bind(this)}>
+                <i className="fa fa-times"></i>
+              </span>
+            </Col>
+          </Row>
           {
             <table>
               <tbody>

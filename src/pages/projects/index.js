@@ -76,6 +76,10 @@ export const query = graphql`
             published_date
             tags
             categories
+            publish
+            institution
+            brief
+            status
           }
           fields
           {

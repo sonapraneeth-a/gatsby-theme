@@ -1,6 +1,6 @@
 .footer
 {
-  z-index: 1;
+  z-index: $footer-zindex;
   width: 100%;
   background-color: $primary-background-color;
   color: $primary-foreground-color;

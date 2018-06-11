@@ -1,11 +1,11 @@
-$feature-phone: 20rem;//320px
-$mobile: 40rem;//640px;
-$minitablet: 48rem;//768px;
-$tablet: 64rem;//1024px;
-$laptop: 80rem;//1280px;
-$desktop: 86rem;//1376px;
-$fullhd: 120rem;//1920px;
-$ultrahd: 240rem;//3840px;
+$feature-phone  : 20rem;  // 320px; - fp
+$mobile         : 40rem;  // 640px; - mp
+$minitablet     : 48rem;  // 768px; - mt
+$tablet         : 64rem;  //1024px; - t
+$laptop         : 80rem;  //1280px; - lp
+$desktop        : 86rem;  //1376px; - dp
+$fullhd         : 120rem; //1920px; - fh
+$ultrahd        : 240rem; //3840px; - uh
 
 @mixin mobile
 {

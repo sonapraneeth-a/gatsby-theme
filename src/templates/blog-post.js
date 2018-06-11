@@ -9,8 +9,8 @@ import LinkChip from "../components/chip/link-chip";
 import HeadMeta from "../components/head/head-meta";
 import SEO from "../components/head/seo";
 import Sharing from "../components/sharing";
-import Grid from "../components/grid/grid";
-import GridItem from "../components/grid/grid-item";
+import Row from "../components/grid/row";
+import Col from "../components/grid/col";
 
 const slugify = require('slug');
 
@@ -66,7 +66,7 @@ class BlogPost extends React.Component
                 <LinkChip
                   url={"/blog/tags/#"+slugify(tag)}
                   key={"tag"+tag_name}
-                  content={tag_name.charAt(0).toUpperCase() + tag_name.slice(1).toLowerCase()}
+                  content={tag_name}
                   icon={"tag"}
                 />
               );
@@ -80,7 +80,7 @@ class BlogPost extends React.Component
                 <LinkChip
                   url={"/blog/categories/#"+slugify(category)}
                   key={"category"+category_name}
-                  content={category_name.charAt(0).toUpperCase() + category_name.slice(1).toLowerCase()}
+                  content={category_name}
                   icon={"folder-open"}
                 />
               );
@@ -89,22 +89,22 @@ class BlogPost extends React.Component
           <hr />
         </header>
         <section>
-          <Grid>
-            <GridItem>
+          <Row>
+            <Col dp={4}>
               <div className="blog-toc">
                 <h4 className="blog-toc-title">Table of Contents</h4>
                 <div className="blog-toc-contents"
                   dangerouslySetInnerHTML={{ __html: post.tableOfContents }}
                 />
               </div>
-            </GridItem>
-            <GridItem>
+            </Col>
+            <Col dp={8}>
               <div
                 className="blog-body"
                 dangerouslySetInnerHTML={{ __html: post.html }}
               />
-            </GridItem>
-          </Grid>
+            </Col>
+          </Row>
         </section>
         <Sharing
           url={base_url+post.fields.slug}

@@ -1,14 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Link from "gatsby-link";
+import _ from 'lodash';
+import slugify from 'slug';
 
 // Components
 import SimpleCard from "../../components/card/simple-card";
 import HeadMeta from "../../components/head/head-meta";
-
-// Imports
-const _ = require('lodash')
-const slugify = require('slug')
+import LinkChip from "../../components/chip/link-chip";
 
 /**
  * 
@@ -104,14 +103,13 @@ class BlogTagPage extends React.Component
           {
             let tag_slug = slugify(blog_tags[index_i].toLowerCase());
             return (
-              <Link to={"/blog/tags/#"+tag_slug} key={"/blog/tags/#"+tag_slug} style={{textDecoration: 'none'}} className="chip" >
-                <span key={name+index_i} className="chip-content">
-                  <i className="fa fa-tag" aria-hidden="true"></i>&nbsp;{blog_tags[index_i]}
-                </span>
-                <span className="chip-count">
-                  {tag_info[index_i].length}
-                </span>
-              </Link>
+              <LinkChip
+                url={"/blog/tags/#"+tag_slug}
+                key={"tag"+name}
+                content={blog_tags[index_i]}
+                count={tag_info[index_i].length}
+                icon={"folder-open"}
+              />
             );
           })
         }

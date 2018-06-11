@@ -1,23 +1,24 @@
 ---
-type: project
 layout: project
-title: Project 03
-subtitle: 
-guide: 
-institution: 
-date: February 2018
-course: 
+type: project
+title: Object tracking
+subtitle: Course Code - CS 763
+guide: Prof. Ajit Rajwade
+institution: IIT Bombay
+published_date: April 2016
+course: CS 763
 abstract: 
-brief: Brief description of project 03
-categories: ["Cat 01", "Cat 02"]
-published: true
+brief: Tracking objects in a video
+categories: ["Computer Vision"]
 source: 
 banner_image: 
 image-alt-text: 
-tags: ["Tag 02", "Tag 03"]
+tags: ["MATLAB", "Mean shift"]
 slides-url: 
 report-url: 
-github-link: 
-status: Ongoing
+github-link: https://github.com/sonapraneeth-a/object-classification
+status: Completed
 publish: true
 ---
+
+Some text

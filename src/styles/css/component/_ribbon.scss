@@ -4,11 +4,11 @@
     position: absolute;
     right: -0.32rem;
     top: -0.38rem;
-    z-index: 0;
     overflow: hidden;
     width: 7rem;
     height: 7rem;
     text-align: right;
+    z-index: $ribbon-zindex;
 }
 .ribbon span
 {

@@ -16,15 +16,13 @@ class LinkChip extends React.Component
         <div className="chip">
           { this.props.content != null &&
             <span className="chip-content">
-              {
-                this.props.icon != null && 
-                  <i className={"fa fa-"+this.props.icon} aria-hidden="true"></i>
-              }
-              &nbsp;{this.props.content}
+            { this.props.icon != null && 
+                <i className={"fa fa-"+this.props.icon} aria-hidden="true"></i>
+            }
+            &nbsp;{this.props.content}
             </span>
           }
-          {
-            this.props.count != null &&
+          { this.props.count != null &&
             <span className="chip-count">
               {this.props.count}
             </span>
