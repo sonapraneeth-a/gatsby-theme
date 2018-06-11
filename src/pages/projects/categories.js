@@ -49,8 +49,9 @@ class ProjectCategoryPage extends React.Component
         // proper sorting
         edge.node.frontmatter.categories.map( function(category, index)
         {
-          let category_name = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
-          categories = categories.concat(category_name);
+          //let category_name = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
+          //categories = categories.concat(category_name);
+          categories = categories.concat(category);
         });
         // Concatenate the categories for this project posts to the list of the categories collected till now
         this.project_category_info.project_categories = this.project_category_info.project_categories.concat(categories);

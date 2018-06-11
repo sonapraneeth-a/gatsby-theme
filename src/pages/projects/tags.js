@@ -49,8 +49,9 @@ class ProjectTagPage extends React.Component
         // proper sorting
         edge.node.frontmatter.tags.map( function(tag, index)
         {
-          let tag_name = tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase();
-          tags = tags.concat(tag_name);
+          //let tag_name = tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase();
+          //tags = tags.concat(tag_name);
+          tags = tags.concat(tag);
         });
         // Concatenate the tags for this project posts to the list of the tags collected till now
         this.project_tag_info.project_tags = this.project_tag_info.project_tags.concat(tags);

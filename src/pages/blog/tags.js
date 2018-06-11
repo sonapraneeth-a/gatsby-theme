@@ -47,8 +47,9 @@ class BlogTagPage extends React.Component
         // proper sorting
         edge.node.frontmatter.tags.map( function(tag, index)
         {
-          let tag_name = tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase();
-          tags = tags.concat(tag_name);
+          //let tag_name = tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase();
+          //tags = tags.concat(tag_name);
+          tags = tags.concat(tag);
         });
         // Concatenate the tags for this blog posts to the list of the tags collected till now
         this.blog_tag_info.blog_tags = this.blog_tag_info.blog_tags.concat(tags);

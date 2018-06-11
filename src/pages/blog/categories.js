@@ -49,8 +49,9 @@ class BlogCategoryPage extends React.Component
         // proper sorting
         edge.node.frontmatter.categories.map( function(category, index)
         {
-          let category_name = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
-          categories = categories.concat(category_name);
+          //let category_name = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase();
+          //categories = categories.concat(category_name);
+          categories = categories.concat(category);
         });
         // Concatenate the categories for this blog posts to the list of the categories collected till now
         this.blog_category_info.blog_categories = this.blog_category_info.blog_categories.concat(categories);
