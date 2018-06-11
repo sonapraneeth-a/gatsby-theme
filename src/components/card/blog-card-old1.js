@@ -7,7 +7,7 @@ import LinkChip from "../chip/link-chip";
 import Row from "../grid/row";
 import Col from "../grid/col";
 
-class ProjectCard extends React.Component
+class BlogCardOld1 extends React.Component
 {
   constructor(props)
   {
@@ -17,7 +17,7 @@ class ProjectCard extends React.Component
     }
   }
 
-  revealProjectCard()
+  revealBlogCard()
   {
     let current_reveal_state = this.state.reveal;
     this.setState({
@@ -49,12 +49,12 @@ class ProjectCard extends React.Component
         }
         { this.props.banner_image == null &&
           <div className="card-image">
-            <img src="https://placeimg.com/320/240/nature" alt={"Banner image of project: "+this.props.title}></img>
+            <img src="https://placeimg.com/320/240/nature" alt={"Banner image of blog: "+this.props.title}></img>
           </div>
         }
         { this.props.banner_image != null &&
           <div className="card-image">
-            <img src={this.props.banner_image} alt={"Banner image of project: "+this.props.title}></img>
+            <img src={this.props.banner_image} alt={"Banner image of blog: "+this.props.title}></img>
           </div>
         }
         <div className="card-content">
@@ -67,7 +67,7 @@ class ProjectCard extends React.Component
             <Col
               dp={1}
             >
-              <span className="card-reveal-icon" onClick={this.revealProjectCard.bind(this)}>
+              <span className="card-reveal-icon" onClick={this.revealBlogCard.bind(this)}>
                 <i className="zmdi zmdi-more-vert zmdi-hc-2x"></i>
               </span>
             </Col>
@@ -92,7 +92,7 @@ class ProjectCard extends React.Component
         <div className="card-reveal" style={reveal_style}>
           <Row>
             <Col dp={12}>
-              <span style={{float: 'left', cursor: 'pointer'}} onClick={this.revealProjectCard.bind(this)}>
+              <span style={{float: 'left', cursor: 'pointer'}} onClick={this.revealBlogCard.bind(this)}>
                 <i className="fa fa-times"></i>
               </span>
             </Col>
@@ -159,4 +159,4 @@ class ProjectCard extends React.Component
   }
 }
 
-export default ProjectCard;
+export default BlogCardOld1;

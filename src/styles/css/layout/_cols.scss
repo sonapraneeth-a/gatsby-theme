@@ -4,6 +4,12 @@
   float: left;
   padding: 0 0.5rem;
 }
+.col-dp-3
+{
+  width: 25%;
+  float: left;
+  padding: 0 0.5rem;
+}
 .col-dp-4
 {
   width: 33.333%;
@@ -14,6 +20,13 @@
 {
   //width: 66.666%;
   width: calc(8/12 * 100%);
+  float: left;
+  padding: 0 0.5rem;
+}
+.col-dp-9
+{
+  //width: 66.666%;
+  width: calc(9/12 * 100%);
   float: left;
   padding: 0 0.5rem;
 }

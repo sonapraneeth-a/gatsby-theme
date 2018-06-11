@@ -12,6 +12,8 @@ import Sharing from "../components/sharing";
 import Row from "../components/grid/row";
 import Col from "../components/grid/col";
 
+import "katex/dist/katex.min.css";
+
 const slugify = require('slug');
 
 //export default ({ data }) => {
@@ -35,7 +37,7 @@ class BlogPost extends React.Component
     return (
       <article>
         <HeadMeta
-          title={"Blog - " + post.frontmatter.title + " | " + this.props.data.site.siteMetadata.author}
+          title={"Blog | " + post.frontmatter.title + " | " + this.props.data.site.siteMetadata.author}
           description={"This is the blog post titled " + post.frontmatter.title + " written by " + this.props.data.site.siteMetadata.author}
           keywords={"blog post, " + this.props.data.site.siteMetadata.author}
         />
@@ -90,7 +92,7 @@ class BlogPost extends React.Component
         </header>
         <section>
           <Row>
-            <Col dp={4}>
+            <Col dp={3}>
               <div className="blog-toc">
                 <h4 className="blog-toc-title">Table of Contents</h4>
                 <div className="blog-toc-contents"
@@ -98,7 +100,7 @@ class BlogPost extends React.Component
                 />
               </div>
             </Col>
-            <Col dp={8}>
+            <Col dp={9}>
               <div
                 className="blog-body"
                 dangerouslySetInnerHTML={{ __html: post.html }}

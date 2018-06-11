@@ -14,6 +14,7 @@ publish: true
 toc: true
 toc_label: "On this page"
 toc_icon: "table"  # corresponding Font Awesome icon name (without fa prefix)
+banner_image: 
 ---
 
 Recently, I've been working on a jekyll theme which has the look and feel of the [lanyon theme](https://lanyon.getpoole.com) and is suitable for any screen type. Also, I wanted the theme to be easily maintainable for adding new features. This has resulted in this new jekyll theme. The core idealogy of this website's theme has been derived from the lanyon theme.<!--more-->
@@ -59,7 +60,7 @@ With the use of markdown, it is easy to generate the web-page content without wo
 
 This is a test code written in C++ highlighted using monokai theme using rouge highlighter.
 
-{% highlight cpp linenos %}
+```cpp
 #include <cstdio>
 
 int main()
@@ -67,14 +68,14 @@ int main()
     printf("Hello World\n");
     return 0;
 }
-{% endhighlight %}
+```
 
 ```bash
 $ sudo apt-get install vim-gnome
 ```
 {% gist a4a981d0e479446054ee38cad99f5383 %}
 
-## $\LaTeX$
+## LaTeX
 
 LaTeX markup of Pythogoras theorem
 
@@ -125,38 +126,3 @@ For convinience on mobile devices, there is a sidebar which can be toggled on/of
 
 For large screen devices, one can use the navigation bar present at the top of the screen for accessing various links. The navigation bar also highlights the current active page in the menu.
 
-## Carousel
-
-<div class="carousel-box">
-    <div class="carousel-buttons">
-        <button class="carousel-prev">
-            <span class="carousel-offscreen">Previous</span>
-        </button>
-        <button class="carousel-next">
-            <span class="carousel-offscreen">Next</span>
-        </button>
-    </div>
-    <ol class="carousel-content">
-        <li class="carousel-current"><!--<img src="http://lorempixel.com/200/200" alt="1">-->1</li>
-        <li><!--<img src="http://lorempixel.com/200/200" alt="2">-->2</li>
-        <li><!--<img src="http://lorempixel.com/200/200" alt="3">-->3</li>
-        <li><!--<img src="http://lorempixel.com/200/200" alt="4">-->4</li>
-    </ol>
-</div>
-
-<div class="carousel-box">
-    <div class="carousel-buttons">
-        <button class="carousel-prev">
-            <span class="carousel-offscreen">Previous</span>
-        </button>
-        <button class="carousel-next">
-            <span class="carousel-offscreen">Next</span>
-        </button>
-    </div>
-    <ol class="carousel-content">
-        <li class="carousel-current"><!--<img src="http://lorempixel.com/200/200" alt="1">-->5</li>
-        <li><!--<img src="http://lorempixel.com/200/200" alt="2">-->6</li>
-        <li><!--<img src="http://lorempixel.com/200/200" alt="3">-->7</li>
-        <li><!--<img src="http://lorempixel.com/200/200" alt="4">-->8</li>
-    </ol>
-</div>

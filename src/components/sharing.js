@@ -14,7 +14,7 @@ class Sharing extends React.Component
     let title = this.props.title;
     return (
       <div className="share-content">
-        <a className="share facebook" href={"https://www.facebook.com/sharer/sharer.php?u="+url} target="_blank" title="Share on Facebook"><i className="fab fa-facebook"></i></a>
+        <a className="share facebook" href={"https://www.facebook.com/sharer/sharer.php?u="+url} target="_blank" title="Share on Facebook"><i className="fab fa-facebook-f"></i></a>
         <a className="share gplus" href={"https://plus.google.com/share?url="+url} target="_blank" title="Share on Google+"><i className="fab fa-google-plus-g"></i></a>
         <a className="share twitter" href={"https://twitter.com/intent/tweet?original_referer="+url+"&amp;text="+title+"&amp;via=sonapraneeth_a"} target="_blank" title="Share on Twitter"><i className="fab fa-twitter"></i></a>
         <a className="share linkedin" href={"https://www.linkedin.com/shareArticle?mini=true&amp;url="+url+"&amp;title="+title+"&amp;summary=&amp;source="+url} target="_blank" title="Share on LinkedIn"><i className="fab fa-linkedin-in"></i></a>

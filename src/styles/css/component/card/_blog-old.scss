@@ -1,0 +1,60 @@
+.blog-card-reveal
+{
+    padding: 24px;
+    position: absolute;
+    background-color: $smooth-blue;
+    width: 100%;
+    overflow-y: auto;
+    left: 0;
+    top: 100%;
+    height: 100%;
+    z-index: 3;
+    display: none;
+    @if $flat == true 
+    {
+        border-radius: 0px;
+    }
+    @else
+    {
+        border-radius: 5px;
+    }
+}
+
+.blog-title
+{
+    font-size: 1.8rem;
+    margin: 0.7rem 0;
+}
+
+.blog-card-reveal-animation
+{
+    -webkit-animation: card-reveal-bottom; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1.5s; /* Safari 4.0 - 8.0 */
+    animation: card-reveal-bottom;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    display: block;
+}
+
+.blog-card-reveal-transform
+{
+    display: block;
+    transition-timing-function: linear;
+    transition-duration: 10s;
+    -webkit-transition: -webkit-transform 10s; /* Safari */
+    transition: transform 10s;
+    -webkit-transform: translateY(-100%); /* Safari */
+    transform: translateY(-100%);
+}
+
+@-webkit-keyframes card-reveal-bottom
+{
+    0% {top: 100%;}
+    100% {top: 0%;}
+}
+
+@keyframes card-reveal-bottom
+{
+    0% {top: 100%;}
+    100% {top: 0%;}
+}

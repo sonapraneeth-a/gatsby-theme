@@ -172,6 +172,8 @@ module.exports = {
       options: {
         plugins: [
           `gatsby-remark-copy-images`,
+          `gatsby-remark-autolink-headers`,
+          `gatsby-remark-katex`,
           `gatsby-remark-component`,
           {
             resolve: `gatsby-remark-prismjs`,

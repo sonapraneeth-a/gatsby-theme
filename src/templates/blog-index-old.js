@@ -34,26 +34,30 @@ class BlogIndexOld extends React.Component
           keywords={"blogs, " + this.props.data.site.siteMetadata.author}
         />
         <div className="page-title"><i className="fa fa-pencil-alt fa-1"></i>&nbsp;&nbsp;Blog</div>
+        <Grid>
         { edges != null &&
           edges.map(({ node }) => {
             const { title, tags, categories, published_date } = node.frontmatter;
             const {slug, date} = node.fields;
             const excerptLength = node.html.indexOf("<!--more-->") > -1 ? node.html.indexOf("<!--more-->"): this.props.pathContext.excerptLength;
             return (
-              <BlogCard
-                card_type={"blog"}
-                key={"blog-card-"+slug}
-                url={slug}
-                title={title}
-                tags={tags}
-                categories={categories}
-                timeToRead={node.timeToRead}
-                published_date={moment.tz(published_date, 'Asia/Kolkata').format("DD MMMM YYYY, HH:mm:ss z", "en")}
-                excerpt={node.html.substr(0, excerptLength)}
-              />
+              <GridItem key={"blog"+title}>
+                <BlogCard
+                  card_type={"blog"}
+                  key={"blog-card-"+slug}
+                  url={slug}
+                  title={title}
+                  tags={tags}
+                  categories={categories}
+                  timeToRead={node.timeToRead}
+                  published_date={moment.tz(published_date, 'Asia/Kolkata').format("DD MMMM YYYY, HH:mm:ss z", "en")}
+                  excerpt={node.html.substr(0, excerptLength)}
+                />
+              </GridItem>
             );
           })
         }
+        </Grid>
       </div>
     )
   }
@@ -62,7 +66,7 @@ class BlogIndexOld extends React.Component
 export default BlogIndexOld;
 
 export const query = graphql`
-  query BlogPostPageQuery($limit: Int, $skip: Int)
+  query BlogPostPageQueryOld($limit: Int, $skip: Int)
   {
     allMarkdownRemark: allMarkdownRemark
     (
