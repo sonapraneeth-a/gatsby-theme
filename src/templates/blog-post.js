@@ -92,7 +92,7 @@ class BlogPost extends React.Component
         </header>
         <section>
           <Row>
-            <Col dp={3}>
+            <Col dp={3} className="blog-toc-sticky">
               <div className="blog-toc">
                 <h4 className="blog-toc-title">Table of Contents</h4>
                 <div className="blog-toc-contents"

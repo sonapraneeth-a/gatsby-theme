@@ -105,3 +105,12 @@ $utility: (
     }
   }
 }
+
+@mixin sticky($prefix, $top-margin)
+{
+  .#{$prefix}sticky
+  {
+    position: sticky;
+    top: $top-margin;
+  }
+}

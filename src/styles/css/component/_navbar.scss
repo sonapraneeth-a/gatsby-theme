@@ -35,11 +35,11 @@
 .navbar-header
 {
   display: flex;
-  margin: 1rem 0;
+  margin: $navbar-header-vert-margin 0;
   color: $navbar-foreground-color;
   a
   {
-    font-size: 2rem;
+    font-size: $navbar-header-size;
     color: $navbar-foreground-color;
     text-decoration: none;
     &:hover
@@ -64,7 +64,7 @@
 {
   font-size: 1rem;
   list-style-type: none;
-  margin: 1rem 0;
+  margin: $navbar-header-vert-margin 0;
   display: flex;
   flex: 1;
   @if $navbar-content-flow == reverse
