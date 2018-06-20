@@ -1,8 +1,10 @@
 .blog-toc
 {
-  position: sticky;
-  top: 2rem;
+  /*position: sticky;
+  top: 2rem;*/
 }
+
+@include sticky("blog-toc-", $navbar-header-size + 2 * $navbar-header-vert-margin + 1.2rem);
 
 .blog-toc-title
 {
