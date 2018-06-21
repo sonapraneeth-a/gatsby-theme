@@ -12,3 +12,9 @@
   display: -webkit-flex;     /* NEW - Chrome */
   display: flex;
 }
+
+@mixin grid-col-width($width)
+{
+  @include prefixer(flex, 0 0 $width, ms moz o spec);
+  max-width: $width;
+}

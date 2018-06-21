@@ -112,5 +112,10 @@ $utility: (
   {
     position: sticky;
     top: $top-margin;
+    /* Reference: https://stackoverflow.com/questions/44446671/my-position-sticky-element-isnt-sticky-when-using-flexbox */
+    @if $flex == true
+    {
+      align-self: flex-start;
+    }
   }
 }

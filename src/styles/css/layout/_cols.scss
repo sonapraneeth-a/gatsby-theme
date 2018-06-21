@@ -5,7 +5,14 @@
 }
 .col-dp-3
 {
-  width: calc(3/12 * 100%);
+  @if $flex == true 
+  {
+    @include grid-col-width(calc(3/12 * 100%));
+  }
+  @else
+  {
+    width: calc(3/12 * 100%); 
+  }
   @include grid-spec;
 }
 .col-dp-4
@@ -20,7 +27,14 @@
 }
 .col-dp-9
 {
-  width: calc(9/12 * 100%);
+  @if $flex == true 
+  {
+    @include grid-col-width(calc(9/12 * 100%));
+  }
+  @else
+  {
+    width: calc(9/12 * 100%); 
+  }
   @include grid-spec;
 }
 .col-dp-11

@@ -1,5 +1,8 @@
 .row
 {
-  @include display-flex;
+  @if flex == true
+  {
+    @include display-flex;
+  }
   @include clearfix;
 }

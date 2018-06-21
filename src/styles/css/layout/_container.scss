@@ -20,10 +20,10 @@
     }
     @include within($laptop, $desktop)
     {
-        width: 75%;
+        width: 80%;
     }
     @include within($desktop, $fullhd)
     {
-        width: 65%;
+        width: 80%;
     }
 }
