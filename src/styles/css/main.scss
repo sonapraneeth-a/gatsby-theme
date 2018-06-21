@@ -1,11 +1,12 @@
 @charset "utf-8";
 @import "base/colors";
-@import "base/mixins";
+@import "base/mixins/all";
 @import "base/screens";
 @import "scheme/base-01";
 @import "base/position";
 @import "base/root";
 @import "config/generic";
+@import "component/admonition";
 @import "component/card/card";
 @import "component/card/profile";
 @import "component/card/project";

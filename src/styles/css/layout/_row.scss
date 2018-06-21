@@ -1,4 +1,5 @@
 .row
 {
+  @include display-flex;
   @include clearfix;
 }

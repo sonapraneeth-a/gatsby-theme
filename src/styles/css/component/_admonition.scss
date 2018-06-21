@@ -1,0 +1,15 @@
+.admonition-title
+{
+  .info &
+  {
+    color: $info;
+  }
+  .danger &
+  {
+    color: $danger;
+  }
+  .success &
+  {
+    color: $success;
+  }
+}

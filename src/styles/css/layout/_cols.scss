@@ -1,44 +1,35 @@
 .col-dp-1
 {
-  width: 8.333%;
-  float: left;
-  padding: 0 0.5rem;
+  width: calc(1/12 * 100%);
+  @include grid-spec;
 }
 .col-dp-3
 {
-  width: 25%;
-  float: left;
-  padding: 0 0.5rem;
+  width: calc(3/12 * 100%);
+  @include grid-spec;
 }
 .col-dp-4
 {
-  width: 33.333%;
-  float: left;
-  padding: 0 0.5rem;
+  width: calc(4/12 * 100%);
+  @include grid-spec;
 }
 .col-dp-8
 {
-  //width: 66.666%;
   width: calc(8/12 * 100%);
-  float: left;
-  padding: 0 0.5rem;
+  @include grid-spec;
 }
 .col-dp-9
 {
-  //width: 66.666%;
   width: calc(9/12 * 100%);
-  float: left;
-  padding: 0 0.5rem;
+  @include grid-spec;
 }
 .col-dp-11
 {
-  width: 91.666%;
-  float: left;
-  padding: 0 0.5rem;
+  width: calc(11/12 * 100%);
+  @include grid-spec;
 }
 .col-dp-12
 {
-  width: 100%;
-  float: left;
-  padding: 0 0.5rem;
+  width: calc(12/12 * 100%);
+  @include grid-spec;
 }
