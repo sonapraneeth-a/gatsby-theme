@@ -3,6 +3,8 @@ import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import moment from "moment";
 import moment_tz from "moment-timezone";
+import rehypeReact from "rehype-react";
+import slugify from "slug";
 
 import SimpleChip from "../components/chip/simple-chip";
 import LinkChip from "../components/chip/link-chip";
@@ -11,10 +13,14 @@ import SEO from "../components/head/seo";
 import Sharing from "../components/sharing";
 import Row from "../components/grid/row";
 import Col from "../components/grid/col";
+import Admonition from "../components/admonition";
 
 import "katex/dist/katex.min.css";
 
-const slugify = require('slug');
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components: { "admonition": Admonition },
+}).Compiler
 
 //export default ({ data }) => {
 class BlogPost extends React.Component
@@ -101,10 +107,7 @@ class BlogPost extends React.Component
               </div>
             </Col>
             <Col dp={9}>
-              <div
-                className="blog-body"
-                dangerouslySetInnerHTML={{ __html: post.html }}
-              />
+              <div className="blog-body">{renderAst(post.htmlAst)}</div>
             </Col>
           </Row>
         </section>
@@ -165,7 +168,7 @@ export const query = graphql`
       { type: { regex: "/blog-post/" } }
     )
     {
-      html
+      htmlAst
       fields
       {
         slug

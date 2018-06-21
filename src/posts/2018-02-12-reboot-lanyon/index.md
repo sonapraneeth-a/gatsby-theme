@@ -126,3 +126,9 @@ For convinience on mobile devices, there is a sidebar which can be toggled on/of
 
 For large screen devices, one can use the navigation bar present at the top of the screen for accessing various links. The navigation bar also highlights the current active page in the menu.
 
+### Admonition
+
+<admonition 
+    title="Testing title"
+    content="Content">
+</admonition>
