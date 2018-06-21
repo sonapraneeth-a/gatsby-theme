@@ -3,13 +3,22 @@ import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import moment from "moment";
 import moment_tz from "moment-timezone";
+import rehypeReact from "rehype-react";
 
 import SimpleChip from "../components/chip/simple-chip";
 import LinkChip from "../components/chip/link-chip";
 import HeadMeta from "../components/head/head-meta";
 import SEO from "../components/head/seo";
+import Row from "../components/grid/row";
+import Col from "../components/grid/col";
+import Admonition from "../components/admonition";
 
-const slugify = require('slug');
+import slugify from "slug";
+
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components: { "admonition": Admonition },
+}).Compiler
 
 //export default ({ data }) => {
 class ProjectPost extends React.Component
@@ -48,7 +57,7 @@ class ProjectPost extends React.Component
             {post.frontmatter.title}
           </h1>
           <SimpleChip
-            icon={"calendar"}
+            icon={"calendar-alt"}
             content={post.frontmatter.published_date}
           />
           {
@@ -82,14 +91,28 @@ class ProjectPost extends React.Component
           <hr />
         </header>
         <section>
-          <div
-            className="blog-index"
-            dangerouslySetInnerHTML={{ __html: post.tableOfContents }}
-          />
-          <div
-            className="blog-body"
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
+        { post.frontmatter.toc == true &&
+          <Row>
+            <Col dp={3} className="blog-toc-sticky">
+              <div className="blog-toc">
+                <h4 className="blog-toc-title">{post.frontmatter.toc_label}</h4>
+                <div className="blog-toc-contents"
+                  dangerouslySetInnerHTML={{ __html: post.tableOfContents }}
+                />
+              </div>
+            </Col>
+            <Col dp={9}>
+              <div className="blog-body">{renderAst(post.htmlAst)}</div>
+            </Col>
+          </Row>
+        }
+        { post.frontmatter.toc == false &&
+          <Row>
+            <Col dp={12}>
+              <div className="blog-body">{renderAst(post.htmlAst)}</div>
+            </Col>
+          </Row>
+        }
         </section>
       </article>
     )
@@ -121,6 +144,8 @@ export const query = graphql`
         brief
         publish
         status
+        toc
+        toc_label
       }
       tableOfContents
     }

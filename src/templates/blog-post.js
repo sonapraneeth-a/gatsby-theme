@@ -63,7 +63,7 @@ class BlogPost extends React.Component
             {post.frontmatter.title}
           </h1>
           <SimpleChip
-            icon={"calendar"}
+            icon={"calendar-alt"}
             content={moment.tz(post.frontmatter.published_date, 'Asia/Kolkata').format("DD MMMM YYYY, HH:mm:ss z", "en")}
           />
           {
@@ -97,10 +97,11 @@ class BlogPost extends React.Component
           <hr />
         </header>
         <section>
+        { post.frontmatter.toc == true &&
           <Row>
             <Col dp={3} className="blog-toc-sticky">
               <div className="blog-toc">
-                <h4 className="blog-toc-title">Table of Contents</h4>
+                <h4 className="blog-toc-title">{post.frontmatter.toc_label}</h4>
                 <div className="blog-toc-contents"
                   dangerouslySetInnerHTML={{ __html: post.tableOfContents }}
                 />
@@ -110,6 +111,14 @@ class BlogPost extends React.Component
               <div className="blog-body">{renderAst(post.htmlAst)}</div>
             </Col>
           </Row>
+        }
+        { post.frontmatter.toc == false &&
+          <Row>
+            <Col dp={12}>
+              <div className="blog-body">{renderAst(post.htmlAst)}</div>
+            </Col>
+          </Row>
+        }
         </section>
         <Sharing
           url={base_url+post.fields.slug}
@@ -179,6 +188,8 @@ export const query = graphql`
         title
         tags
         categories
+        toc
+        toc_label
       }
       tableOfContents
     }
