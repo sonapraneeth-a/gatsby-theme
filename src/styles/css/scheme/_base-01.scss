@@ -26,21 +26,22 @@ $primary-text-color                : black;
 /* Links Colors */
 $link-text-color                   : hsl(207, 97%, 65%);
 
-/* Sidebar configuration */
-$sidebar-font-size         : 1.05rem;
-$sidebar-hamburger-size    : 1.3rem;
-$sidebar-width             : 16rem;
-$sidebar-visible-screen    : $tablet;
-$sidebar-foreground-color  : $primary-foreground-color;
-$sidebar-background-color  : $primary-background-color;
-$sidebar-pos               : left;
-$sidebar-item-padding      : 0.9rem 1.5rem;
-
 /* Navbar configuration */
 $navbar-visible-screen     : $minitablet;
 $navbar-radius             : 1rem;
 $navbar-foreground-color   : $primary-foreground-color-light;
 $navbar-background-color   : $primary-background-color-light;
 $navbar-content-flow       : "forward";
-$navbar-header-size        : 2rem;
-$navbar-header-vert-margin : 1rem;
+$navbar-header-size        : 1.5rem;
+$navbar-header-vert-margin : 0.5rem;
+
+/* Sidebar configuration */
+$sidebar-font-size         : 1.05rem;
+$sidebar-hamburger-size    : 1.2rem;
+$sidebar-width             : 16rem;
+$sidebar-visible-screen    : $tablet;
+$sidebar-foreground-color  : $primary-foreground-color;
+$sidebar-background-color  : $primary-background-color;
+$sidebar-pos               : left;
+$sidebar-item-padding      : 0.9rem 1.5rem;
+$sidebar-toggle-vert-pos   : $navbar-header-vert-margin + 0.3rem;

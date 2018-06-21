@@ -2,6 +2,7 @@
 {
   /*position: sticky;
   top: 2rem;*/
+  padding-right: 1rem;
 }
 
 @include sticky("blog-toc-", $navbar-header-size + 2 * $navbar-header-vert-margin + 1.2rem);

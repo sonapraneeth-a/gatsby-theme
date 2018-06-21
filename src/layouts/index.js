@@ -43,7 +43,7 @@ class BaseLayout extends React.Component
             page_url={this.props.location.pathname}
           />
           <Container>
-            <div style={{margin: '6rem 0'}}>
+            <div className="main-content">
               {this.props.children()}
             </div>
           </Container>

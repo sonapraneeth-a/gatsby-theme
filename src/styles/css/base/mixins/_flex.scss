@@ -16,5 +16,5 @@
 @mixin grid-col-width($width)
 {
   @include prefixer(flex, 0 0 $width, ms moz o spec);
-  max-width: $width;
+  width: $width;
 }

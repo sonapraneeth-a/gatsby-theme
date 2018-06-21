@@ -129,6 +129,7 @@ For large screen devices, one can use the navigation bar present at the top of t
 ### Admonition
 
 <admonition 
+    type="danger"
     title="Testing title"
-    content="Content">
+    content="**Content**">
 </admonition>

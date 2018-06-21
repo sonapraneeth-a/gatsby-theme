@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "gatsby-link";
-
+import Markdown from "react-markdown";
+import marked from "marked";
 
 class Admonition extends React.Component
 {
@@ -11,10 +12,16 @@ class Admonition extends React.Component
 
   render()
   {
+    let admonition_class = "admonition" + " " + this.props.type;
     return (
-      <div className="admonition">
+      <div className={admonition_class}>
           <div className="admonition-title">{this.props.title}</div>
-          <div className="admonition-content">{this.props.content}</div>
+          {/*<Markdown source={this.props.content} className="admonition-content"/>*/}
+          {/* Reference: https://stackoverflow.com/questions/31875748/how-do-i-render-markdown-from-a-react-component */}
+          <div
+            className="admonition-content"
+            dangerouslySetInnerHTML={{__html: marked(this.props.content || '')}}
+          />
       </div>
     );
   }
