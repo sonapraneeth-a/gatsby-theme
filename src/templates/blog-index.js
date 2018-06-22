@@ -10,7 +10,7 @@ import HeadMeta from "../components/head/head-meta";
 import SEO from "../components/head/seo";
 
 //export default ({ pathContext, data }) => {
-class BlogIndexOld extends React.Component
+class BlogIndex extends React.Component
 {
   constructor(props)
   {
@@ -34,11 +34,12 @@ class BlogIndexOld extends React.Component
           keywords={"blogs, " + this.props.data.site.siteMetadata.author}
         />
         <div className="page-title"><i className="fa fa-pencil-alt fa-1"></i>&nbsp;&nbsp;Blog</div>
+        <div>
         { edges != null &&
           edges.map(({ node }) => {
             const { title, tags, categories, published_date } = node.frontmatter;
             const {slug, date} = node.fields;
-            const excerptLength = node.html.indexOf("<!--more-->") > -1 ? node.html.indexOf("<!--more-->"): this.props.pathContext.excerptLength;
+            //const excerptLength = node.html.indexOf("<!--more-->") > -1 ? node.html.indexOf("<!--more-->"): this.props.pathContext.excerptLength;
             return (
               <BlogCard
                 card_type={"blog"}
@@ -49,17 +50,18 @@ class BlogIndexOld extends React.Component
                 categories={categories}
                 timeToRead={node.timeToRead}
                 published_date={moment.tz(published_date, 'Asia/Kolkata').format("DD MMMM YYYY, HH:mm:ss z", "en")}
-                excerpt={node.html.substr(0, excerptLength)}
+                excerpt={node.excerpt}
               />
             );
           })
         }
+        </div>
       </div>
     )
   }
 }
 
-export default BlogIndexOld;
+export default BlogIndex;
 
 export const query = graphql`
   query BlogPostPageQuery($limit: Int, $skip: Int)
@@ -96,7 +98,7 @@ export const query = graphql`
             published_date
           }
           timeToRead
-          html
+          excerpt
         }
       }
     }

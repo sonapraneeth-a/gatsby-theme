@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "gatsby-link";
 import slugify from "slug";
+import Markdown from "react-markdown";
+import marked from "marked";
 
 import SimpleChip from "../chip/simple-chip";
 import LinkChip from "../chip/link-chip";
@@ -39,7 +41,7 @@ class BlogCard extends React.Component
     let categories = this.props.categories;
     let card_type = this.props.card_type;
     return (
-      <div className="blog-card" key={"card-"+this.props.key}>
+      <div className="blog-card">
         { this.props.banner_image == null &&
           <img className="blog-card-image" src="https://placeimg.com/320/240/nature" alt={"Banner image of blog: "+this.props.title}/>
         }
@@ -75,8 +77,7 @@ class BlogCard extends React.Component
               />
             }
             <div className="card-details">
-              <p dangerouslySetInnerHTML={{ 
-                __html: this.props.excerpt}} />
+              <div dangerouslySetInnerHTML={{__html: marked(this.props.excerpt || '')}} />
             </div>
           </div>
           <div className="blog-card-reveal" style={reveal_style}>
