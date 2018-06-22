@@ -34,7 +34,8 @@ $$
 <admonition 
     type="danger"
     title="Danger"
-    content="**Content**">
+    content="Bold: **Content**  
+             Italics: *Content*">
 </admonition>
 
 <admonition 
