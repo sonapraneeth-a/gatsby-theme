@@ -16,7 +16,7 @@ class Sidebar extends React.Component
   updateRevealStatus()
   {
     let current_reveal_status = this.state.reveal_status;
-    console.log(current_reveal_status);
+    //console.log(current_reveal_status);
     if(current_reveal_status === "on") { current_reveal_status = "off"; }
     else { current_reveal_status = "on"; }
     this.setState({

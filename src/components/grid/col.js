@@ -28,7 +28,7 @@ class Col extends React.Component
     this.getClassNames();
     let extra_class_name = this.props.className;
     if(extra_class_name === undefined) { extra_class_name = ""; }
-    console.log("Class: " + extra_class_name);
+    //console.log("Class: " + extra_class_name);
     return (
       <div className={this.config.class_name + " " + extra_class_name}>
         {this.props.children}

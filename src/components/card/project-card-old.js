@@ -25,7 +25,7 @@ class ProjectCardOld extends React.Component
   render()
   {
     let reveal_style = {display: 'none', transform: 'translateY(0%)', transitionProperty: 'transform', transition: 'transform 5s ease-in-out'}
-    console.log(this.state.reveal);
+    //console.log(this.state.reveal);
     if(this.state.reveal === true)
     {
       reveal_style = {display: 'block', transform: 'translateY(-100%)'}
