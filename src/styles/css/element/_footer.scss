@@ -8,8 +8,9 @@
   {
     margin: 0.2rem auto;
   }
-  @include until($mobile)
+  @include from($tablet)
   {
-    display: none;
+    position: fixed;
+    bottom: 0;
   }
 }

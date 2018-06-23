@@ -47,7 +47,7 @@ class BaseLayout extends React.Component
               {this.props.children()}
             </div>
           </Container>
-          <footer className="footer sticky-bottom">
+          <footer className="footer">
             <center>
               <p
                 dangerouslySetInnerHTML={{

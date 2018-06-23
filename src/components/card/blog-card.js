@@ -77,7 +77,7 @@ class BlogCard extends React.Component
               />
             }
             <div className="card-details">
-              <div dangerouslySetInnerHTML={{__html: marked(this.props.excerpt || '')}} />
+              <div dangerouslySetInnerHTML={{__html: marked(this.props.excerpt + ' ...' || '')}} />
             </div>
           </div>
           <div className="blog-card-reveal" style={reveal_style}>
