@@ -29,6 +29,18 @@ $$
 f(a) = \frac{1}{2\pi i} \oint\frac{f(z)}{z-a}dz
 $$
 
+### Code highlighting
+
+```cpp{1,5-6}
+#include <iostream>
+
+int main()
+{
+    std::cout << "Hello World" << std::endl;
+    return 0;
+}
+```
+
 ### Admonition
 
 <admonition 

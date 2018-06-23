@@ -38,6 +38,7 @@ class ProjectIndex extends React.Component
                 categories={node.frontmatter.categories}
                 url={node.fields.slug}
                 institution={node.frontmatter.institution}
+                timeToRead={node.timeToRead}
               />
             </GridItem>
           )

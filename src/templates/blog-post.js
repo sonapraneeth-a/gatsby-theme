@@ -36,6 +36,7 @@ class BlogPost extends React.Component
     const post = this.props.data.blog_post;
     const tags = post.frontmatter.tags;
     const categories = post.frontmatter.categories;
+    const timeToRead = post.timeToRead;
     const next_post = this.props.pathContext.next_post;
     const prev_post = this.props.pathContext.prev_post;
     const base_url = this.props.data.site.siteMetadata.siteUrl;
@@ -93,6 +94,12 @@ class BlogPost extends React.Component
                 />
               );
             })
+          }
+          {
+            <SimpleChip
+              icon={"clock"}
+              content={timeToRead + " min"}
+            />
           }
           <hr />
         </header>
@@ -191,6 +198,7 @@ export const query = graphql`
         toc
         toc_label
       }
+      timeToRead
       tableOfContents
     }
     site: site

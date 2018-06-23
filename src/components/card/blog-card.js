@@ -76,6 +76,12 @@ class BlogCard extends React.Component
                 content={this.props.institution}
               />
             }
+            { this.props.timeToRead != null &&
+              <SimpleChip
+                icon={"clock"}
+                content={this.props.timeToRead + " min"}
+              />
+            }
             <div className="card-details">
               <div dangerouslySetInnerHTML={{__html: marked(this.props.excerpt + ' ...' || '')}} />
             </div>

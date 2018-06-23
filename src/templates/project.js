@@ -88,6 +88,10 @@ class ProjectPost extends React.Component
               );
             })
           }
+          <SimpleChip
+            icon={"clock"}
+            content={post.timeToRead + " min"}
+          />
           <hr />
         </header>
         <section>
@@ -147,6 +151,7 @@ export const query = graphql`
         toc
         toc_label
       }
+      timeToRead
       tableOfContents
     }
     site: site
