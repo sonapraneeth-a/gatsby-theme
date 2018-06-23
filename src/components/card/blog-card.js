@@ -42,11 +42,11 @@ class BlogCard extends React.Component
     let card_type = this.props.card_type;
     let footer_position = "absolute";
     let info_width = "75%";
-    if(this.props.banner_image == null || this.props.banner_image == "")
+    /*if(this.props.banner_image == null || this.props.banner_image == "")
     {
       footer_position = "relative";
       info_width = "100%";
-    }
+    }*/
     return (
       <div className="blog-card">
         { this.props.banner_image == null &&
