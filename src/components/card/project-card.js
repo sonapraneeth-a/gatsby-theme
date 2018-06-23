@@ -86,7 +86,7 @@ class ProjectCard extends React.Component
           }
           { this.props.timeToRead != null &&
             <SimpleChip
-              icon={"clock"}
+              icon={"stopwatch"}
               content={this.props.timeToRead + " min"}
             />
           }

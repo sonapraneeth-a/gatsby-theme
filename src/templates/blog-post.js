@@ -97,7 +97,7 @@ class BlogPost extends React.Component
           }
           {
             <SimpleChip
-              icon={"clock"}
+              icon={"stopwatch"}
               content={timeToRead + " min"}
             />
           }

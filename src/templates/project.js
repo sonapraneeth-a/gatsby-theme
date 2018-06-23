@@ -89,7 +89,7 @@ class ProjectPost extends React.Component
             })
           }
           <SimpleChip
-            icon={"clock"}
+            icon={"stopwatch"}
             content={post.timeToRead + " min"}
           />
           <hr />
