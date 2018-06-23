@@ -45,3 +45,7 @@ $sidebar-background-color  : $primary-background-color;
 $sidebar-pos               : left;
 $sidebar-item-padding      : 0.9rem 1.5rem;
 $sidebar-toggle-vert-pos   : $navbar-header-vert-margin + 0.3rem;
+
+/* Pager configuration */
+$pager-foreground-color   : $primary-foreground-color-light;
+$pager-background-color   : $primary-background-color-light;

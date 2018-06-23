@@ -10,13 +10,13 @@
     {
         text-decoration: none;
         padding: 0.5rem;
-        background-color: white;
-        color: grey;
+        background-color: $pager-background-color;
+        color: $pager-foreground-color;
         &:hover
         {
             text-decoration: none;
-            background-color: grey;
-            color: white;
+            background-color: $pager-foreground-color;
+            color: $pager-background-color;
         }
     }
 }

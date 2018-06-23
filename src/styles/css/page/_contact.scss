@@ -18,14 +18,18 @@ select, textarea
     }
     margin-bottom: 0.5rem;
     padding: 0.5rem;
-    border: 0.05rem solid white;
+    border: 0.05rem solid $primary-background-color-light;
+    &:hover
+    {
+        border-bottom: 0.2rem solid $primary-background-color-light;
+    }
     //font-family: $normal-font;
 }
 
 input[type=submit]
 {
-    background-color: white;
-    color: grey;
+    background-color: $primary-background-color-light;
+    color: $primary-foreground-color-light;
     font-weight: bold;
     @if flat == false
     {
@@ -39,7 +43,7 @@ input[type=submit]
 
 input[type=submit]:hover
 {
-    background-color: darken(white, 10%);
+    background-color: darken($primary-background-color-light, 10%);
 }
 
 .form-item
