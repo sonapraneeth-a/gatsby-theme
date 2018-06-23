@@ -40,6 +40,13 @@ class BlogCard extends React.Component
     let tags = this.props.tags;
     let categories = this.props.categories;
     let card_type = this.props.card_type;
+    let footer_position = "absolute";
+    let info_width = "75%";
+    if(this.props.banner_image == null || this.props.banner_image == "")
+    {
+      footer_position = "relative";
+      info_width = "100%";
+    }
     return (
       <div className="blog-card">
         { this.props.banner_image == null &&
@@ -48,7 +55,7 @@ class BlogCard extends React.Component
         { this.props.banner_image != null &&
           <img className="blog-card-image" src={this.props.banner_image} alt={"Banner image of blog: "+this.props.title}/>
         }
-        <div className="blog-card-info">
+        <div className="blog-card-info" style={{width: info_width}}>
           <div className="blog-card-content">
             <Row>
               <Col
@@ -82,7 +89,7 @@ class BlogCard extends React.Component
                 content={this.props.timeToRead + " min"}
               />
             }
-            <div className="card-details">
+            <div className="blog-card-details">
               <div dangerouslySetInnerHTML={{__html: marked(this.props.excerpt + ' ...' || '')}} />
             </div>
           </div>
@@ -143,7 +150,7 @@ class BlogCard extends React.Component
             }
           </div>
           { this.props.url != null &&
-            <div className="blog-card-footer">
+            <div className="blog-card-footer" style={{position: footer_position}}>
               <Link to={this.props.url} style={{textDecoration: 'none'}}>
                 Continue Reading ...
               </Link>

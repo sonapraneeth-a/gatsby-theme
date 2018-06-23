@@ -73,6 +73,7 @@
     .blog-card-content
     {
         padding: 1rem;
+        width: 100%;
     }
 
     .blog-card-details
@@ -95,8 +96,8 @@
 
     .blog-card-footer
     {
-        position: relative;
-        width: 100%;
+        position: absolute;
+        width: inherit;
         padding: 0.8rem;
         border-top: 0.1rem solid rgba(160,160,160,0.2);
         bottom: 0;
