@@ -40,13 +40,19 @@ class BlogCard extends React.Component
     let tags = this.props.tags;
     let categories = this.props.categories;
     let card_type = this.props.card_type;
-    let footer_position = "absolute";
-    let info_width = "75%";
-    /*if(this.props.banner_image == null || this.props.banner_image == "")
+    /*//let footer_position = "absolute";
+    //let info_width = "75%";
+    let info_class = "blog-card-info";
+    let footer_class = "blog-card-footer";
+    if(this.props.banner_image == null || this.props.banner_image == "")
     {
-      footer_position = "relative";
-      info_width = "100%";
+      //footer_position = "relative";
+      //info_width = "100%";
+      info_class += "-no-image";
+      footer_class += "-no-image";
     }*/
+    let info_class = "blog-card-info";
+    let footer_class = "blog-card-footer";
     return (
       <div className="blog-card">
         { this.props.banner_image == null &&
@@ -55,7 +61,7 @@ class BlogCard extends React.Component
         { this.props.banner_image != null &&
           <img className="blog-card-image" src={this.props.banner_image} alt={"Banner image of blog: "+this.props.title}/>
         }
-        <div className="blog-card-info" style={{width: info_width}}>
+        <div className={info_class}>
           <div className="blog-card-content">
             <Row>
               <Col
@@ -150,7 +156,7 @@ class BlogCard extends React.Component
             }
           </div>
           { this.props.url != null &&
-            <div className="blog-card-footer" style={{position: footer_position}}>
+            <div className={footer_class}>
               <Link to={this.props.url} style={{textDecoration: 'none'}}>
                 Continue Reading ...
               </Link>
