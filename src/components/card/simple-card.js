@@ -13,7 +13,9 @@ class SimpleCard extends React.Component
   {
     return (
       <div className="card">
-        {this.props.children}
+        <div className="card-content">
+          {this.props.children}
+        </div>
       </div>
     );
   }
