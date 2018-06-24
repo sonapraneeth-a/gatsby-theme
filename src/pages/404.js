@@ -31,7 +31,7 @@ class Index extends React.Component
         />
         <div className="page-title"><i className="fa fa-exclamation fa-1" aria-hidden="true"></i>&nbsp;&nbsp;404 - Not found</div>
         <SimpleCard>
-          You're headed into a wrong location. Please go back!!!
+          You have landed in a wrong location. Please <a href={this.props.history}>go back</a> (or) head to <a href={this.props.data.site.siteMetadata.siteUrl}>home</a>!!!
         </SimpleCard>
       </div>
     )
