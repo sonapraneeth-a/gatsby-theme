@@ -49,6 +49,13 @@ export const query = graphql`
       {
         author
         siteUrl
+        social
+        {
+          twitter
+          {
+            username
+          }
+        }
       }
     }
   }`;
