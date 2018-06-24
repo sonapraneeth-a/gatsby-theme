@@ -69,6 +69,15 @@
         flex-direction: column;
     }
 
+    .profile-card-info-no-image
+    {
+        @include from($tablet)
+        {
+            width: 100%;
+        }
+        flex-direction: column;
+    }
+
     .profile-card-content
     {
         padding: 1rem;
@@ -83,6 +92,19 @@
     .profile-card-footer
     {
         position: absolute;
+        @include until($tablet)
+        {
+            position: relative;
+        }
+        width: inherit;
+        padding: 0.8rem;
+        border-top: 0.1rem solid rgba(160,160,160,0.2);
+        bottom: 0;
+    }
+
+    .profile-card-footer-no-image
+    {
+        position: relative;
         width: inherit;
         padding: 0.8rem;
         border-top: 0.1rem solid rgba(160,160,160,0.2);
