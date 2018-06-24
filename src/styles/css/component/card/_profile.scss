@@ -62,6 +62,10 @@
 
     .profile-card-info
     {
+        @include until($tablet)
+        {
+            width: 100%;
+        }
         @include from($tablet)
         {
             width: 75%;
@@ -91,12 +95,16 @@
 
     .profile-card-footer
     {
-        position: absolute;
-        @include until($tablet)
+        @include from($desktop)
+        {
+            position: absolute;
+            width: inherit;
+        }
+        @include until($desktop)
         {
             position: relative;
+            width: 100%;
         }
-        width: inherit;
         padding: 0.8rem;
         border-top: 0.1rem solid rgba(160,160,160,0.2);
         bottom: 0;
