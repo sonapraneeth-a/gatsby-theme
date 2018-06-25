@@ -108,7 +108,12 @@ class BlogPost extends React.Component
           <Row>
             <Col dp={3} className="blog-toc-sticky">
               <div className="blog-toc">
-                <h4 className="blog-toc-title">{post.frontmatter.toc_label}</h4>
+              { (post.frontmatter.toc_label != "" || post.frontmatter.toc_label != null) &&
+                  <h4 className="blog-toc-title">{post.frontmatter.toc_label}</h4>
+                }
+                { (post.frontmatter.toc_label != "" || post.frontmatter.toc_label != null) &&
+                  <h4 className="blog-toc-title">Table of contents</h4>
+                }
                 <div className="blog-toc-contents"
                   dangerouslySetInnerHTML={{ __html: post.tableOfContents }}
                 />
@@ -119,7 +124,7 @@ class BlogPost extends React.Component
             </Col>
           </Row>
         }
-        { post.frontmatter.toc == false &&
+        { (post.frontmatter.toc == false || post.frontmatter.toc == null) &&
           <Row>
             <Col dp={12}>
               <div className="blog-body">{renderAst(post.htmlAst)}</div>

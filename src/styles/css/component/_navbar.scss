@@ -120,6 +120,7 @@
     }
     .dropdown-icon
     {
+      border-left: 0.01rem solid $navbar-foreground-color;
       display: inline-block;
     }
   }

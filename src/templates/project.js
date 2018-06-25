@@ -4,6 +4,7 @@ import Helmet from "react-helmet";
 import moment from "moment";
 import moment_tz from "moment-timezone";
 import rehypeReact from "rehype-react";
+import slugify from "slug";
 
 import SimpleChip from "../components/chip/simple-chip";
 import LinkChip from "../components/chip/link-chip";
@@ -13,7 +14,7 @@ import Row from "../components/grid/row";
 import Col from "../components/grid/col";
 import Admonition from "../components/admonition";
 
-import slugify from "slug";
+import "katex/dist/katex.min.css";
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
@@ -31,7 +32,7 @@ class ProjectPost extends React.Component
   render()
   {
     slugify.charmap['+'] = 'p';
-    const post = this.props.data.markdownRemark
+    const post = this.props.data.project_post;
     const tags = post.frontmatter.tags;
     const categories = post.frontmatter.categories;
     return (
@@ -68,7 +69,8 @@ class ProjectPost extends React.Component
                 <LinkChip
                   url={"/projects/tags/#"+slugify(tag)}
                   key={"tag"+tag_name}
-                  content={tag_name.charAt(0).toUpperCase() + tag_name.slice(1).toLowerCase()}
+                  //content={tag_name.charAt(0).toUpperCase() + tag_name.slice(1).toLowerCase()}
+                  content={tag_name}
                   icon={"tag"}
                 />
               );
@@ -82,7 +84,8 @@ class ProjectPost extends React.Component
                 <LinkChip
                   url={"/projects/categories/#"+slugify(category)}
                   key={"category"+category_name}
-                  content={category_name.charAt(0).toUpperCase() + category_name.slice(1).toLowerCase()}
+                  //content={category_name.charAt(0).toUpperCase() + category_name.slice(1).toLowerCase()}
+                  content={category_name}
                   icon={"folder-open"}
                 />
               );
@@ -99,7 +102,12 @@ class ProjectPost extends React.Component
           <Row>
             <Col dp={3} className="blog-toc-sticky">
               <div className="blog-toc">
-                <h4 className="blog-toc-title">{post.frontmatter.toc_label}</h4>
+                { (post.frontmatter.toc_label != "" || post.frontmatter.toc_label != null) &&
+                  <h4 className="blog-toc-title">{post.frontmatter.toc_label}</h4>
+                }
+                { (post.frontmatter.toc_label != "" || post.frontmatter.toc_label != null) &&
+                  <h4 className="blog-toc-title">Table of contents</h4>
+                }
                 <div className="blog-toc-contents"
                   dangerouslySetInnerHTML={{ __html: post.tableOfContents }}
                 />
@@ -110,7 +118,7 @@ class ProjectPost extends React.Component
             </Col>
           </Row>
         }
-        { post.frontmatter.toc == false &&
+        { (post.frontmatter.toc == false || post.frontmatter.toc == null) &&
           <Row>
             <Col dp={12}>
               <div className="blog-body">{renderAst(post.htmlAst)}</div>
@@ -128,13 +136,13 @@ export default ProjectPost;
 export const query = graphql`
   query ProjectPostQuery($slug: String!)
   {
-    markdownRemark: markdownRemark
+    project_post: markdownRemark
     (
       fields: { slug: { eq: $slug } }
       frontmatter: { type: { regex: "/project/" } }
     )
     {
-      html
+      htmlAst
       fields
       {
         slug
