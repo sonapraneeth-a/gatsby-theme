@@ -124,6 +124,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-sitemap`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-sass`,
       options: {

@@ -56,7 +56,7 @@ class BlogCard extends React.Component
     return (
       <div className="blog-card">
         { this.props.banner_image == null &&
-          <img className="blog-card-image" src="https://placeimg.com/320/240/nature" alt={"Banner image of blog: "+this.props.title}/>
+          <img className="blog-card-image" src="/assets/blog/default_banner_image.jpg" alt={"Banner image of blog: "+this.props.title}/>
         }
         { this.props.banner_image != null &&
           <img className="blog-card-image" src={this.props.banner_image} alt={"Banner image of blog: "+this.props.title}/>

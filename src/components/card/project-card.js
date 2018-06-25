@@ -49,7 +49,7 @@ class ProjectCard extends React.Component
         }
         { this.props.banner_image == null &&
           <div className="card-image">
-            <img src="https://placeimg.com/320/240/nature" alt={"Banner image of project: "+this.props.title}></img>
+            <img src="/assets/projects/default_banner_image.jpg" alt={"Banner image of project: "+this.props.title}/>
           </div>
         }
         { this.props.banner_image != null &&
