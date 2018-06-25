@@ -37,7 +37,7 @@ class Index extends React.Component
           github_username={github_username}
           linkedin_username={linkedin_username}
           twitter_username={twitter_username}
-          image={"/assets/home/sonapraneeth-full.png"}
+          image={"/static/assets/home/sonapraneeth-full.png"}
           content={<div><p>I'm currently working as a Software Developer in Cloud Database 
           Development Team in <a href="https://www.oracle.com/in/index.html" target="_blank">Oracle India Private Limited</a>.</p>
           <p>I have completed my masters in <a href="https://www.cse.iitb.ac.in/" target="_blank">Computer Science and Engineering</a> from <a href="http://iitb.ac.in/" target="_blank">IIT Bombay</a> in July 2017. Prior to that, I have completed my bachelors in 

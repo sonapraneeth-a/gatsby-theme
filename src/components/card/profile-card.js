@@ -28,7 +28,10 @@ class ProfileCard extends React.Component
     return (
       <div className="profile-card">
         { this.props.image != null &&
-          <img className="profile-card-image" src={this.props.image}/>
+          <img
+            className="profile-card-image"
+            src={this.props.image}
+          />
         }
         <div className={info_class}>
           <div className="profile-card-content">
