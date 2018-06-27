@@ -21,16 +21,19 @@ Testing <!--more-->
 
 # Instructions to use
 
-- Fork the repository from the following [link](https://github.com/sonapraneeth-a/gatsby-theme)
+- Fork/Clone the repository from the following [link](https://github.com/sonapraneeth-a/gatsby-theme)
+```bash
+$ git clone -b master https://github.com/sonapraneeth-a/gatsby-theme
+```
 - Update the ```data/config.js``` file present in the ```src``` folder
 
 # Features
 
-Some of the main features available on this theme:
-- Formatting text in markdown
+Some of the main features available in this theme:
+- Wr
 - Code highlighting using [prism.js](http://prismjs.com/)
 - $\LaTeX$ integration
-- Utility classes like info, danger, success and warning
+- Utility classes like <text type="info" markdown=true>info</text>, <text type="danger" markdown=true>danger</text>, <text type="success" markdown=true>success</text> and <text type="warning" markdown=true>warning</text>
 - Menus
     - Sidebar
     - Navigation bar
@@ -39,7 +42,7 @@ Some of the main features available on this theme:
     - Sticky table of contents for the blog posts
     - Estimated time to read the post
     - Sharing modules (facebook, gplus, twitter, linkedin etc.,) for all posts (Can be enabled in frontmatter)
-    - Custon components in blog posts like [admonitions](#admonition), [quotes](#blockquote) etc.,
+    - Custom components in blog posts like [admonition](#admonition), [quote](#blockquote), [text](#text) etc.,
 - Google Analytics for tracking
 
 ## Menu
