@@ -1,0 +1,31 @@
+.blockquote
+{
+  margin: 1rem 0;
+  padding: 0.5rem 2rem;
+  box-sizing: border-box;
+  //border-radius: $chip-radius;
+  &.info
+  {
+    background-color: lighten($info, 35%);
+    //border: 0.05rem solid $info;
+    border-left: 0.25rem solid $info;
+  }
+  &.danger
+  {
+    background-color: lighten($danger, 35%);
+    //border: 0.05rem solid $danger;
+    border-left: 0.25rem solid $danger;
+  }
+  &.success
+  {
+    background-color: lighten($success, 35%);
+    //border: 0.05rem solid $success;
+    border-left: 0.25rem solid $success;
+  }
+  &.warning
+  {
+    background-color: lighten($warning, 35%);
+    //border: 0.05rem solid $warning;
+    border-left: 0.25rem solid $warning;
+  }
+}
