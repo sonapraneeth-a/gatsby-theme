@@ -18,10 +18,19 @@ class Admonition extends React.Component
           <div className="admonition-title">{this.props.title}</div>
           {/*<Markdown source={this.props.content} className="admonition-content"/>*/}
           {/* Reference: https://stackoverflow.com/questions/31875748/how-do-i-render-markdown-from-a-react-component */}
-          <div
-            className="admonition-content"
-            dangerouslySetInnerHTML={{__html: marked(this.props.content || '')}}
-          />
+          { (this.props.markdown == false || this.props.markdown == null) &&
+            <div
+              className="admonition-content"
+              dangerouslySetInnerHTML={{__html: marked(this.props.content || '')}}
+            />
+          }
+          { (this.props.markdown == true || this.props.markdown != null) &&
+            <div 
+              className="admonition-content"
+            >
+              {this.props.children}
+            </div>
+          }
       </div>
     );
   }
