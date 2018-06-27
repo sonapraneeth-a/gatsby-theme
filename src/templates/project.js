@@ -13,12 +13,16 @@ import SEO from "../components/head/seo";
 import Row from "../components/grid/row";
 import Col from "../components/grid/col";
 import Admonition from "../components/admonition";
+import Blockquote from "../components/blockquote";
 
 import "katex/dist/katex.min.css";
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
-  components: { "admonition": Admonition },
+  components: { 
+    "admonition": Admonition,
+    "quote": Blockquote
+  },
 }).Compiler
 
 //export default ({ data }) => {

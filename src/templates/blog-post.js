@@ -14,12 +14,16 @@ import Sharing from "../components/sharing";
 import Row from "../components/grid/row";
 import Col from "../components/grid/col";
 import Admonition from "../components/admonition";
+import Blockquote from "../components/blockquote";
 
 import "katex/dist/katex.min.css";
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
-  components: { "admonition": Admonition },
+  components: { 
+    "admonition": Admonition,
+    "quote": Blockquote
+  },
 }).Compiler
 
 //export default ({ data }) => {
@@ -108,10 +112,10 @@ class BlogPost extends React.Component
           <Row>
             <Col dp={3} className="blog-toc-sticky">
               <div className="blog-toc">
-              { (post.frontmatter.toc_label != "" || post.frontmatter.toc_label != null) &&
+                { (post.frontmatter.toc_label != "" || post.frontmatter.toc_label != null) &&
                   <h4 className="blog-toc-title">{post.frontmatter.toc_label}</h4>
                 }
-                { (post.frontmatter.toc_label != "" || post.frontmatter.toc_label != null) &&
+                { (post.frontmatter.toc_label == "" || post.frontmatter.toc_label == null) &&
                   <h4 className="blog-toc-title">Table of contents</h4>
                 }
                 <div className="blog-toc-contents"
