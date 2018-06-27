@@ -9,7 +9,7 @@
 
 .blog-toc-title
 {
-  border: 0.01rem solid black;
+  border: 0.05rem solid #bbc8c8;
   margin: 0;
   padding: 1rem;
   background-color: $primary-background-color;
@@ -23,17 +23,35 @@
     list-style-type: none;
     margin: 0.5rem;
     padding: 0;
-  }
-  a 
-  {
-    text-decoration: none;
+    p 
+    {
+      margin: 0;
+    }
   }
   li
   {
+    padding: 0.3rem;
     ul 
     {
-      margin: 1rem;
+      margin: 0 1rem;
+    }
+    a 
+    {
+      text-decoration: none;
+      //border-bottom: 0.01rem solid black;
+      //display: block;
     }
   }
-  border: 0.1rem solid black;
+  border: 0.05rem solid #bbc8c8;
+}
+
+.blog-body
+{
+  li 
+  {
+    p 
+    {
+      margin: 0;
+    }
+  }
 }
