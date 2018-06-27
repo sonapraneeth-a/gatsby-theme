@@ -20,6 +20,18 @@
   width: calc(4/12 * 100%);
   @include grid-spec;
 }
+.col-dp-6
+{
+  @if $flex == true 
+  {
+    @include grid-col-width(calc(6/12 * 100%));
+  }
+  @else
+  {
+    width: calc(6/12 * 100%); 
+  }
+  @include grid-spec;
+}
 .col-dp-8
 {
   width: calc(8/12 * 100%);

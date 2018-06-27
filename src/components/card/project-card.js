@@ -38,6 +38,14 @@ class ProjectCard extends React.Component
     let tags = this.props.tags;
     let categories = this.props.categories;
     let card_type = this.props.card_type;
+    let footer_number_count = 0;
+    if(this.props.url != null && this.props.url != "") { footer_number_count += 1; }
+    if(this.props.source_link != null && this.props.source_link != "") { footer_number_count += 1; }
+    if(this.props.report_link != null && this.props.report_link != "") { footer_number_count += 1; }
+    let footer_number = footer_number_count == 0 ? 12 : 12/footer_number_count;
+    console.log(this.props.url);
+    console.log(this.props.source_link);
+    console.log(footer_number);
     return (
       <div className="card">
         { this.props.status != null &&
@@ -157,15 +165,46 @@ class ProjectCard extends React.Component
             </table>
           }
         </div>
-        { this.props.url != null &&
           <div className="card-footer">
-            <center>
-              <Link to={this.props.url} style={{textDecoration: 'none'}}>
-                Details
-              </Link>
-            </center>
+            <Row>
+              { (this.props.url != null && this.props.url != "") &&
+                <Col
+                  dp={footer_number}
+                  className="align-center"
+                >
+                  <Link to={this.props.url} style={{textDecoration: 'none'}}>
+                    <span>
+                      <i className="fa fa-info-circle" aria-hidden="true"></i>&nbsp;Details
+                    </span>
+                  </Link>
+                </Col>
+              }
+              { (this.props.source_link != null && this.props.source_link != "") &&
+                <Col
+                  dp={footer_number}
+                  className="align-center"
+                >
+                  <a href={this.props.source_link} style={{textDecoration: 'none'}}>
+                    <span>
+                      <i className="fa fa-code" aria-hidden="true"></i>&nbsp;Source
+                    </span>
+                  </a>
+                </Col>
+              }
+              { (this.props.report_link != null && this.props.report_link != "") &&
+                <Col
+                  dp={footer_number}
+                  className="align-center"
+                >
+                  <a href={this.props.report_link} style={{textDecoration: 'none'}}>
+                    <span>
+                      <i className="fa fa-file-alt" aria-hidden="true"></i>&nbsp;Report
+                    </span>
+                  </a>
+                </Col>
+              }
+            </Row>
           </div>
-        }
       </div>
     );
   }

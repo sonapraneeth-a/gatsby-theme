@@ -39,6 +39,7 @@ class ProjectIndex extends React.Component
                 url={node.fields.slug}
                 institution={node.frontmatter.institution}
                 timeToRead={node.timeToRead}
+                source_link={node.frontmatter.source_link}
               />
             </GridItem>
           )
@@ -61,7 +62,7 @@ export const query = graphql`
       {
         frontmatter:
         {
-          type: {eq: "project"},
+          type: {regex: "/project/"},
           publish: {eq: true}},
         }
     )
@@ -81,6 +82,11 @@ export const query = graphql`
             institution
             brief
             status
+            source_link
+            github_link
+            report_link
+            slides_link
+            banner_image
           }
           fields
           {
