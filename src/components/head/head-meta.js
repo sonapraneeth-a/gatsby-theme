@@ -16,6 +16,7 @@ class HeadMeta extends React.Component
 
   setMetaProps()
   {
+    if(this.props.title != null) { this.config.title = this.props.title; }
     if(this.props.author != null) { this.config.author = this.props.author; }
     if(this.props.description != null) { this.config.description = this.props.description; }
     if(this.props.keywords != null) { this.config.keywords = this.props.keywords; }
@@ -23,10 +24,11 @@ class HeadMeta extends React.Component
 
   render()
   {
+    setMetaProps();
     return (
       <div>
         <Helmet
-          title={this.props.title}
+          title={this.config.title}
           meta={[
             { name: "author", content: this.config.author },
             { name: "description", content: this.config.description },
