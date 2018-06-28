@@ -1,7 +1,7 @@
-import React from "react"
+import React from "react";
 import Link from "gatsby-link";
 
-import ProfileCard from "../components/card/profile-card.js"
+import ProfileCard from "../components/card/profile-card.js";
 import HeadMeta from "../components/head/head-meta";
 import SEO from "../components/head/seo";
 

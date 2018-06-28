@@ -55,7 +55,7 @@ class BlogCard extends React.Component
     let footer_class = "blog-card-footer";
     return (
       <div className="blog-card">
-        { (this.props.banner_image == null && this.props.banner_image == "") &&
+        { (this.props.banner_image == null || this.props.banner_image == "") &&
           <img
             className="blog-card-image"
             src="/static/assets/blog/default_banner_image.jpg"
