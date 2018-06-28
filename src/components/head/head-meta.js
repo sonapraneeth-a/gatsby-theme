@@ -24,7 +24,7 @@ class HeadMeta extends React.Component
 
   render()
   {
-    setMetaProps();
+    this.setMetaProps();
     return (
       <div>
         <Helmet
