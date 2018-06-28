@@ -40,7 +40,7 @@ class Index extends React.Component
           image={"/static/assets/home/sonapraneeth-full.png"}
           content={<div><p>I'm currently working as a Software Developer in Cloud Database 
           Development Team in <a href="https://www.oracle.com/in/index.html" target="_blank" rel="noopener">Oracle India Private Limited</a>.</p>
-          <p>I have completed my masters in <a href="https://www.cse.iitb.ac.in/" target="_blank" rel="noopener">Computer Science and Engineering</a> from <a href="http://iitb.ac.in/" target="_blank">IIT Bombay</a> in July 2017. Prior to that, I have completed my bachelors in 
+          <p>I have completed my masters in <a href="https://www.cse.iitb.ac.in/" target="_blank" rel="noopener">Computer Science and Engineering</a> from <a href="http://iitb.ac.in/" target="_blank" rel="noopener">IIT Bombay</a> in July 2017. Prior to that, I have completed my bachelors in 
           <a href="http://iitj.ac.in/department/index.php?id=cse" target="_blank" rel="noopener"> Computer Science and Engineering</a> from <a href="http://iitj.ac.in/" target="_blank" rel="noopener">IIT Jodhpur</a> in April 2015.</p>
           <p>I like to work in areas involving Computer Vision, Image Processing and Machine Learning. You can have a look at my projects <Link to="/projects/">here</Link>.</p></div>}
         />
