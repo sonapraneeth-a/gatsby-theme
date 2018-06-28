@@ -21,7 +21,7 @@ module.exports = {
     logo: "src/assets/logo.jpg", // Logo used for SEO and manifest.
     url: "https://gatsby-profile-page-theme.netlify.com", // Domain of your website without pathPrefix.
     description: "A GatsbyJS starter with Advanced design in mind.", // Website description used for Feed feeds/meta description tag.
-    startUrl: "/",
+    startUrl: "/index.html",
     pathPrefix: "", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
     author: "Sona Praneeth Akula", // Username to display in the author segment.
     copyright: "Copyright &copy; Sona Praneeth Akula. "+moment().format("YYYY"), // Copyright string for the footer of the website and Feed feed.
