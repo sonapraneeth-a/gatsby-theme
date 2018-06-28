@@ -28,8 +28,8 @@ module.exports = {
     backgroundColor: "#e0e0e0" // Used for setting manifest background color.
   },
   id: {
-    googleAnalyticsID: "UA-47311644-5", // GA tracking ID.
-    disqusShortname: "https-vagr9k-github-io-gatsby-advanced-starter", // Disqus shortname.
+    googleAnalyticsID: "UA-90733014-1", // GA tracking ID.
+    disqusShortname: "sonapraneethakula", // Disqus shortname.
   },
   user: {
     social_links: [
