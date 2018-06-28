@@ -56,67 +56,7 @@ module.exports = {
         username: config.user.social_links[3].username,
       },
     },
-    menu:
-    [
-      {
-        name: "Home",
-        icon: "home",
-        url: "/",
-        submenu: [],
-      },
-      {
-        name: "Projects",
-        icon: "file-code",
-        url: "/projects/",
-        submenu:
-        [
-          {
-            name: "Tags",
-            icon: "tag",
-            url: "/projects/tags/",
-          },
-          {
-            name: "Categories",
-            icon: "folder-open",
-            url: "/projects/categories/",
-          },
-          {
-            name: "Archives",
-            icon: "file-archive",
-            url: "/projects/archives/",
-          },
-        ]
-      },
-      {
-        name: "Blog",
-        icon: "pencil-alt",
-        url: "/blog/",
-        submenu:
-        [
-          {
-            name: "Tags",
-            icon: "tag",
-            url: "/blog/tags/",
-          },
-          {
-            name: "Categories",
-            icon: "folder-open",
-            url: "/blog/categories/",
-          },
-          {
-            name: "Archives",
-            icon: "file-archive",
-            url: "/blog/archives/",
-          },
-        ]
-      },
-      {
-        name: "Contact",
-        icon: "mobile-alt",
-        url: "/contact/",
-        submenu: [],
-      },
-    ]
+    menu: config.menu,
   },
   pathPrefix: "/",
   plugins: [
