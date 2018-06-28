@@ -14,7 +14,7 @@ publish: true
 toc: true
 toc_label: "On this page"
 toc_icon: "table"  # corresponding Font Awesome icon name (without fa prefix)
-banner_image: 
+banner_image: ""
 ---
 
 Testing <!--more-->

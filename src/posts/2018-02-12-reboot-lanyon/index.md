@@ -14,7 +14,7 @@ publish: true
 toc: true
 toc_label: "On this page"
 toc_icon: "table"  # corresponding Font Awesome icon name (without fa prefix)
-banner_image: 
+banner_image: ""
 ---
 
 Recently, I've been working on a jekyll theme which has the look and feel of the [lanyon theme](https://lanyon.getpoole.com) and is suitable for any screen type. Also, I wanted the theme to be easily maintainable for adding new features. This has resulted in this new jekyll theme. The core idealogy of this website's theme has been derived from the lanyon theme.<!--more-->

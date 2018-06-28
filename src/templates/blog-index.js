@@ -51,6 +51,7 @@ class BlogIndex extends React.Component
                 timeToRead={node.timeToRead}
                 published_date={moment.tz(published_date, 'Asia/Kolkata').format("DD MMMM YYYY, HH:mm:ss z", "en")}
                 excerpt={node.excerpt}
+                banner_image={node.frontmatter.banner_image}
               />
             );
           })
@@ -96,6 +97,7 @@ export const query = graphql`
             tags
             categories
             published_date
+            banner_image
           }
           timeToRead
           excerpt
