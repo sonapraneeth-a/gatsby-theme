@@ -71,7 +71,7 @@ module.exports = {
         precision: 8,
       },
     },
-    {
+    /*{
       resolve: "gatsby-plugin-manifest",
       options: {
         name: config.site.title,
@@ -94,6 +94,19 @@ module.exports = {
           }
         ]
       }
+    },*/
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: config.site.title,
+        short_name: config.site.title,
+        description: config.site.description,
+        start_url: config.site.pathPrefix,
+        background_color: config.site.backgroundColor,
+        theme_color: config.site.themeColor,
+        display: "minimal-ui",
+        icon: config.site.logo,
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
