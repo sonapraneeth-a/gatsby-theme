@@ -17,7 +17,7 @@ module.exports = {
   },
   site: {
     title: "Home page - Gatsby theme", // Site title.
-    titleAlt: "Home page - Gatsby theme", // Alternative site title for SEO.
+    titleAlt: "Home page", // Alternative site title for SEO.
     logo: "src/assets/logo.jpg", // Logo used for SEO and manifest.
     url: "https://gatsby-profile-page-theme.netlify.com", // Domain of your website without pathPrefix.
     description: "A GatsbyJS starter with Advanced design in mind.", // Website description used for Feed feeds/meta description tag.
