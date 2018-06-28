@@ -18,6 +18,10 @@
 
 .blog-toc-contents
 {
+  a 
+  {
+    display: block;
+  }
   ul 
   {
     list-style-type: none;
@@ -39,7 +43,6 @@
     {
       text-decoration: none;
       //border-bottom: 0.01rem solid black;
-      //display: block;
     }
   }
   border: 0.05rem solid #bbc8c8;

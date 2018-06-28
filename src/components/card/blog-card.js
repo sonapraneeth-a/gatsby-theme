@@ -166,7 +166,7 @@ class BlogCard extends React.Component
           { this.props.url != null &&
             <div className={footer_class}>
               <Link to={this.props.url} style={{textDecoration: 'none'}}>
-                Continue Reading ...
+                <i className="fa fa-book-open" aria-hidden="true"></i>&nbsp;Continue Reading ...
               </Link>
             </div>
           }
