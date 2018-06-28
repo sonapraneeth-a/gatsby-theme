@@ -18,14 +18,14 @@ module.exports = {
   site: {
     title: "Home page - Gatsby theme", // Site title.
     titleAlt: "Home page - Gatsby theme", // Alternative site title for SEO.
-    logo: "src/assets/logo.png", // Logo used for SEO and manifest.
+    logo: "src/assets/logo.jpg", // Logo used for SEO and manifest.
     url: "https://gatsby-profile-page-theme.netlify.com", // Domain of your website without pathPrefix.
     description: "A GatsbyJS starter with Advanced design in mind.", // Website description used for Feed feeds/meta description tag.
     pathPrefix: "", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
     author: "Sona Praneeth Akula", // Username to display in the author segment.
     copyright: "Copyright &copy; Sona Praneeth Akula. "+moment().format("YYYY"), // Copyright string for the footer of the website and Feed feed.
-    themeColor: "#c62828", // Used for setting manifest and progress theme colors.
-    backgroundColor: "#e0e0e0" // Used for setting manifest background color.
+    themeColor: "#0297ed", // Used for setting manifest and progress theme colors.
+    backgroundColor: "#ffffff" // Used for setting manifest background color.
   },
   id: {
     googleAnalyticsID: "UA-90733014-1", // GA tracking ID.
