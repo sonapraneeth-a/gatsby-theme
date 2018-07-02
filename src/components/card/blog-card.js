@@ -8,6 +8,7 @@ import SimpleChip from "../chip/simple-chip";
 import LinkChip from "../chip/link-chip";
 import Row from "../grid/row";
 import Col from "../grid/col";
+import DefaultBlogCardImage from "../../assets/blog/default_banner_image.jpg";
 
 class BlogCard extends React.Component
 {
@@ -58,7 +59,7 @@ class BlogCard extends React.Component
         { (this.props.banner_image == null || this.props.banner_image == "") &&
           <img
             className="blog-card-image"
-            src="/static/assets/blog/default_banner_image.jpg"
+            src={DefaultBlogCardImage}
             alt={"Banner image of blog: "+this.props.title}
           />
         }

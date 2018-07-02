@@ -6,6 +6,7 @@ import SimpleChip from "../chip/simple-chip";
 import LinkChip from "../chip/link-chip";
 import Row from "../grid/row";
 import Col from "../grid/col";
+import DefaultProjectCardImage from "../../assets/projects/default_banner_image.jpg";
 
 class ProjectCard extends React.Component
 {
@@ -58,7 +59,7 @@ class ProjectCard extends React.Component
         { this.props.banner_image == null &&
           <div className="card-image">
             <img 
-              src="/static/assets/projects/default_banner_image.jpg"
+              src={DefaultProjectCardImage}
               alt={"Banner image of project: "+this.props.title}
             />
           </div>

@@ -4,6 +4,7 @@ import Link from "gatsby-link";
 import ProfileCard from "../components/card/profile-card.js";
 import HeadMeta from "../components/head/head-meta";
 import SEO from "../components/head/seo";
+import ProfileCardImage from "../assets/home/sonapraneeth-full.png";
 
 class Index extends React.Component
 {
@@ -37,7 +38,7 @@ class Index extends React.Component
           github_username={github_username}
           linkedin_username={linkedin_username}
           twitter_username={twitter_username}
-          image={"/static/assets/home/sonapraneeth-full.png"}
+          image={ProfileCardImage}
           content={<div><p>I'm currently working as a Software Developer in Cloud Database 
           Development Team in <a href="https://www.oracle.com/in/index.html" target="_blank" rel="noopener">Oracle India Private Limited</a>.</p>
           <p>I have completed my masters in <a href="https://www.cse.iitb.ac.in/" target="_blank" rel="noopener">Computer Science and Engineering</a> from <a href="http://iitb.ac.in/" target="_blank" rel="noopener">IIT Bombay</a> in July 2017. Prior to that, I have completed my bachelors in 
