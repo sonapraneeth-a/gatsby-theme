@@ -59,7 +59,7 @@ class BlogCard extends React.Component
         { (this.props.banner_image == null || this.props.banner_image == "") &&
           <img
             className="blog-card-image"
-            src={DefaultBlogCardImage}
+            src="assets/blog/default_banner_image.jpg"
             alt={"Banner image of blog: "+this.props.title}
           />
         }
