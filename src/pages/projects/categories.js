@@ -127,7 +127,7 @@ class ProjectCategoryPage extends React.Component
               <ul key={"project_category_list"+index_i} style={{listStyleType: 'none', paddingLeft: '0'}}>
                 <li key={project_categories[index_i]}>
                   {
-                    <Link to={"/project/categories/#"+category_slug} style={{textDecoration: 'none'}}>
+                    <Link to={"/projects/categories/#"+category_slug} style={{textDecoration: 'none'}}>
                       <h2>{name}</h2>
                     </Link>
                   }

@@ -117,7 +117,7 @@ class ProjectArchivePage extends React.Component
               <ul key={"project_year_list"+index_i} style={{listStyleType: 'none', paddingLeft: '0'}}>
                 <li key={project_years[index_i]}>
                 {
-                  <Link to={"/project/archives/#"+year_slug} style={{textDecoration: 'none'}}>
+                  <Link to={"/projects/archives/#"+year_slug} style={{textDecoration: 'none'}}>
                     <h2>{name}</h2>
                   </Link>
                 }

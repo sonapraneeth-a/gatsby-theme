@@ -128,7 +128,7 @@ class ProjectTagPage extends React.Component
               <ul key={"project_tag_list"+index_i} style={{listStyleType: 'none', paddingLeft: '0'}}>
                 <li key={project_tags[index_i]}>
                   {
-                    <Link to={"/project/tags/#"+tag_slug} style={{textDecoration: 'none'}}>
+                    <Link to={"/projects/tags/#"+tag_slug} style={{textDecoration: 'none'}}>
                       <h2>{name}</h2>
                     </Link>
                   }
