@@ -1,3 +1,8 @@
+public
+
+.vs
+.vscode
+
 # Logs
 logs
 *.log
