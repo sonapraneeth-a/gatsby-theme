@@ -2,6 +2,7 @@ import React from 'react'
 import Link from "gatsby-link";
 import moment from "moment";
 import moment_tz from "moment-timezone";
+import { graphql } from "gatsby";
 
 import BlogCard from "../components/card/blog-card";
 import Grid from "../components/grid/grid";

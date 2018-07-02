@@ -1,5 +1,6 @@
 import React from "react"
 import Link from "gatsby-link";
+import { graphql } from "gatsby";
 
 import SimpleCard from "../components/card/simple-card.js"
 import HeadMeta from "../components/head/head-meta";

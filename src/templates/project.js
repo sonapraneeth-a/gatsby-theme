@@ -5,6 +5,7 @@ import moment from "moment";
 import moment_tz from "moment-timezone";
 import rehypeReact from "rehype-react";
 import slugify from "slug";
+import { graphql } from "gatsby";
 
 import SimpleChip from "../components/chip/simple-chip";
 import LinkChip from "../components/chip/link-chip";

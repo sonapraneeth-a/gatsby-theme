@@ -10,7 +10,7 @@ class Sidebar extends React.Component
     this.menu = [];
     this.state = {
       reveal_status: "off",
-    }
+    };
   }
 
   updateRevealStatus()
@@ -42,11 +42,11 @@ class Sidebar extends React.Component
   {
     let sidebar_menu = this.props.menu;
     let sidebar_menu_length = sidebar_menu.length;
-    let sidebar_menu_array = new Array();
+    let sidebar_menu_array = [];
     for(let index_i = 0; index_i < sidebar_menu_length; index_i++)
     {
       let sidebar_submenu_length = sidebar_menu[index_i].submenu.length;
-      let sidebar_submenu_array = new Array();
+      let sidebar_submenu_array = [];
       let sidebar_menu_status = this.isNavMenuActive(sidebar_menu[index_i].url);
       for(let index_j = 0; index_j < sidebar_submenu_length; index_j++)
       {
