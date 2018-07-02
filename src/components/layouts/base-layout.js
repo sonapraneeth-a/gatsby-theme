@@ -1,7 +1,4 @@
 import React from "react";
-import Link from "gatsby-link";
-import Helmet from "react-helmet";
-import moment from "moment";
 import { graphql } from "gatsby";
 
 import "../../styles/fonts/req.scss";
@@ -13,7 +10,6 @@ import Container from "../grid/container";
 import Navbar from "../navbar";
 import Sidebar from "../sidebar";
 
-// export default ({ children, data }) => (
 class BaseLayout extends React.Component
 {
   constructor(props)
@@ -24,11 +20,7 @@ class BaseLayout extends React.Component
   render()
   {
     let data = this.props.data;
-    /*console.log(this.props.data);
-    console.log(data);*/
     let copyright = this.props.data.config.siteMetadata.copyright;
-    /*console.log("Path: " +this.props.match.path);
-    console.log("Location: " +this.props.location.pathname);*/
     return (
       <div>
         <Sidebar
@@ -45,7 +37,7 @@ class BaseLayout extends React.Component
           />
           <Container>
             <div className="main-content">
-              {this.props.children()}
+              {this.props.children}
             </div>
           </Container>
           <footer className="footer">
