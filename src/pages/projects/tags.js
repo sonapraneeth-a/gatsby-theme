@@ -7,6 +7,7 @@ import { graphql } from "gatsby";
 import SimpleCard from "../../components/card/simple-card";
 import LinkChip from "../../components/chip/link-chip";
 import HeadMeta from "../../components/head/head-meta";
+import BaseLayout from "../../components/layouts/base-layout";
 
 // Imports
 const _ = require('lodash')
@@ -93,7 +94,7 @@ class ProjectTagPage extends React.Component
     let tag_info = this.project_tag_info.tag_info;
     let projects = this.project_tag_info.projects;
     return (
-      <div>
+      <BaseLayout location={this.props.location}>
         <HeadMeta
           title={"Projects - Tags | " + this.props.data.site.siteMetadata.author}
           description={"This page contains the details of all the tags for the projects undertaken by " + this.props.data.site.siteMetadata.author}
@@ -155,7 +156,7 @@ class ProjectTagPage extends React.Component
           })
         }
         </div>
-      </div>
+      </BaseLayout>
     )
   }
 }

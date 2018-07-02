@@ -5,6 +5,7 @@ import { graphql } from "gatsby";
 import SimpleCard from "../components/card/simple-card.js"
 import HeadMeta from "../components/head/head-meta";
 import SEO from "../components/head/seo";
+import BaseLayout from "../components/layouts/base-layout";
 
 class Index extends React.Component
 {
@@ -16,7 +17,7 @@ class Index extends React.Component
   render()
   {
     return (
-      <div>
+      <BaseLayout location={this.props.location}>
         <HeadMeta
           title={"404 Not found | " + this.props.data.site.siteMetadata.author}
           description={"This is the home page of " + this.props.data.site.siteMetadata.author}
@@ -34,7 +35,7 @@ class Index extends React.Component
         <SimpleCard>
           You have landed in a wrong location. Please <a href={this.props.history}>go back</a> (or) head to <a href={this.props.data.site.siteMetadata.siteUrl}>home</a>!!!
         </SimpleCard>
-      </div>
+      </BaseLayout>
     )
   }
 }

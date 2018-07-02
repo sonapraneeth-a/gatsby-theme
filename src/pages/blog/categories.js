@@ -7,6 +7,7 @@ import { graphql } from "gatsby";
 import SimpleCard from "../../components/card/simple-card";
 import LinkChip from "../../components/chip/link-chip";
 import HeadMeta from "../../components/head/head-meta";
+import BaseLayout from "../../components/layouts/base-layout";
 
 // Imports
 const _ = require('lodash')
@@ -92,7 +93,7 @@ class BlogCategoryPage extends React.Component
     let category_info = this.blog_category_info.category_info;
     let blogs = this.blog_category_info.blogs;
     return (
-      <div>
+      <BaseLayout location={this.props.location}>
         <HeadMeta
           title={"Blogs - Categories | " + this.props.data.site.siteMetadata.author}
           description={"This page contains the details of all the categories for the blogs undertaken by " + this.props.data.site.siteMetadata.author}
@@ -155,7 +156,7 @@ class BlogCategoryPage extends React.Component
           })
         }
         </div>
-      </div>
+      </BaseLayout>
     )
   }
 }

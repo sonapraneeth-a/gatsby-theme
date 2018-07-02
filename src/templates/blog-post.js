@@ -17,6 +17,7 @@ import Col from "../components/grid/col";
 import Admonition from "../components/admonition";
 import Blockquote from "../components/blockquote";
 import Text from "../components/text";
+import BaseLayout from "../components/layouts/base-layout";
 
 import "katex/dist/katex.min.css";
 
@@ -49,134 +50,136 @@ class BlogPost extends React.Component
     const base_url = this.props.data.site.siteMetadata.siteUrl;
     const twitter_username = this.props.data.site.siteMetadata.social.twitter.username;
     return (
-      <article>
-        <HeadMeta
-          title={"Blog | " + post.frontmatter.title + " | " + this.props.data.site.siteMetadata.author}
-          description={"This is the blog post titled " + post.frontmatter.title + " written by " + this.props.data.site.siteMetadata.author}
-          keywords={"blog post, " + this.props.data.site.siteMetadata.author}
-        />
-        <SEO
-          type="article"
-          author={this.props.data.site.siteMetadata.author}
-          tags={post.frontmatter.tags}
-          published_date={moment.tz(post.frontmatter.published_date, 'Asia/Kolkata').format("DD MMMM YYYY, HH:mm:ss z", "en")}
-          title={"Blog - " + post.frontmatter.title + " | " + this.props.data.site.siteMetadata.author}
-          description={"This is the blog post titled " + post.frontmatter.title + " written by " + this.props.data.site.siteMetadata.author}
-          url={this.props.data.site.siteMetadata.siteUrl}
-          site_name={"Homepage of " + this.props.data.site.siteMetadata.author}
-          twitter_username={this.props.data.site.siteMetadata.social.twitter.username}
-        />
-        <header>
-          <h1 className="blog-title">
-            {post.frontmatter.title}
-          </h1>
-          <SimpleChip
-            icon={"calendar-alt"}
-            content={moment.tz(post.frontmatter.published_date, 'Asia/Kolkata').format("DD MMMM YYYY, HH:mm:ss z", "en")}
+      <BaseLayout location={this.props.location}>
+        <article>
+          <HeadMeta
+            title={"Blog | " + post.frontmatter.title + " | " + this.props.data.site.siteMetadata.author}
+            description={"This is the blog post titled " + post.frontmatter.title + " written by " + this.props.data.site.siteMetadata.author}
+            keywords={"blog post, " + this.props.data.site.siteMetadata.author}
           />
-          {
-            tags.map(function(tag_name, index)
-            {
-              let tag = tag_name.toLowerCase();
-              return (
-                <LinkChip
-                  url={"/blog/tags/#"+slugify(tag)}
-                  key={"tag"+tag_name}
-                  content={tag_name}
-                  icon={"tag"}
-                />
-              );
-            })
-          }
-          {
-            categories.map(function(category_name, index)
-            {
-              let category = category_name.toLowerCase();
-              return (
-                <LinkChip
-                  url={"/blog/categories/#"+slugify(category)}
-                  key={"category"+category_name}
-                  content={category_name}
-                  icon={"folder-open"}
-                />
-              );
-            })
-          }
-          {
+          <SEO
+            type="article"
+            author={this.props.data.site.siteMetadata.author}
+            tags={post.frontmatter.tags}
+            published_date={moment.tz(post.frontmatter.published_date, 'Asia/Kolkata').format("DD MMMM YYYY, HH:mm:ss z", "en")}
+            title={"Blog - " + post.frontmatter.title + " | " + this.props.data.site.siteMetadata.author}
+            description={"This is the blog post titled " + post.frontmatter.title + " written by " + this.props.data.site.siteMetadata.author}
+            url={this.props.data.site.siteMetadata.siteUrl}
+            site_name={"Homepage of " + this.props.data.site.siteMetadata.author}
+            twitter_username={this.props.data.site.siteMetadata.social.twitter.username}
+          />
+          <header>
+            <h1 className="blog-title">
+              {post.frontmatter.title}
+            </h1>
             <SimpleChip
-              icon={"stopwatch"}
-              content={timeToRead + " min"}
+              icon={"calendar-alt"}
+              content={moment.tz(post.frontmatter.published_date, 'Asia/Kolkata').format("DD MMMM YYYY, HH:mm:ss z", "en")}
             />
+            {
+              tags.map(function(tag_name, index)
+              {
+                let tag = tag_name.toLowerCase();
+                return (
+                  <LinkChip
+                    url={"/blog/tags/#"+slugify(tag)}
+                    key={"tag"+tag_name}
+                    content={tag_name}
+                    icon={"tag"}
+                  />
+                );
+              })
+            }
+            {
+              categories.map(function(category_name, index)
+              {
+                let category = category_name.toLowerCase();
+                return (
+                  <LinkChip
+                    url={"/blog/categories/#"+slugify(category)}
+                    key={"category"+category_name}
+                    content={category_name}
+                    icon={"folder-open"}
+                  />
+                );
+              })
+            }
+            {
+              <SimpleChip
+                icon={"stopwatch"}
+                content={timeToRead + " min"}
+              />
+            }
+            <hr />
+          </header>
+          <section>
+          { post.frontmatter.toc == true &&
+            <Row>
+              <Col dp={3} className="blog-toc-sticky">
+                <div className="blog-toc">
+                  { (post.frontmatter.toc_label != "" || post.frontmatter.toc_label != null) &&
+                    <h4 className="blog-toc-title">{post.frontmatter.toc_label}</h4>
+                  }
+                  { (post.frontmatter.toc_label == "" || post.frontmatter.toc_label == null) &&
+                    <h4 className="blog-toc-title">Table of contents</h4>
+                  }
+                  <div className="blog-toc-contents"
+                    dangerouslySetInnerHTML={{ __html: post.tableOfContents }}
+                  />
+                </div>
+              </Col>
+              <Col dp={9}>
+                <div className="blog-body">{renderAst(post.htmlAst)}</div>
+              </Col>
+            </Row>
           }
-          <hr />
-        </header>
-        <section>
-        { post.frontmatter.toc == true &&
-          <Row>
-            <Col dp={3} className="blog-toc-sticky">
-              <div className="blog-toc">
-                { (post.frontmatter.toc_label != "" || post.frontmatter.toc_label != null) &&
-                  <h4 className="blog-toc-title">{post.frontmatter.toc_label}</h4>
-                }
-                { (post.frontmatter.toc_label == "" || post.frontmatter.toc_label == null) &&
-                  <h4 className="blog-toc-title">Table of contents</h4>
-                }
-                <div className="blog-toc-contents"
-                  dangerouslySetInnerHTML={{ __html: post.tableOfContents }}
-                />
-              </div>
-            </Col>
-            <Col dp={9}>
-              <div className="blog-body">{renderAst(post.htmlAst)}</div>
-            </Col>
-          </Row>
-        }
-        { (post.frontmatter.toc == false || post.frontmatter.toc == null) &&
-          <Row>
-            <Col dp={12}>
-              <div className="blog-body">{renderAst(post.htmlAst)}</div>
-            </Col>
-          </Row>
-        }
-        </section>
-        <Sharing
-          url={base_url+post.fields.slug}
-          title={post.frontmatter.title}
-          twitter_username={twitter_username}
-        />
-        <div className="pager">
-          {
-            prev_post[0] == null &&
-            <a className="post-page previous-post hidden">Previous</a>
+          { (post.frontmatter.toc == false || post.frontmatter.toc == null) &&
+            <Row>
+              <Col dp={12}>
+                <div className="blog-body">{renderAst(post.htmlAst)}</div>
+              </Col>
+            </Row>
           }
-          { prev_post[0] != null &&
-            <a className="post-page" href={prev_post[1]} style={{paddingLeft: '0'}}>
-              <div style={{width: '12%', textAlign: 'center'}} class="previous-post">
-                <i className="fa fa-arrow-left"></i>
-              </div>
-              <div style={{width: '88%'}}>
-                <p style={{textAlign:'left', fontWeight: '700'}}>Previous</p>
-                <p style={{textAlign:'left'}} className="previous-post-title">{prev_post[0]}</p>
-              </div>
-            </a>
-          }
-          {
-            next_post[0] == null &&
-            <a className="post-page next-post hidden">Next</a>
-          }
-          { next_post[0] != null &&
-            <a className="post-page" href={next_post[1]} style={{paddingRight: '0'}}>
-              <div style={{width: '88%'}}>
-                <p style={{textAlign:'right', fontWeight: '700'}}>Next</p>
-                <p style={{textAlign:'right'}} className="next-post-title">{next_post[0]}</p>
-              </div>
-              <div style={{width: '12%', textAlign: 'center'}} className="next-post">
-                <i className="fa fa-arrow-right"></i>
-              </div>
-            </a>
-          }
-        </div>
-      </article>
+          </section>
+          <Sharing
+            url={base_url+post.fields.slug}
+            title={post.frontmatter.title}
+            twitter_username={twitter_username}
+          />
+          <div className="pager">
+            {
+              prev_post[0] == null &&
+              <a className="post-page previous-post hidden">Previous</a>
+            }
+            { prev_post[0] != null &&
+              <a className="post-page" href={prev_post[1]} style={{paddingLeft: '0'}}>
+                <div style={{width: '12%', textAlign: 'center'}} class="previous-post">
+                  <i className="fa fa-arrow-left"></i>
+                </div>
+                <div style={{width: '88%'}}>
+                  <p style={{textAlign:'left', fontWeight: '700'}}>Previous</p>
+                  <p style={{textAlign:'left'}} className="previous-post-title">{prev_post[0]}</p>
+                </div>
+              </a>
+            }
+            {
+              next_post[0] == null &&
+              <a className="post-page next-post hidden">Next</a>
+            }
+            { next_post[0] != null &&
+              <a className="post-page" href={next_post[1]} style={{paddingRight: '0'}}>
+                <div style={{width: '88%'}}>
+                  <p style={{textAlign:'right', fontWeight: '700'}}>Next</p>
+                  <p style={{textAlign:'right'}} className="next-post-title">{next_post[0]}</p>
+                </div>
+                <div style={{width: '12%', textAlign: 'center'}} className="next-post">
+                  <i className="fa fa-arrow-right"></i>
+                </div>
+              </a>
+            }
+          </div>
+        </article>
+      </BaseLayout>
     )
   }
 }

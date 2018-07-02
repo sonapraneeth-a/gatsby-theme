@@ -9,6 +9,7 @@ import Grid from "../components/grid/grid";
 import GridItem from "../components/grid/grid-item";
 import HeadMeta from "../components/head/head-meta";
 import SEO from "../components/head/seo";
+import BaseLayout from "../components/layouts/base-layout";
 
 //export default ({ pageContext, data }) => {
 class BlogIndex extends React.Component
@@ -28,7 +29,7 @@ class BlogIndex extends React.Component
     nextPage = nextPage <= totalNumberOfPages ? nextPage : '';
 
     return (
-      <div>
+      <BaseLayout location={this.props.location}>
         <HeadMeta
           title={"Blog | " + this.props.data.site.siteMetadata.author}
           description={"This page contains the details of blogs written by " + this.props.data.site.siteMetadata.author}
@@ -58,7 +59,7 @@ class BlogIndex extends React.Component
           })
         }
         </div>
-      </div>
+      </BaseLayout>
     )
   }
 }

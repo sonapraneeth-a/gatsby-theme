@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 
 import HeadMeta from "../../components/head/head-meta";
 import SEO from "../../components/head/seo";
+import BaseLayout from "../../components/layouts/base-layout";
 
 //export default ({ data }) => {
 
@@ -17,7 +18,7 @@ class ContactIndex extends React.Component
   render()
   {
     return (
-      <div>
+      <BaseLayout location={this.props.location}>
         <HeadMeta
           title={"Contact | " + this.props.data.site.siteMetadata.author}
           description={"This is the contact page of " + this.props.data.site.siteMetadata.author}
@@ -57,7 +58,7 @@ class ContactIndex extends React.Component
             </div>
             <center><input type="submit" value="Submit" /></center>
         </form>
-      </div>
+      </BaseLayout>
     )
   }
 }

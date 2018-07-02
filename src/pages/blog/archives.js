@@ -9,6 +9,7 @@ import { graphql } from "gatsby";
 import SimpleCard from "../../components/card/simple-card";
 import LinkChip from "../../components/chip/link-chip";
 import HeadMeta from "../../components/head/head-meta";
+import BaseLayout from "../../components/layouts/base-layout";
 
 // Imports
 const _ = require('lodash');
@@ -84,7 +85,7 @@ class BlogArchivePage extends React.Component
     let year_info = this.blog_year_info.year_info;
     let blogs = this.blog_year_info.blogs;
     return (
-      <div>
+      <BaseLayout location={this.props.location}>
         <HeadMeta
           title={"Blogs - Archives | " + this.props.data.site.siteMetadata.author}
           description={"This page contains the details of all the archives for the blogs undertaken by " + this.props.data.site.siteMetadata.author}
@@ -146,7 +147,7 @@ class BlogArchivePage extends React.Component
           })
         }
         </div>
-      </div>
+      </BaseLayout>
     )
   }
 }

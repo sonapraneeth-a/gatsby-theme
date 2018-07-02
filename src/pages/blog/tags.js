@@ -9,6 +9,7 @@ import { graphql } from "gatsby";
 import SimpleCard from "../../components/card/simple-card";
 import HeadMeta from "../../components/head/head-meta";
 import LinkChip from "../../components/chip/link-chip";
+import BaseLayout from "../../components/layouts/base-layout";
 
 /**
  * 
@@ -91,7 +92,7 @@ class BlogTagPage extends React.Component
     let tag_info = this.blog_tag_info.tag_info;
     let blogs = this.blog_tag_info.blogs;
     return (
-      <div>
+      <BaseLayout location={this.props.location}>
         <HeadMeta
           title={"Blog - Tags | " + this.props.data.site.siteMetadata.author}
           description={"This page contains the details of all the tags for the blogs written by " + this.props.data.site.siteMetadata.author}
@@ -153,7 +154,7 @@ class BlogTagPage extends React.Component
           })
         }
         </div>
-      </div>
+      </BaseLayout>
     )
   }
 }
