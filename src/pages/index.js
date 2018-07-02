@@ -20,7 +20,7 @@ class Index extends React.Component
     let linkedin_username = this.props.data.site.siteMetadata.social.linkedin.username;
     let twitter_username = this.props.data.site.siteMetadata.social.twitter.username;
     return (
-      <BaseLayout>
+      <BaseLayout location={this.props.location}>
         <HeadMeta
           title={"Home page | " + this.props.data.site.siteMetadata.author}
           description={"This is the home page of " + this.props.data.site.siteMetadata.author}
