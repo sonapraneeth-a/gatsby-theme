@@ -2,6 +2,7 @@
 layout: project
 type: project
 title: Project 01
+author: Sona Praneeth Akula
 subtitle: ""
 guide: Prof. WXY
 institution: ABC College

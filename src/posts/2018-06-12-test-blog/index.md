@@ -1,6 +1,7 @@
 ---
 type: blog-post
 title: Launching new gatsby theme
+author: Sona Praneeth Akula
 cover: "https://unsplash.it/400/300/?random?BoldMage"
 tags: ['HTML5', 'CSS3']
 categories: ['Website']

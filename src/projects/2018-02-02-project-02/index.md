@@ -2,6 +2,7 @@
 layout: project
 type: project
 title: Project 02
+author: Sona Praneeth Akula
 subtitle: ""
 guide: Prof. XYZ
 institution: ABC College

@@ -2,6 +2,7 @@
 layout: project
 type: project
 title: Project 03
+author: Sona Praneeth Akula
 subtitle: ""
 guide: Prof. DEF
 institution: ABC College
