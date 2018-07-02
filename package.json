@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Sona Praneeth Akula <sonapraneeth.akula@gmail.com>",
   "dependencies": {
+    "eslint": "^5.0.1",
     "gatsby": "next",
     "gatsby-image": "next",
     "gatsby-plugin-catch-links": "next",
@@ -27,7 +28,6 @@
     "gatsby-transformer-remark": "next",
     "gatsby-transformer-sharp": "next",
     "graphql": "^0.13.2",
-    "jshint": "^2.9.5",
     "lodash": "^4.17.10",
     "marked": "^0.4.0",
     "moment-timezone": "^0.5.17",
@@ -54,7 +54,7 @@
   "peerDependencies": {
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-helemt": "^5.2.0",
+    "react-helmet": "^5.2.0",
     "node-sass": "^4.9.0",
     "webpack": "^4.14.0",
     "graphql": "^0.13.2"
