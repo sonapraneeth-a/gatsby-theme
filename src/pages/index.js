@@ -1,11 +1,11 @@
 import React from "react";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import { graphql } from "gatsby";
 
 import ProfileCard from "../components/card/profile-card.js";
 import HeadMeta from "../components/head/head-meta";
 import SEO from "../components/head/seo";
-import ProfileCardImage from "../assets/home/sonapraneeth-full.png";
+import BaseLayout from "../components/layouts/base-layout";
 
 class Index extends React.Component
 {
@@ -20,7 +20,7 @@ class Index extends React.Component
     let linkedin_username = this.props.data.site.siteMetadata.social.linkedin.username;
     let twitter_username = this.props.data.site.siteMetadata.social.twitter.username;
     return (
-      <div>
+      <BaseLayout>
         <HeadMeta
           title={"Home page | " + this.props.data.site.siteMetadata.author}
           description={"This is the home page of " + this.props.data.site.siteMetadata.author}
@@ -46,7 +46,7 @@ class Index extends React.Component
           <a href="http://iitj.ac.in/department/index.php?id=cse" target="_blank" rel="noopener"> Computer Science and Engineering</a> from <a href="http://iitj.ac.in/" target="_blank" rel="noopener">IIT Jodhpur</a> in April 2015.</p>
           <p>I like to work in areas involving Computer Vision, Image Processing and Machine Learning. You can have a look at my projects <Link to="/projects/">here</Link>.</p></div>}
         />
-      </div>
+      </BaseLayout>
     )
   }
 }

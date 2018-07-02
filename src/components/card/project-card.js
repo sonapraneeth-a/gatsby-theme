@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import slugify from "slug";
 
 import SimpleChip from "../chip/simple-chip";

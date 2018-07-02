@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import { graphql } from "gatsby";
 
 import HeadMeta from "../../components/head/head-meta";

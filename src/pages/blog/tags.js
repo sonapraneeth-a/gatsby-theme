@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import _ from 'lodash';
 import slugify from 'slug';
 import { graphql } from "gatsby";

@@ -1,5 +1,5 @@
 import React from "react"
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import { graphql } from "gatsby";
 
 import SimpleCard from "../components/card/simple-card.js"
