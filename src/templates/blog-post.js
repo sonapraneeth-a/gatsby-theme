@@ -44,8 +44,8 @@ class BlogPost extends React.Component
     const tags = post.frontmatter.tags;
     const categories = post.frontmatter.categories;
     const timeToRead = post.timeToRead;
-    const next_post = this.props.pathContext.next_post;
-    const prev_post = this.props.pathContext.prev_post;
+    const next_post = this.props.pageContext.next_post;
+    const prev_post = this.props.pageContext.prev_post;
     const base_url = this.props.data.site.siteMetadata.siteUrl;
     const twitter_username = this.props.data.site.siteMetadata.social.twitter.username;
     return (

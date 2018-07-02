@@ -5,8 +5,8 @@ import { graphql } from "gatsby";
 // Components
 import Link from "gatsby-link";
 
-const BlogTags = ({ pathContext, data }) => {
-  const { tag } = pathContext;
+const BlogTags = ({ pageContext, data }) => {
+  const { tag } = pageContext;
   const { edges, totalCount } = data.allMarkdownRemark;
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
@@ -31,7 +31,7 @@ const BlogTags = ({ pathContext, data }) => {
 };
 
 BlogTags.propTypes = {
-  pathContext: PropTypes.shape({
+  pageContext: PropTypes.shape({
     tag: PropTypes.string.isRequired,
   }),
   data: PropTypes.shape({

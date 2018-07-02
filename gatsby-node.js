@@ -4,8 +4,8 @@ const slugify = require('slug')
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const _ = require('lodash')
 
-exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
-  const { createNodeField } = boundActionCreators
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
   slugify.charmap['+'] = 'p';
   // Create node fields for blog post
   if (node.internal.type === `MarkdownRemark` && node.frontmatter.type === `blog-post`)
@@ -33,8 +33,8 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   }
 }
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
   return new Promise((resolve, reject) => {
   graphql(`
     {

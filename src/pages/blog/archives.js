@@ -11,8 +11,8 @@ import LinkChip from "../../components/chip/link-chip";
 import HeadMeta from "../../components/head/head-meta";
 
 // Imports
-const _ = require('lodash')
-const slugify = require('slug')
+const _ = require('lodash');
+const slugify = require('slug');
 
 /**
  * 
@@ -30,8 +30,8 @@ class BlogArchivePage extends React.Component
     {
       blog_years: [],        // Gets the list of unique years in all blog posts
       blogs: [],                  // Store the information about each blog post (title, years, slug, date)
-      year_info: new Array(), // Store the information about each year (List of indices of blog posts containing the year in the order in which the blogs are ordered)
-    }
+      year_info: [], // Store the information about each year (List of indices of blog posts containing the year in the order in which the blogs are ordered)
+    };
   }
   
   /**
@@ -60,7 +60,7 @@ class BlogArchivePage extends React.Component
       for(var index_i = 0; index_i < this.blog_year_info.blog_years.length; index_i++)
       {
         
-        this.blog_year_info.year_info.push(new Array());
+        this.blog_year_info.year_info.push([]);
         for(var index_j = 0; index_j < this.blog_year_info.blogs.length; index_j++)
         {
           // If the blog has this particular year, then append the blog index to year_info array

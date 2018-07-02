@@ -10,7 +10,7 @@ import GridItem from "../components/grid/grid-item";
 import HeadMeta from "../components/head/head-meta";
 import SEO from "../components/head/seo";
 
-//export default ({ pathContext, data }) => {
+//export default ({ pageContext, data }) => {
 class BlogIndex extends React.Component
 {
   constructor(props)
@@ -21,8 +21,8 @@ class BlogIndex extends React.Component
   render()
   {
     const { edges } = this.props.data.allMarkdownRemark;
-    let { prevPage, currentPage, nextPage, totalNumberOfPages} = this.props.pathContext;
-    let { minNumberOfPages, blogs} = this.props.pathContext;
+    let { prevPage, currentPage, nextPage, totalNumberOfPages} = this.props.pageContext;
+    let { minNumberOfPages, blogs} = this.props.pageContext;
     let dispPrevPage = prevPage >= 1 ? prevPage : '';
     prevPage = prevPage > 1 ? prevPage : '';
     nextPage = nextPage <= totalNumberOfPages ? nextPage : '';
@@ -40,7 +40,7 @@ class BlogIndex extends React.Component
           edges.map(({ node }) => {
             const { title, tags, categories, published_date } = node.frontmatter;
             const {slug, date} = node.fields;
-            //const excerptLength = node.html.indexOf("<!--more-->") > -1 ? node.html.indexOf("<!--more-->"): this.props.pathContext.excerptLength;
+            //const excerptLength = node.html.indexOf("<!--more-->") > -1 ? node.html.indexOf("<!--more-->"): this.props.pageContext.excerptLength;
             return (
               <BlogCard
                 card_type={"blog"}
