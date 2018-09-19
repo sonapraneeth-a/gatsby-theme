@@ -51,8 +51,8 @@ class BaseLayout extends React.Component
         `}
         render={data => {
           const {author, copyright, menu, version} = data.config.siteMetadata;
-          console.log(this.props);
-          console.log(this.props.location);
+          /*console.log(this.props);
+          console.log(this.props.location);*/
           return (
             <div>
               <Sidebar
