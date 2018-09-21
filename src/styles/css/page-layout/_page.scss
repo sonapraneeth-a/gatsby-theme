@@ -1,0 +1,11 @@
+.main-content
+{
+    @include until($laptop)
+    {
+        margin: 2*$navbar-header-vert-margin+$navbar-header-size+1.2rem 0;
+    }
+    @include from($laptop)
+    {
+        margin: 2*$navbar-header-vert-margin+$navbar-header-size+2.2rem 0;
+    }
+}

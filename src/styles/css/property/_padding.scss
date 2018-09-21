@@ -1,0 +1,15 @@
+.no-horizontal-padding
+{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.no-vertical-padding
+{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+.no-padding
+{
+    @extend .no-horizontal-padding;
+    @extend .no-vertical-padding;
+}

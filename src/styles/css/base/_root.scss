@@ -1,7 +1,7 @@
 *
 {
     box-sizing: border-box;
-    font-family: "PT Sans",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    font-family: $default-font;
 }
 
 html
@@ -11,7 +11,11 @@ html
 
 h1, h2, h3, h4, h5, h6
 {
-    font-family: "PT Sans",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI SemiBold",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    font-family: $heading-font;
+    a
+    {
+        font-family: $heading-font;
+    }
 }
 
 body
@@ -19,6 +23,7 @@ body
     margin: 0;
     background-color: $background-color;
     color: $primary-text-color;
+    overflow-x: hidden;
 }
 
 a

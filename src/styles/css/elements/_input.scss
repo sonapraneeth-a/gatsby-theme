@@ -1,0 +1,9 @@
+input[type=email], input[type=text],
+input[type=url], select, textarea
+{
+    box-sizing: border-box;
+    vertical-align: top;
+    margin-bottom: .5rem;
+    padding: .5rem;
+    border: .05rem solid #2262c9;
+}

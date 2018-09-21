@@ -1,7 +1,26 @@
 .col-dp-1
 {
-  width: calc(1/12 * 100%);
+    @if $flex == true
+    {
+        @include grid-col-width(calc(1/12 * 100%));
+    }
+    @else
+    {
+        width: calc(1/12 * 100%);
+    }
   @include grid-spec;
+}
+.col-dp-2
+{
+    @if $flex == true
+    {
+        @include grid-col-width(calc(2/12 * 100%));
+    }
+    @else
+    {
+        width: calc(2/12 * 100%);
+    }
+    @include grid-spec;
 }
 .col-dp-3
 {
@@ -17,8 +36,27 @@
 }
 .col-dp-4
 {
-  width: calc(4/12 * 100%);
+    @if $flex == true
+    {
+        @include grid-col-width(calc(4/12 * 100%));
+    }
+    @else
+    {
+        width: calc(4/12 * 100%);
+    }
   @include grid-spec;
+}
+.col-dp-5
+{
+    @if $flex == true
+    {
+        @include grid-col-width(calc(5/12 * 100%));
+    }
+    @else
+    {
+        width: calc(5/12 * 100%);
+    }
+    @include grid-spec;
 }
 .col-dp-6
 {
@@ -32,10 +70,29 @@
   }
   @include grid-spec;
 }
+.col-dp-7
+{
+    @if $flex == true
+    {
+        @include grid-col-width(calc(7/12 * 100%));
+    }
+    @else
+    {
+        width: calc(7/12 * 100%);
+    }
+    @include grid-spec;
+}
 .col-dp-8
 {
-  width: calc(8/12 * 100%);
-  @include grid-spec;
+    @if $flex == true
+    {
+        @include grid-col-width(calc(8/12 * 100%));
+    }
+    @else
+    {
+        width: calc(8/12 * 100%);
+    }
+    @include grid-spec;
 }
 .col-dp-9
 {
@@ -49,13 +106,76 @@
   }
   @include grid-spec;
 }
+.col-dp-10
+{
+    @if $flex == true
+    {
+        @include grid-col-width(calc(10/12 * 100%));
+    }
+    @else
+    {
+        width: calc(10/12 * 100%);
+    }
+    @include grid-spec;
+}
 .col-dp-11
 {
-  width: calc(11/12 * 100%);
+    @if $flex == true
+    {
+        @include grid-col-width(calc(11/12 * 100%));
+    }
+    @else
+    {
+        width: calc(11/12 * 100%);
+    }
   @include grid-spec;
 }
 .col-dp-12
 {
-  width: calc(12/12 * 100%);
+    @if $flex == true
+    {
+        @include grid-col-width(calc(12/12 * 100%));
+    }
+    @else
+    {
+        width: calc(12/12 * 100%);
+    }
   @include grid-spec;
+}
+.col-tb-8
+{
+    @include within($minitablet, $tablet) {
+        @if $flex == true {
+            @include grid-col-width(calc(8 / 12 * 100%));
+        } @else {
+            width: calc(8 / 12 * 100%);
+        }
+        @include grid-spec;
+    }
+}
+.col-tb-4
+{
+    @include within($minitablet, $tablet) {
+        @if $flex == true {
+            @include grid-col-width(calc(4 / 12 * 100%));
+        } @else {
+            width: calc(4 / 12 * 100%);
+        }
+        @include grid-spec;
+    }
+}
+.col-mb-12
+{
+    @include until($minitablet)
+    {
+        @if $flex == true
+        {
+            @include grid-col-width(calc(12 / 12 * 100%));
+        }
+        @else
+        {
+            width: calc(12 / 12 * 100%);
+        }
+        @include grid-spec;
+    }
 }

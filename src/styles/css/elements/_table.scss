@@ -1,0 +1,51 @@
+.table
+{
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    caption 
+    {
+        text-align: left;
+        padding-bottom: 1rem;
+    }
+    > thead,
+    > tbody,
+    > tfoot
+    {
+        > tr 
+        {
+            &:nth-child(even)
+            {
+                background-color: darken($primary-background-color, 5%);
+                &:hover
+                {
+                    background-color: darken($primary-background-color, 10%);
+                }
+            }
+            &:hover
+            {
+                background-color: darken($primary-background-color, 5%);
+            }
+            > th, 
+            > td 
+            {
+                padding: 0.5rem;
+                border-bottom: 0.05rem solid $primary-foreground-color;
+            }
+        }
+    }
+    > thead > tr 
+    {
+        background-color: $primary-foreground-color;
+        color: $primary-background-color;
+        &:hover
+        {
+            background-color: darken($primary-foreground-color, 20%);
+        }
+        > th
+        {
+            border-bottom: 0;
+        }
+    }
+}

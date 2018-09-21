@@ -1,0 +1,51 @@
+.scroll::before
+{
+    /*@include up-icon*/
+    font-family: "Font Awesome 5 Free";
+    content: "\f077";
+    font-weight: 700;
+}
+/*#scroll
+{
+    text-decoration: none;
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    z-index: 100;
+    padding: 10px;
+    @if flat == false
+    {
+        border-radius: 10px;
+    }
+    cursor: pointer;
+    color: $background-color;
+    background-color: $foreground-color;
+}*/
+/* http://anacidre.com/creating-circle-text-using-html-css/ */
+.scroll
+{
+    position: fixed;
+    bottom: 1.9rem;
+    right: 0.6rem;
+    display: none;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1rem;
+    text-align: center;
+    vertical-align: middle;
+    @if flat == false
+    {
+        border-radius: 50%;
+    }
+    cursor: pointer;
+    color: $primary-foreground-color;
+    background-color: $primary-background-color;
+    text-decoration: none;
+    padding: 0.75rem;
+    z-index: 1000;
+    &:hover
+    {
+        text-decoration: none;
+    }
+}

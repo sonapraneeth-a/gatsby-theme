@@ -10,13 +10,13 @@
     {
         text-decoration: none;
         padding: 0.5rem;
-        background-color: $pager-background-color;
-        color: $pager-foreground-color;
+        background-color: $primary-foreground-color;
+        color: $primary-background-color;
         &:hover
         {
             text-decoration: none;
-            background-color: $pager-foreground-color;
-            color: $pager-background-color;
+            background-color: $primary-background-color;
+            color: $primary-foreground-color;
         }
     }
 }
@@ -33,13 +33,9 @@
     /*border: 1px solid $foreground-dark-color;*/
     box-sizing: border-box;
     margin: 0.25rem 0;
-    p 
+    p
     {
         margin: 0;
-    }
-    &.hidden
-    {
-        visibility: hidden;
     }
 }
 .previous-post

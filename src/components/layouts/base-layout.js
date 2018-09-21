@@ -1,10 +1,7 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 
-import "../../styles/fonts/req.scss";
 import "../../styles/css/main.scss";
-import "../../styles/prism/solarized.scss";
-import "../../styles/prism/gatsby-highlight.scss";
 
 import Container from "../grid/container";
 import Navbar from "../navbar";

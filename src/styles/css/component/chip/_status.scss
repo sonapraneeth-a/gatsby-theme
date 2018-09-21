@@ -1,0 +1,15 @@
+.chip
+{
+    &.ongoing
+    {
+        background-color: $info;
+        color: $primary-foreground-color;
+        border: 0.05rem solid $info;
+    }
+    &.complete
+    {
+        background-color: $success;
+        color: $primary-foreground-color;
+        border: 0.05rem solid $success;
+    }
+}
