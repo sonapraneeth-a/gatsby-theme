@@ -15,7 +15,7 @@ class ProjectCard extends React.Component
     super(props);
     this.state = {
       reveal: false,
-    }
+    };
   }
 
   revealProjectCard()
@@ -23,7 +23,7 @@ class ProjectCard extends React.Component
     let current_reveal_state = this.state.reveal;
     this.setState({
       reveal: !current_reveal_state,
-    })
+    });
   }
 
   render()
@@ -31,7 +31,7 @@ class ProjectCard extends React.Component
     let reveal_style = {display: 'none', transform: 'translateY(0%)', transitionProperty: 'transform', transition: 'transform 5s ease-in-out'}
     if(this.state.reveal === true)
     {
-      reveal_style = {display: 'block', transform: 'translateY(-100%)'}
+      reveal_style = {display: 'block', transform: 'translateY(-100%)'};
     }
     slugify.charmap['+'] = 'p';
     let ribbon_class = "ribbon";
@@ -44,9 +44,9 @@ class ProjectCard extends React.Component
     if(this.props.source_link != null && this.props.source_link != "") { footer_number_count += 1; }
     if(this.props.report_link != null && this.props.report_link != "") { footer_number_count += 1; }
     let footer_number = footer_number_count == 0 ? 12 : 12/footer_number_count;
-    console.log(this.props.url);
+    /*console.log(this.props.url);
     console.log(this.props.source_link);
-    console.log(footer_number);
+    console.log(footer_number);*/
     return (
       <div className="card">
         { this.props.status != null &&
@@ -59,7 +59,7 @@ class ProjectCard extends React.Component
         { this.props.banner_image == null &&
           <div className="card-image">
             <img 
-              src="assets/projects/default_banner_image.jpg"
+              src={DefaultProjectCardImage}
               alt={"Banner image of project: "+this.props.title}
             />
           </div>
@@ -168,7 +168,7 @@ class ProjectCard extends React.Component
         </div>
           <div className="card-footer">
             <Row>
-              { (this.props.url != null && this.props.url != "") &&
+              { (this.props.url != null && this.props.url !== "") &&
                 <Col
                   dp={footer_number}
                   className="align-center"
