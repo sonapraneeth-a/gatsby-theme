@@ -71,7 +71,7 @@ module.exports = {
         precision: 8,
       },
     },
-    /*{
+    {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: config.site.title,
@@ -83,18 +83,18 @@ module.exports = {
         display: "minimal-ui",
         icons: [
           {
-            src: "/logos/logo-192x192.png",
+            src: "/logos/android-chrome-192x192.png",
             sizes: "192x192",
             type: "image/png"
           },
           {
-            src: "/logos/logo-512x512.png",
+            src: "/logos/android-chrome-512x512.png",
             sizes: "512x512",
             type: "image/png"
           }
         ]
       }
-    },*/
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
