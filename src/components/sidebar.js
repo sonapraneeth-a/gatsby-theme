@@ -90,7 +90,7 @@ class Sidebar extends React.Component
                       &nbsp;&nbsp;{sidebar_menu[index_i][0]}
                       {
                         sidebar_menu[index_i][3].length > 0 &&
-                          <span style={{float: 'right'}}><i className="fa fa-caret-down fa-fw" aria-hidden={"true"}></i></span>
+                          <span className={"sidebar-dropdown-icon"}><i className="fa fa-caret-down fa-fw" aria-hidden={"true"}></i></span>
                       }
                     </a>
                   {
