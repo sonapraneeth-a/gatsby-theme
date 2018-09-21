@@ -10,7 +10,7 @@ class Footer extends React.Component
 
   render()
   {
-    console.log("Author: " + this.props.author);
+    //console.log("Author: " + this.props.author);
     return (
       <footer className="footer center" id="footer" style={{clear: "both"}}>
         <center>
