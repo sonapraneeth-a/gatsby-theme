@@ -27,7 +27,7 @@
         box-shadow: 0 5px 5px 0 rgba(0,0,0,0.14), 0 3px 8px 0 rgba(0,0,0,0.12), 0 5px 3px -4px rgba(0,0,0,0.2);
     }
     width: 100%;
-    height: 100%;
+    //height: 100%;
     @include clearfix;
 
     .profile-card-image
@@ -91,15 +91,30 @@
 
     .profile-card-details
     {
-        padding-bottom: 2rem;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+
+    .profile-card-title
+    {
+        margin: 0.5rem 0;
+    }
+
+    .profile-card-reveal-icon
+    {
+        float: right;
+        cursor: pointer;
+        margin: 0.5rem 0.5rem 0.5rem 0;
+        padding: 10%;
     }
 
     .profile-card-footer
     {
         @include from($desktop)
         {
-            /*position: absolute;
-            width: inherit;*/
+            //position: absolute;
+            position: relative;
+            //width: inherit;
         }
         @include until($desktop)
         {

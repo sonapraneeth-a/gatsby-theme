@@ -18,16 +18,16 @@ class ProfileCard extends React.Component
     //let info_width = "75%";
     let info_class = "profile-card-info";
     let footer_class = "profile-card-footer";
-    if(this.props.image == null || this.props.image == "")
+    /*if(this.props.image == null || this.props.image === "")
     {
       //footer_position = "relative";
       //info_width = "100%";
       info_class += "-no-image";
       footer_class += "-no-image";
-    }
+    }*/
     return (
       <div className="profile-card">
-        { (this.props.image != null && this.props.image != "") &&
+        { (this.props.image != null && this.props.image !== "") &&
           <img
             className="profile-card-image"
             src={this.props.image}
