@@ -3,7 +3,7 @@ const moment = require("moment");
 
 module.exports = {
   siteMetadata: {
-    author: `Gatsby theme`,
+    author: config.site.author,
     title: `Demo of Gatsby theme`,
     description: ``,
     siteUrl: config.site.url,

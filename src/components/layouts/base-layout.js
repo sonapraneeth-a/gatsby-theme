@@ -9,6 +9,7 @@ import "../../styles/prism/gatsby-highlight.scss";
 import Container from "../grid/container";
 import Navbar from "../navbar";
 import Sidebar from "../sidebar";
+import Footer from "../footer";
 
 class BaseLayout extends React.Component
 {
@@ -72,14 +73,10 @@ class BaseLayout extends React.Component
                     {this.props.children}
                   </div>
                 </Container>
-                <footer className="footer">
-                  <center>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: copyright}}
-                    />
-                  </center>
-                </footer>
+                <Footer
+                  author={author}
+                >
+                </Footer>
               </div>
             </div>
           );

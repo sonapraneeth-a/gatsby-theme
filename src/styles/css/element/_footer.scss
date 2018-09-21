@@ -5,14 +5,41 @@
   background-color: $primary-background-color;
   color: $primary-foreground-color;
   bottom: 0;
-  position: relative;
-  p 
+  position: fixed;
+  p
   {
     margin: 0.2rem auto;
+  }
+  @include until($mobile)
+  {
+    #powered-by
+    {
+      display: none;
+    }
+    #last-modified
+    {
+      display: none;
+    }
+  }
+  @include within($mobile, $minitablet)
+  {
+    #powered-by
+    {
+      display: none;
+    }
   }
   @include from($tablet)
   {
     position: fixed;
     bottom: 0;
+  }
+  &.hidden
+  {
+    visibility: hidden;
+  }
+  a
+  {
+    color: $primary-foreground-color;
+    font-weight: bold;
   }
 }
