@@ -7,6 +7,8 @@ import HeadMeta from "../components/head/head-meta";
 import SEO from "../components/head/seo";
 import BaseLayout from "../components/layouts/base-layout";
 
+import HomePageImage from "../assets/home/sonapraneeth-full.png";
+
 class Index extends React.Component
 {
   constructor(props)
@@ -39,7 +41,7 @@ class Index extends React.Component
           github_username={github_username}
           linkedin_username={linkedin_username}
           twitter_username={twitter_username}
-          image="./src/assets/home/sonapraneeth-full.png"
+          image={HomePageImage}
           content={<div><p>I'm currently working as a Software Developer in Cloud Database 
           Development Team in <a href="https://www.oracle.com/in/index.html" target="_blank" rel="noopener">Oracle India Private Limited</a>.</p>
           <p>I have completed my masters in <a href="https://www.cse.iitb.ac.in/" target="_blank" rel="noopener">Computer Science and Engineering</a> from <a href="http://iitb.ac.in/" target="_blank" rel="noopener">IIT Bombay</a> in July 2017. Prior to that, I have completed my bachelors in 
