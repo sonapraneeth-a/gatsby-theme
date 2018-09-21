@@ -99,7 +99,7 @@ class BlogCategoryPage extends React.Component
           description={"This page contains the details of all the categories for the blogs undertaken by " + this.props.data.site.siteMetadata.author}
           keywords={"blogs, categories, " + this.props.data.site.siteMetadata.author}
         />
-        <div className="page-title"><i className="fa fa-folder-open fa-1" aria-hidden="true"></i>&nbsp;&nbsp;Blog - Categories</div>
+        <div className="page-title"><i className="fa fa-folder-open fa-1" aria-hidden={"true"}></i>&nbsp;&nbsp;Blog - Categories</div>
         <div style={{display: 'inline-flex', flexWrap: 'wrap'}}>
         {/* Generates the list of categories and their counts in all the blog posts */}
         {
@@ -109,7 +109,7 @@ class BlogCategoryPage extends React.Component
             return (
               <Link to={"/blog/categories/#"+category_slug} key={"/blog/categories/#"+category_slug} style={{textDecoration: 'none'}} className="chip" >
                 <span key={name+index_i} className="chip-content">
-                  <i className="fa fa-folder-open" aria-hidden="true"></i>&nbsp;{blog_categories[index_i]}
+                  <i className="fa fa-folder-open" aria-hidden={"true"}></i>&nbsp;{blog_categories[index_i]}
                 </span>
                 <span className="chip-count">
                   {category_info[index_i].length}

@@ -35,7 +35,7 @@ class BlogIndex extends React.Component
           description={"This page contains the details of blogs written by " + this.props.data.site.siteMetadata.author}
           keywords={"blogs, " + this.props.data.site.siteMetadata.author}
         />
-        <div className="page-title"><i className="fa fa-pencil-alt fa-1"></i>&nbsp;&nbsp;Blog</div>
+        <div className="page-title"><i className="fa fa-pencil-alt fa-1" aria-hidden={"true"}></i>&nbsp;&nbsp;Blog</div>
         <div>
         { edges != null &&
           edges.map(({ node }) => {

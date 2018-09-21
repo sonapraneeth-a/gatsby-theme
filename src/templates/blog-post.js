@@ -154,7 +154,7 @@ class BlogPost extends React.Component
             { prev_post[0] != null &&
               <a className="post-page" href={prev_post[1]} style={{paddingLeft: '0'}}>
                 <div style={{width: '12%', textAlign: 'center'}} class="previous-post">
-                  <i className="fa fa-arrow-left"></i>
+                  <i className="fa fa-arrow-left" aria-hidden={"true"}></i>
                 </div>
                 <div style={{width: '88%'}}>
                   <p style={{textAlign:'left', fontWeight: '700'}}>Previous</p>
@@ -173,7 +173,7 @@ class BlogPost extends React.Component
                   <p style={{textAlign:'right'}} className="next-post-title">{next_post[0]}</p>
                 </div>
                 <div style={{width: '12%', textAlign: 'center'}} className="next-post">
-                  <i className="fa fa-arrow-right"></i>
+                  <i className="fa fa-arrow-right" aria-hidden={"true"}></i>
                 </div>
               </a>
             }

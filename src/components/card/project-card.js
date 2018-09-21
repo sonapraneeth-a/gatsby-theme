@@ -114,7 +114,7 @@ class ProjectCard extends React.Component
           <Row>
             <Col dp={12}>
               <span style={{float: 'left', cursor: 'pointer'}} onClick={this.revealProjectCard.bind(this)}>
-                <i className="fa fa-times"></i>
+                <i className="fa fa-times" aria-hidden={"true"}></i>
               </span>
             </Col>
           </Row>
@@ -175,7 +175,7 @@ class ProjectCard extends React.Component
                 >
                   <Link to={this.props.url} style={{textDecoration: 'none'}}>
                     <span>
-                      <i className="fa fa-info-circle" aria-hidden="true"></i>&nbsp;Details
+                      <i className="fa fa-info-circle" aria-hidden={"true"}></i>&nbsp;Details
                     </span>
                   </Link>
                 </Col>
@@ -187,7 +187,7 @@ class ProjectCard extends React.Component
                 >
                   <a href={this.props.source_link} style={{textDecoration: 'none'}}>
                     <span>
-                      <i className="fa fa-code" aria-hidden="true"></i>&nbsp;Source
+                      <i className="fa fa-code" aria-hidden={"true"}></i>&nbsp;Source
                     </span>
                   </a>
                 </Col>
@@ -199,7 +199,7 @@ class ProjectCard extends React.Component
                 >
                   <a href={this.props.report_link} style={{textDecoration: 'none'}}>
                     <span>
-                      <i className="fa fa-file-alt" aria-hidden="true"></i>&nbsp;Report
+                      <i className="fa fa-file-alt" aria-hidden={"true"}></i>&nbsp;Report
                     </span>
                   </a>
                 </Col>

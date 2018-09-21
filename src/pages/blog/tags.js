@@ -98,7 +98,7 @@ class BlogTagPage extends React.Component
           description={"This page contains the details of all the tags for the blogs written by " + this.props.data.site.siteMetadata.author}
           keywords={"blogs, tags, " + this.props.data.site.siteMetadata.author}
         />
-        <div className="page-title"><i className="fa fa-tag fa-1" aria-hidden="true"></i>&nbsp;&nbsp;Projects - Tags</div>
+        <div className="page-title"><i className="fa fa-tag fa-1" aria-hidden={"true"}></i>&nbsp;&nbsp;Projects - Tags</div>
         <div style={{display: 'inline-flex', flexWrap: 'wrap'}}>
         {/* Generates the list of tags and their counts in all the blog posts */}
         {

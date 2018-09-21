@@ -74,7 +74,7 @@ class InfoCard extends React.Component
           </div>
         </div>
         <div className="card-reveal" style={reveal_style}>
-          <span style={{float: 'right', cursor: 'pointer'}} onClick={this.revealInfoCard.bind(this)}><i className="fa fa-times"></i></span>
+          <span style={{float: 'right', cursor: 'pointer'}} onClick={this.revealInfoCard.bind(this)}><i className="fa fa-times"  aria-hidden={"true"}></i></span>
           {
             <table>
               <tbody>

@@ -112,7 +112,7 @@ class BlogCard extends React.Component
             <Row>
               <Col dp={12}>
                 <span style={{float: 'left', cursor: 'pointer'}} onClick={this.revealBlogCard.bind(this)}>
-                  <i className="fa fa-times"></i>
+                  <i className="fa fa-times" aria-hidden={"true"}></i>
                 </span>
               </Col>
             </Row>
@@ -167,7 +167,7 @@ class BlogCard extends React.Component
           { this.props.url != null &&
             <div className={footer_class}>
               <Link to={this.props.url} style={{textDecoration: 'none'}}>
-                <i className="fa fa-book-open" aria-hidden="true"></i>&nbsp;Continue Reading ...
+                <i className="fa fa-book-open" aria-hidden={"true"}></i>&nbsp;Continue Reading ...
               </Link>
             </div>
           }

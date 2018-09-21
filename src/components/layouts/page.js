@@ -14,7 +14,7 @@ class Page extends React.Component
     let font_name = "fa fa-1 " + this.props.icon_name;
     return (
       <div className="page">
-        <div className="page-title"><i className={font_name} aria-hidden="true"></i>&nbsp;&nbsp;{this.props.title}</div>
+        <div className="page-title"><i className={font_name} aria-hidden={"true"}></i>&nbsp;&nbsp;{this.props.title}</div>
         <div className="page-content">
           {this.props.children}
         </div>

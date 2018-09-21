@@ -25,7 +25,7 @@ class ProjectIndex extends React.Component
           description={"This page contains the details of projects undertaken by " + this.props.data.site.siteMetadata.author}
           keywords={"projects, " + this.props.data.site.siteMetadata.author}
         />
-        <div className="page-title"><i className="fa fa-file-code fa-1" aria-hidden="true"></i>&nbsp;&nbsp;Projects</div>
+        <div className="page-title"><i className="fa fa-file-code fa-1" aria-hidden={"true"}></i>&nbsp;&nbsp;Projects</div>
         <Grid>
         { this.props.data.projects != null &&
           this.props.data.projects.edges.map(({ node }) =>

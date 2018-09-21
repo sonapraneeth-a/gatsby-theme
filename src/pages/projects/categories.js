@@ -99,7 +99,7 @@ class ProjectCategoryPage extends React.Component
           description={"This page contains the details of all the categories for the projects undertaken by " + this.props.data.site.siteMetadata.author}
           keywords={"projects, categories, " + this.props.data.site.siteMetadata.author}
         />
-        <div className="page-title"><i className="fa fa-folder-open fa-1" aria-hidden="true"></i>&nbsp;&nbsp;Projects - Categories</div>
+        <div className="page-title"><i className="fa fa-folder-open fa-1" aria-hidden={"true"}></i>&nbsp;&nbsp;Projects - Categories</div>
         <div style={{display: 'inline-flex', flexWrap: 'wrap'}}>
         {/* Generates the list of categories and their counts in all the project posts */}
         {

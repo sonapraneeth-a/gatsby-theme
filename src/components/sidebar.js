@@ -21,7 +21,7 @@ class Sidebar extends React.Component
     else { current_reveal_status = "on"; }
     this.setState({
       reveal_status: current_reveal_status,
-    })
+    });
   }
 
   isNavMenuActive(url)
@@ -71,12 +71,12 @@ class Sidebar extends React.Component
     return (
       <div className="sidebar-content">
         <label className="sidebar-toggle" onClick={() => this.updateRevealStatus()}>
-          <i className="fa fa-bars"></i>
+          <i className="fa fa-bars" aria-hidden={"true"}></i>
         </label>
         <aside className={`sidebar ${this.state.reveal_status}`} style={{display: {}}} role="navigation">
           <div className="sidebar-item" style={{textAlign: 'right'}}>
             <p className="sidebar-close" onClick={() => this.updateRevealStatus()}>
-              <i className="fa fa-times"></i>
+              <i className="fa fa-times" aria-hidden={"true"}></i>
             </p>
           </div>
           <ul className="sidebar-menu">
@@ -86,11 +86,11 @@ class Sidebar extends React.Component
               return (
                 <li key={"sidebar"+index_i} className={sidebar_menu[index_i][4]} style={{width: '100%'}}>
                     <a href={sidebar_menu[index_i][2]}>
-                      <i className={"fa fa-"+sidebar_menu[index_i][1]+" fa-fw"}></i>
+                      <i className={"fa fa-"+sidebar_menu[index_i][1]+" fa-fw"} aria-hidden={"true"}></i>
                       &nbsp;&nbsp;{sidebar_menu[index_i][0]}
                       {
                         sidebar_menu[index_i][3].length > 0 &&
-                          <span style={{float: 'right'}}><i className="fa fa-caret-down fa-fw"></i></span>
+                          <span style={{float: 'right'}}><i className="fa fa-caret-down fa-fw" aria-hidden={"true"}></i></span>
                       }
                     </a>
                   {
@@ -102,7 +102,7 @@ class Sidebar extends React.Component
                         return (
                           <li key={"subsidebar"+index_j} className="active">
                             <a href={sidebar_menu[index_i][3][index_j][2]}>
-                              <i className={"fa fa-"+sidebar_menu[index_i][3][index_j][1]}></i>&nbsp;&nbsp;{sidebar_menu[index_i][3][index_j][0]}
+                              <i className={"fa fa-"+sidebar_menu[index_i][3][index_j][1]} aria-hidden={"true"}></i>&nbsp;&nbsp;{sidebar_menu[index_i][3][index_j][0]}
                             </a>
                           </li>
                         );
@@ -116,7 +116,7 @@ class Sidebar extends React.Component
           }
           </ul>
           <div className="sidebar-item">
-            Made in <i className="fa fa-heart red"></i> with Gatsby
+            Made in <i className="fa fa-heart red" aria-hidden={"true"}></i> with Gatsby
           </div>
           { version != null &&
             <div className="sidebar-item">

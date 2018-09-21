@@ -64,13 +64,13 @@ class Navbar extends React.Component
                   <li key={"nav"+index_i} className={nav_menu[index_i][4]}>
                     <span style={{display: 'inline-block'}}>
                       <a href={nav_menu[index_i][2]}>
-                        <i className={"fa fa-"+nav_menu[index_i][1]+" fa-fw"}></i>
+                        <i className={"fa fa-"+nav_menu[index_i][1]+" fa-fw"} aria-hidden={"true"}></i>
                         &nbsp;{nav_menu[index_i][0]}
                       </a>
                     </span>
                     {
                       nav_menu[index_i][3].length > 0 &&
-                        <span className="dropdown-icon"><a style={{padding: '0rem 0.1rem'}}><i className="fa fa-caret-down fa-fw"></i></a></span>
+                        <span className="dropdown-icon"><a style={{padding: '0rem 0.1rem'}}><i className="fa fa-caret-down fa-fw" aria-hidden={"true"}></i></a></span>
                     }
                     {
                       nav_menu[index_i][3].length > 0 &&
@@ -81,7 +81,7 @@ class Navbar extends React.Component
                           return (
                             <li key={"subnav"+index_j} className="active">
                               <a href={nav_menu[index_i][3][index_j][2]}>
-                                <i className={"fa fa-"+nav_menu[index_i][3][index_j][1]}></i>&nbsp;&nbsp;{nav_menu[index_i][3][index_j][0]}
+                                <i className={"fa fa-"+nav_menu[index_i][3][index_j][1]} aria-hidden={"true"}></i>&nbsp;&nbsp;{nav_menu[index_i][3][index_j][0]}
                               </a>
                             </li>
                           );
