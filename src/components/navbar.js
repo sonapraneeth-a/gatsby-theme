@@ -61,7 +61,7 @@ class Navbar extends React.Component
               nav_menu.map(function(menu_name, index_i)
               {
                 return (
-                  <li key={"nav"+index_i} className={nav_menu[index_i][4]}>
+                  <li key={"nav"+index_i} className={nav_menu[index_i][4] + " navbar-menu-item"}>
                     <span style={{display: 'inline-block'}}>
                       <a href={nav_menu[index_i][2]}>
                         <i className={"fa fa-"+nav_menu[index_i][1]+" fa-fw"} aria-hidden={"true"}></i>

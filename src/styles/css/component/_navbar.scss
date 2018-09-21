@@ -37,11 +37,13 @@
   display: flex;
   margin: $navbar-header-vert-margin 0;
   color: $navbar-foreground-color;
+  font-weight: 500;
   a
   {
     font-size: $navbar-header-size;
     color: $navbar-foreground-color;
     text-decoration: none;
+    vertical-align: -webkit-baseline-middle;
     &:hover
     {
       text-decoration: none;
@@ -132,6 +134,10 @@
   {
     display: none;
   }
+  .navbar-menu-item
+  {
+    border: 0.05rem solid $navbar-foreground-color;
+  }
 }
 
 /* https://tympanus.net/Tutorials/CustomDropDownListStyling/index3.html */
@@ -143,11 +149,15 @@
   display: none;
   box-sizing: border-box;
   padding-top: 0.5rem;
-  li 
+  li
   {
     background-color: darken($navbar-background-color, 10%);
     width: 8rem;
     margin: 0;
+    &:hover
+    {
+      background-color: $navbar-background-color;
+    }
   }
   &::before
   {
