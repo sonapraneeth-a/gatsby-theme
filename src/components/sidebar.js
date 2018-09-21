@@ -8,8 +8,18 @@ class Sidebar extends React.Component
   {
     super(props);
     this.menu = [];
+    //console.log("Sidebar const: " + this.props.active);
+    let current_reveal_status = "";
+    if(this.props.active === true)
+    {
+      current_reveal_status = "on";
+    }
+    else
+    {
+      current_reveal_status = "off";
+    }
     this.state = {
-      reveal_status: "off",
+      reveal_status: current_reveal_status,
     };
   }
 
@@ -22,6 +32,26 @@ class Sidebar extends React.Component
     this.setState({
       reveal_status: current_reveal_status,
     });
+  }
+
+  componentDidUpdate(prevProps)
+  {
+    // console.log("CDU 1: " + prevProps.active);
+    // console.log("CDU 2: " + this.props.active);
+    if (this.props.active !== prevProps.active) {
+      this.updateReveal(this.props.active);
+    }
+  }
+
+  updateReveal(isActive)
+  {
+    let current_reveal_status = "";
+    if(isActive === true) { current_reveal_status = "on"; }
+    else { current_reveal_status = "off"; }
+    this.setState({
+      reveal_status: current_reveal_status,
+    });
+    //console.log("URA: " + current_reveal_status);
   }
 
   isNavMenuActive(url)
@@ -68,14 +98,13 @@ class Sidebar extends React.Component
     let sidebarVisibleStyle = [];
     /*console.log(sidebar_menu);
     console.log(typeof(sidebar_menu));*/
+    //console.log("Sidebar: " + this.state.reveal_status);
+    // this.updateReveal(this.props.active);
     return (
       <div className="sidebar-content">
-        <label className="sidebar-toggle" onClick={() => this.updateRevealStatus()}>
-          <i className="fa fa-bars" aria-hidden={"true"}></i>
-        </label>
-        <aside className={`sidebar ${this.state.reveal_status}`} style={{display: {}}} role="navigation">
+        <aside className={`sidebar ${this.state.reveal_status}`} role="navigation">
           <div className="sidebar-item" style={{textAlign: 'right'}}>
-            <p className="sidebar-close" onClick={() => this.updateRevealStatus()}>
+            <p className="sidebar-close" onClick={() => this.props.onClose()}>
               <i className="fa fa-times" aria-hidden={"true"}></i>
             </p>
           </div>

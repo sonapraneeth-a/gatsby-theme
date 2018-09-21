@@ -1,6 +1,11 @@
 const moment = require("moment");
 
 module.exports = {
+  ui: {
+    flat: true,
+    sidebar_pos: "left",
+    sidebar_reveal: "push", // overlay
+  },
   feed: {
     dir: "posts", // The name of directory that contains your posts.
     url: "/feed.xml", // Path to the Feed file.

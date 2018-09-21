@@ -11,8 +11,15 @@ class Footer extends React.Component
   render()
   {
     //console.log("Author: " + this.props.author);
+    let footer_hide_class = "";
+    if(this.props.hidden === true)
+    {
+      footer_hide_class = "hidden";
+    }
+    /*console.log(this.props.hidden);
+    console.log(footer_hide_class);*/
     return (
-      <footer className="footer center" id="footer" style={{clear: "both"}}>
+      <footer className={`footer center ${footer_hide_class}`} id="footer" style={{clear: "both"}}>
         <center>
           <p className="footer-display">
 
