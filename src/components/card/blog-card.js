@@ -76,7 +76,16 @@ class BlogCard extends React.Component
               <Col
                 dp={11}
               >
-                <h2 className="blog-card-title">{this.props.title}</h2>
+                <h2 className="blog-card-title">
+                  { this.props.url != null &&
+                    <a href={this.props.url} lang="en">
+                      {this.props.title}
+                    </a>
+                  }
+                  { this.props.url == null &&
+                    this.props.title
+                  }
+                </h2>
               </Col>
               <Col
                 dp={1}
