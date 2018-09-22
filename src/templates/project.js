@@ -15,6 +15,7 @@ import Row from "../components/grid/row";
 import Col from "../components/grid/col";
 import Admonition from "../components/admonition";
 import Blockquote from "../components/blockquote";
+import Text from "../components/text";
 import BaseLayout from "../components/layouts/base-layout";
 
 import "katex/dist/katex.min.css";
