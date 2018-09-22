@@ -19,6 +19,16 @@
       background-color: $primary-foreground-color;
       color: $primary-background-color;
     }
+    &.selected
+    {
+      display: inline-block;
+      background-color: $primary-foreground-color;
+      color: $primary-background-color;
+      a
+      {
+        color: $primary-background-color;
+      }
+    }
     a
     {
       padding: 0.25rem 0.45rem;
