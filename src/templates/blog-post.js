@@ -20,6 +20,7 @@ import Admonition from "../components/admonition";
 import Blockquote from "../components/blockquote";
 import Text from "../components/text";
 import BaseLayout from "../components/layouts/base-layout";
+import Pager from "../components/pager";
 
 import "katex/dist/katex.min.css";
 
@@ -64,6 +65,8 @@ class BlogPost extends React.Component
     const timeToRead = post.timeToRead;
     const next_post = this.props.pageContext.next_post;
     const prev_post = this.props.pageContext.prev_post;
+    console.log("Prev Post: " + prev_post[0]);
+    console.log("Next Post: " + next_post[0]);
     const base_url = this.props.data.site.siteMetadata.siteUrl;
     const twitter_username = this.props.data.site.siteMetadata.social.twitter.username;
     const show_toc = this.state.show_toc;
@@ -187,6 +190,12 @@ class BlogPost extends React.Component
               </Col>
               <Col dp={9}>
                 <div className="blog-body">{renderAst(post.htmlAst)}</div>
+                <Pager
+                  prev_post_title={prev_post[0]}
+                  prev_post_url={prev_post[1]}
+                  next_post_title={next_post[0]}
+                  next_post_url={next_post[1]}
+                />
               </Col>
             </Row>
           }
@@ -194,6 +203,12 @@ class BlogPost extends React.Component
             <Row>
               <Col dp={12} style={{paddingLeft: "0"}}>
                 <div className="blog-body">{renderAst(post.htmlAst)}</div>
+                <Pager
+                  prev_post_title={prev_post[0]}
+                  prev_post_url={prev_post[1]}
+                  next_post_title={next_post[0]}
+                  next_post_url={next_post[1]}
+                />
               </Col>
             </Row>
           }
@@ -203,38 +218,6 @@ class BlogPost extends React.Component
             title={post.frontmatter.title}
             twitter_username={twitter_username}
           />
-          <div className="pager">
-            {
-              prev_post[0] == null &&
-              <a className="post-page previous-post hidden">Previous</a>
-            }
-            { prev_post[0] != null &&
-              <a className="post-page" href={prev_post[1]} style={{paddingLeft: '0'}}>
-                <div style={{width: '12%', textAlign: 'center'}} className="previous-post">
-                  <i className="fa fa-arrow-left" aria-hidden={"true"}></i>
-                </div>
-                <div style={{width: '88%'}}>
-                  <p style={{textAlign:'left', fontWeight: '700'}}>Previous</p>
-                  <p style={{textAlign:'left'}} className="previous-post-title">{prev_post[0]}</p>
-                </div>
-              </a>
-            }
-            {
-              next_post[0] == null &&
-              <a className="post-page next-post hidden">Next</a>
-            }
-            { next_post[0] != null &&
-              <a className="post-page" href={next_post[1]} style={{paddingRight: '0'}}>
-                <div style={{width: '88%'}}>
-                  <p style={{textAlign:'right', fontWeight: '700'}}>Next</p>
-                  <p style={{textAlign:'right'}} className="next-post-title">{next_post[0]}</p>
-                </div>
-                <div style={{width: '12%', textAlign: 'center'}} className="next-post">
-                  <i className="fa fa-arrow-right" aria-hidden={"true"}></i>
-                </div>
-              </a>
-            }
-          </div>
         </article>
       </BaseLayout>
     )
