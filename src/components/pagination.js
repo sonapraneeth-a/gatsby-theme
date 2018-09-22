@@ -46,10 +46,10 @@ class Paginator extends React.Component
             pages.map(function(name, index) {
               let page_no = pages[index];
               let pageURL = baseURL + (page_no > 1 ? page_no : "");
-              console.log("Page no: " + page_no);
+              /*console.log("Page no: " + page_no);
               console.log("Page no index: " + index);
               console.log(currentPage === page_no);
-              console.log(currentPage == page_no);
+              console.log(currentPage == page_no);*/
               if(currentPage === page_no)
               {
                 return (

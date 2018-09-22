@@ -140,7 +140,7 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
 
-        console.log(blogsPaginationList);
+        //console.log(blogsPaginationList);
 
         result.data.posts.edges.map( function(name, index)
         {
@@ -179,10 +179,10 @@ exports.createPages = ({ graphql, actions }) => {
           var page_no = index_i+1;
           var prev_page_no = ((page_no-1) > 1 ? (page_no-1) : '');
           var next_page_no = ((page_no+1) <= numPages ? (page_no+1) : '');
-          console.log("PP: " + prev_page_no);
+          /*console.log("PP: " + prev_page_no);
           console.log("NP: " + next_page_no);
           console.log(index_i);
-          console.log(blogsPaginationList[index_i]);
+          console.log(blogsPaginationList[index_i]);*/
           if(index_i !== 0) { blog_path = "/blog/"+page_no; }
           createPage({
             path: blog_path,
