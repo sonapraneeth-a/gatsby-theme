@@ -10,7 +10,7 @@ import Grid from "../components/grid/grid";
 import GridItem from "../components/grid/grid-item";
 import HeadMeta from "../components/head/head-meta";
 import SEO from "../components/head/seo";
-import BaseLayout from "../components/layouts/base-layout";
+import BaseLayout from "../components/layouts/base";
 import Pagination from "../components/pagination";
 
 //export default ({ pageContext, data }) => {

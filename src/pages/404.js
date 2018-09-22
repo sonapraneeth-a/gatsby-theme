@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 import SimpleCard from "../components/card/simple-card.js"
 import HeadMeta from "../components/head/head-meta";
 import SEO from "../components/head/seo";
-import BaseLayout from "../components/layouts/base-layout";
+import BaseLayout from "../components/layouts/base.js";
 
 class Index extends React.Component
 {
