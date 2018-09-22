@@ -7,6 +7,7 @@ import rehypeReact from "rehype-react";
 import slugify from "slug";
 import { graphql } from "gatsby";
 import config from "../../data/config";
+import _ from "lodash";
 
 import SimpleChip from "../components/chip/simple-chip";
 import LinkChip from "../components/chip/link-chip";
