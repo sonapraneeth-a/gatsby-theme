@@ -6,6 +6,7 @@ import moment_tz from "moment-timezone";
 import rehypeReact from "rehype-react";
 import slugify from "slug";
 import { graphql } from "gatsby";
+import config from "../../data/config";
 
 import SimpleChip from "../components/chip/simple-chip";
 import LinkChip from "../components/chip/link-chip";
@@ -40,12 +41,12 @@ class BlogPost extends React.Component
     this.state = {
       show_toc: show_toc,
     };
-    console.log("Const: " + this.state.show_toc);
+    //console.log("Const: " + this.state.show_toc);
   }
 
   toggle_toc()
   {
-    console.log("Calling toggle_toc");
+    //console.log("Calling toggle_toc");
     let current_show_toc = this.state.show_toc;
     this.setState({
       show_toc: !current_show_toc,
@@ -56,6 +57,7 @@ class BlogPost extends React.Component
   {
     slugify.charmap['+'] = 'p';
     const post = this.props.data.blog_post;
+    const post_helper = this.props.data.post_time;
     const tags = post.frontmatter.tags;
     const categories = post.frontmatter.categories;
     const timeToRead = post.timeToRead;
@@ -64,7 +66,13 @@ class BlogPost extends React.Component
     const base_url = this.props.data.site.siteMetadata.siteUrl;
     const twitter_username = this.props.data.site.siteMetadata.social.twitter.username;
     const show_toc = this.state.show_toc;
-    console.log("Render: " + show_toc);
+    //console.log("Render: " + show_toc);
+    let modifiedTime = "";
+    _.each(post_helper.edges, edge => {
+      modifiedTime = edge.node.modifiedTime;
+      //console.log("MT: " + edge.node.modifiedTime);
+    });
+    //console.log("RP: " + this.props.pageContext.relativePath);
     return (
       <BaseLayout location={this.props.location}>
         <article>
@@ -77,7 +85,7 @@ class BlogPost extends React.Component
             type="article"
             author={this.props.data.site.siteMetadata.author}
             tags={post.frontmatter.tags}
-            published_date={moment.tz(post.frontmatter.published_date, 'Asia/Kolkata').format("DD MMMM YYYY, HH:mm:ss z", "en")}
+            published_date={moment.tz(post.frontmatter.published_date, config.site.timezone).format("DD MMMM YYYY, HH:mm:ss z", "en")}
             title={"Blog - " + post.frontmatter.title + " | " + this.props.data.site.siteMetadata.author}
             description={"This is the blog post titled " + post.frontmatter.title + " written by " + this.props.data.site.siteMetadata.author}
             url={this.props.data.site.siteMetadata.siteUrl}
@@ -91,7 +99,12 @@ class BlogPost extends React.Component
             <SimpleChip
               icon={"calendar-alt"}
               title={"Published"}
-              content={moment.tz(post.frontmatter.published_date, 'Asia/Kolkata').format("DD MMMM YYYY, HH:mm:ss z", "en")}
+              content={moment.tz(post.frontmatter.published_date, config.site.timezone).format("DD MMMM YYYY, HH:mm z", "en")}
+            />
+            <SimpleChip
+              icon={"calendar-alt"}
+              title={"Modified"}
+              content={moment.tz(modifiedTime, config.site.timezone).format("DD MMMM YYYY, HH:mm z", "en")}
             />
             {
               tags.map(function(tag_name, index)
@@ -230,7 +243,7 @@ class BlogPost extends React.Component
 export default BlogPost;
 
 export const query = graphql`
-  query BlogPostQuery($slug: String!)
+  query BlogPostQuery($slug: String!, $relativePath: String!)
   {
     blog_post: markdownRemark
     (
@@ -259,6 +272,22 @@ export const query = graphql`
       }
       timeToRead
       tableOfContents
+    }
+    post_time: allFile
+    (
+      filter: 
+      {
+        relativePath: { eq: $relativePath}
+      }
+    )
+    {
+      edges
+      {
+        node
+        {
+          modifiedTime
+        }
+      }
     }
     site: site
     {

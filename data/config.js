@@ -31,7 +31,8 @@ module.exports = {
     author: "Sona Praneeth Akula", // Username to display in the author segment.
     copyright: "Copyright &copy; Sona Praneeth Akula. "+moment().format("YYYY"), // Copyright string for the footer of the website and Feed feed.
     themeColor: "#0297ed", // Used for setting manifest and progress theme colors.
-    backgroundColor: "#ffffff" // Used for setting manifest background color.
+    backgroundColor: "#ffffff", // Used for setting manifest background color.
+    timezone: "Asia/Kolkata",
   },
   id: {
     googleAnalyticsID: "UA-90733014-1", // GA tracking ID.
