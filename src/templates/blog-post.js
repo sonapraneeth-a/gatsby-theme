@@ -49,6 +49,7 @@ class BlogPost extends React.Component
     const prev_post = this.props.pageContext.prev_post;
     const base_url = this.props.data.site.siteMetadata.siteUrl;
     const twitter_username = this.props.data.site.siteMetadata.social.twitter.username;
+    const show_toc = this.props.data.blog_post.frontmatter.toc;
     return (
       <BaseLayout location={this.props.location}>
         <article>
@@ -113,15 +114,35 @@ class BlogPost extends React.Component
             <hr />
           </header>
           <section>
-          { post.frontmatter.toc == true &&
+          { show_toc === true &&
             <Row>
-              <Col dp={3} className="blog-toc-sticky">
+              <Col dp={3} className="blog-toc-sticky" style={{paddingLeft: "0"}}>
                 <div className="blog-toc">
                   { (post.frontmatter.toc_label != "" || post.frontmatter.toc_label != null) &&
-                    <h4 className="blog-toc-title">{post.frontmatter.toc_label}</h4>
+                    <h4 className="blog-toc-title">
+                      {
+                        (post.frontmatter.toc_icon !== "" || post.frontmatter.toc_icon !== null) &&
+                        <i className={`fa fa-${post.frontmatter.toc_icon}`} aria-hidden={"true"}></i>
+                      }
+                      {
+                        (post.frontmatter.toc_icon === "" || post.frontmatter.toc_icon === null) &&
+                        <i className={`fa fa-table`} aria-hidden={"true"}></i>
+                      }
+                      &nbsp;&nbsp;{post.frontmatter.toc_label}
+                    </h4>
                   }
                   { (post.frontmatter.toc_label == "" || post.frontmatter.toc_label == null) &&
-                    <h4 className="blog-toc-title">Table of contents</h4>
+                    <h4 className="blog-toc-title">
+                      {
+                        (post.frontmatter.toc_icon !== "" || post.frontmatter.toc_icon !== null) &&
+                        <i className={`fa fa-${post.frontmatter.toc_icon}`} aria-hidden={"true"}></i>
+                      }
+                      {
+                        (post.frontmatter.toc_icon === "" || post.frontmatter.toc_icon === null) &&
+                        <i className={`fa fa-table`} aria-hidden={"true"}></i>
+                      }
+                      &nbsp;&nbsp;Table of contents
+                    </h4>
                   }
                   <div className="blog-toc-contents"
                     dangerouslySetInnerHTML={{ __html: post.tableOfContents }}
@@ -133,7 +154,7 @@ class BlogPost extends React.Component
               </Col>
             </Row>
           }
-          { (post.frontmatter.toc == false || post.frontmatter.toc == null) &&
+          { (show_toc === false || show_toc == null) &&
             <Row>
               <Col dp={12}>
                 <div className="blog-body">{renderAst(post.htmlAst)}</div>
@@ -153,7 +174,7 @@ class BlogPost extends React.Component
             }
             { prev_post[0] != null &&
               <a className="post-page" href={prev_post[1]} style={{paddingLeft: '0'}}>
-                <div style={{width: '12%', textAlign: 'center'}} class="previous-post">
+                <div style={{width: '12%', textAlign: 'center'}} className="previous-post">
                   <i className="fa fa-arrow-left" aria-hidden={"true"}></i>
                 </div>
                 <div style={{width: '88%'}}>
@@ -211,6 +232,7 @@ export const query = graphql`
         tags
         categories
         toc
+        toc_icon
         toc_label
       }
       timeToRead
