@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import moment from "moment";
 import moment_tz from "moment-timezone";
 import { graphql } from "gatsby";
+import config from "../../data/config";
 
 import BlogCard from "../components/card/blog-card";
 import Grid from "../components/grid/grid";
@@ -51,7 +52,7 @@ class BlogIndex extends React.Component
                 tags={tags}
                 categories={categories}
                 timeToRead={node.timeToRead}
-                published_date={moment.tz(published_date, 'Asia/Kolkata').format("DD MMMM YYYY, HH:mm:ss z", "en")}
+                published_date={moment.tz(published_date, config.site.timezone).format("DD MMMM YYYY, HH:mm:ss z", "en")}
                 excerpt={node.excerpt}
                 banner_image={node.frontmatter.banner_image}
               />

@@ -9,6 +9,7 @@ module.exports = {
     siteUrl: config.site.url,
     copyright: config.site.copyright,
     version: `1.0.0`,
+    timezone: `Asia/Kolkata`,
     pagination: 
     {
       per_page: 5,
