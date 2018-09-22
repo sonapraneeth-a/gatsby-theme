@@ -23,6 +23,7 @@
     .card-image
     {
         width: 100%;
+      border-bottom: 0.05rem solid rgba(160,160,160,0.2);
         @if $flat == true 
         {
             border-radius: 0px;
