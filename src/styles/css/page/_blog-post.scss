@@ -2,7 +2,7 @@
 {
   /*position: sticky;
   top: 2rem;*/
-  padding-right: 1rem;
+  /*padding-right: 1rem;*/
 }
 
 @include sticky("blog-toc-", $navbar-header-size + 2 * $navbar-header-vert-margin + 1.2rem);
@@ -18,7 +18,7 @@
 
 .blog-toc-contents
 {
-  a 
+  /*a
   {
     display: block;
   }
@@ -45,7 +45,70 @@
       //border-bottom: 0.01rem solid black;
     }
   }
-  border: 0.05rem solid #bbc8c8;
+  border: 0.05rem solid #bbc8c8;*/
+  ul
+  {
+    p
+    {
+      margin: 0;
+    }
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    ul
+    {
+      list-style-type: none;
+      padding: 0;
+    }
+    li a
+    {
+      font-size: 1.05rem;
+      text-decoration: none;
+      padding: 0.25rem 0 0.25rem 0.6rem;
+      border-bottom: 0.05rem solid #bbc8c8;
+    }
+    li a.active
+    {
+      color: $primary-foreground-color;
+      background-color: $primary-background-color;
+      font-size: 1.05rem;
+      text-decoration: none;
+      padding: 0.25rem 0 0.25rem 0.6rem;
+      border-bottom: 0.05rem solid #bbc8c8;
+    }
+    li li a
+    {
+      font-size: 0.95rem;
+      text-decoration: none;
+      padding: 0.25rem 0 0.25rem 1.75rem;
+    }
+    li li a.active
+    {
+      color: $primary-foreground-color;
+      background-color: $primary-background-color;
+      font-size: 0.95rem;
+      text-decoration: none;
+      padding: 0.25rem 0 0.25rem 1.75rem;
+    }
+    li li li a
+    {
+      font-size: 0.85rem;
+      text-decoration: none;
+      padding: 0.25rem 0 0.25rem 2.5rem;
+    }
+    li li li a.active
+    {
+      color: $primary-foreground-color;
+      background-color: $primary-background-color;
+      font-size: 0.85rem;
+      text-decoration: none;
+      padding: 0.25rem 0 0.25rem 2.5rem;
+    }
+    a
+    {
+      display: block;
+    }
+  }
 }
 
 .blog-body
