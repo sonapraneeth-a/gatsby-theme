@@ -15,9 +15,11 @@ class SimpleChip extends React.Component
       <div className="chip">
         { this.props.content != null &&
           <span className="chip-content">
-            {
-              this.props.icon != null && 
-                <i className={"fa fa-"+this.props.icon} aria-hidden={"true"}></i>
+            { this.props.icon != null &&
+              <i className={"fa fa-"+this.props.icon} aria-hidden={"true"}></i>
+            }
+            { this.props.title != null &&
+              <b>&nbsp;{this.props.title}:</b>
             }
             &nbsp;{this.props.content}
           </span>
