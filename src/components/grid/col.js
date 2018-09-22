@@ -9,7 +9,7 @@ class Col extends React.Component
     this.config = {
       dp: 12,
       class_name: "",
-    }
+    };
   }
 
   getClassNames()
@@ -30,7 +30,7 @@ class Col extends React.Component
     if(extra_class_name === undefined) { extra_class_name = ""; }
     //console.log("Class: " + extra_class_name);
     return (
-      <div className={this.config.class_name + " " + extra_class_name}>
+      <div className={this.config.class_name + " " + extra_class_name} style={this.props.style}>
         {this.props.children}
       </div>
     );
