@@ -13,6 +13,7 @@ class Sharing extends React.Component
     let url = this.props.url;
     let title = this.props.title;
     return (
+      <center>
       <div className="share-content">
         <a className="share facebook" href={"https://www.facebook.com/sharer/sharer.php?u="+url} target="_blank" title="Share on Facebook"><i className="fab fa-facebook-f"></i></a>
         <a className="share gplus" href={"https://plus.google.com/share?url="+url} target="_blank" title="Share on Google+"><i className="fab fa-google-plus-g"></i></a>
@@ -21,6 +22,7 @@ class Sharing extends React.Component
         <a className="share email" href={"mailto:?subject="+title+"&amp;body="} target="_blank" title="Send an email" data-proofer-ignore=""><i className="fa fa-envelope"></i></a>
         <a className="share print" href="javascript:window.print()" target="_blank" title="Print the article"><i className="fa fa-print"></i></a>
       </div>
+      </center>
     );
   }
 }

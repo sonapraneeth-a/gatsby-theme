@@ -36,6 +36,20 @@ class BlogPost extends React.Component
   constructor(props)
   {
     super(props);
+    const show_toc = this.props.data.blog_post.frontmatter.toc;
+    this.state = {
+      show_toc: show_toc,
+    };
+    console.log("Const: " + this.state.show_toc);
+  }
+
+  toggle_toc()
+  {
+    console.log("Calling toggle_toc");
+    let current_show_toc = this.state.show_toc;
+    this.setState({
+      show_toc: !current_show_toc,
+    });
   }
 
   render()
@@ -49,7 +63,8 @@ class BlogPost extends React.Component
     const prev_post = this.props.pageContext.prev_post;
     const base_url = this.props.data.site.siteMetadata.siteUrl;
     const twitter_username = this.props.data.site.siteMetadata.social.twitter.username;
-    const show_toc = this.props.data.blog_post.frontmatter.toc;
+    const show_toc = this.state.show_toc;
+    console.log("Render: " + show_toc);
     return (
       <BaseLayout location={this.props.location}>
         <article>
@@ -115,6 +130,12 @@ class BlogPost extends React.Component
           </header>
           <section>
           { show_toc === true &&
+            <div id="show-hide-toc" onClick={() => this.toggle_toc()} className="show-hide-toc">Hide TOC</div>
+          }
+          { show_toc === false &&
+          <div id="show-hide-toc" onClick={() => this.toggle_toc()} className="show-hide-toc">Show TOC</div>
+          }
+          { show_toc === true &&
             <Row>
               <Col dp={3} className="blog-toc-sticky" style={{paddingLeft: "0"}}>
                 <div className="blog-toc">
@@ -156,7 +177,7 @@ class BlogPost extends React.Component
           }
           { (show_toc === false || show_toc == null) &&
             <Row>
-              <Col dp={12}>
+              <Col dp={12} style={{paddingLeft: "0"}}>
                 <div className="blog-body">{renderAst(post.htmlAst)}</div>
               </Col>
             </Row>
