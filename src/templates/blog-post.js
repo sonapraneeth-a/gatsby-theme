@@ -90,6 +90,7 @@ class BlogPost extends React.Component
             </h1>
             <SimpleChip
               icon={"calendar-alt"}
+              title={"Published"}
               content={moment.tz(post.frontmatter.published_date, 'Asia/Kolkata').format("DD MMMM YYYY, HH:mm:ss z", "en")}
             />
             {
