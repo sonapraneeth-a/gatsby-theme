@@ -23,7 +23,8 @@ const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: { 
     "admonition": Admonition,
-    "quote": Blockquote
+    "quote": Blockquote,
+    "text": Text
   },
 }).Compiler
 
@@ -66,6 +67,7 @@ class ProjectPost extends React.Component
             </h1>
             <SimpleChip
               icon={"calendar-alt"}
+	      title={"Published"}
               content={post.frontmatter.published_date}
             />
             {
@@ -98,10 +100,12 @@ class ProjectPost extends React.Component
                 );
               })
             }
-            <SimpleChip
-              icon={"stopwatch"}
-              content={post.timeToRead + " min"}
-            />
+            {
+              <SimpleChip
+                icon={"stopwatch"}
+                content={post.timeToRead + " min"}
+              />
+            }
             <hr />
           </header>
           <section>
