@@ -130,11 +130,9 @@ class BlogArchivePage extends React.Component
                     return (
                     <li key={year_name} style={{marginBottom: '0.5rem'}}>
                       <SimpleCard>
-                        <div className="card-content">
-                          <Link to={blogs[year_name][2]} style={{textDecoration: 'none'}}>
-                            <span>{blogs[year_name][0]}</span>
-                          </Link><span style={{float: 'right'}}>{blogs[year_name][3]}</span>
-                        </div>
+                        <Link to={blogs[year_name][2]} style={{textDecoration: 'none'}}>
+                          <span>{blogs[year_name][0]}</span>
+                        </Link><span style={{float: 'right'}}>{blogs[year_name][3]}</span>
                       </SimpleCard>
                     </li>
                     );

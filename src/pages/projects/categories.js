@@ -138,11 +138,9 @@ class ProjectCategoryPage extends React.Component
                       return (
                       <li key={category_name} style={{marginBottom: '0.5rem'}}>
                         <SimpleCard>
-                          <div className="card-content">
-                            <Link to={projects[category_name][2]} style={{textDecoration: 'none'}}>
-                              <span>{projects[category_name][0]}</span>
-                            </Link><span style={{float: 'right'}}>{projects[category_name][3]}</span>
-                          </div>
+                          <Link to={projects[category_name][2]} style={{textDecoration: 'none'}}>
+                            <span>{projects[category_name][0]}</span>
+                          </Link><span style={{float: 'right'}}>{projects[category_name][3]}</span>
                         </SimpleCard>
                       </li>
                       );

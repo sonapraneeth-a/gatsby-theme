@@ -139,11 +139,9 @@ class ProjectTagPage extends React.Component
                       return (
                       <li key={tag_name} style={{marginBottom: '0.5rem'}}>
                         <SimpleCard>
-                          <div className="card-content">
-                            <Link to={projects[tag_name][2]} style={{textDecoration: 'none'}}>
-                              <span>{projects[tag_name][0]}</span>
-                            </Link><span style={{float: 'right'}}>{projects[tag_name][3]}</span>
-                          </div>
+                          <Link to={projects[tag_name][2]} style={{textDecoration: 'none'}}>
+                            <span>{projects[tag_name][0]}</span>
+                          </Link><span style={{float: 'right'}}>{projects[tag_name][3]}</span>
                         </SimpleCard>
                       </li>
                       );

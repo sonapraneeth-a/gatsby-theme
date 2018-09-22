@@ -128,11 +128,9 @@ class ProjectArchivePage extends React.Component
                     return (
                     <li key={year_name} style={{marginBottom: '0.5rem'}}>
                       <SimpleCard>
-                        <div className="card-content">
-                          <Link to={projects[year_name][2]} style={{textDecoration: 'none'}}>
-                            <span>{projects[year_name][0]}</span>
-                          </Link><span style={{float: 'right'}}>{projects[year_name][3]}</span>
-                        </div>
+                        <Link to={projects[year_name][2]} style={{textDecoration: 'none'}}>
+                          <span>{projects[year_name][0]}</span>
+                        </Link><span style={{float: 'right'}}>{projects[year_name][3]}</span>
                       </SimpleCard>
                     </li>
                     );
