@@ -4,7 +4,7 @@ import { graphql } from "gatsby";
 
 import HeadMeta from "../../components/head/head-meta";
 import SEO from "../../components/head/seo";
-import BaseLayout from "../../components/layouts/base";
+import BaseLayout from "../../components/layouts/base-layout";
 
 //export default ({ data }) => {
 

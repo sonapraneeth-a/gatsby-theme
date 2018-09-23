@@ -5,10 +5,9 @@ import { graphql } from "gatsby";
 import SimpleCard from "../components/card/simple-card.js"
 import HeadMeta from "../components/head/head-meta";
 import SEO from "../components/head/seo";
-import PageLayout from "../components/layouts/page.js";
-import BaseLayout from "../components/layouts/base.js";
+import BaseLayout from "../components/layouts/base-layout";
 
-class NotFound extends React.Component
+class Index extends React.Component
 {
   constructor(props)
   {
@@ -18,7 +17,7 @@ class NotFound extends React.Component
   render()
   {
     return (
-      <PageLayout location={this.props.location} icon_name={"fa-exclamation"} title={"404 - Not found"}>
+      <BaseLayout location={this.props.location}>
         <HeadMeta
           title={"404 Not found | " + this.props.data.site.siteMetadata.author}
           description={"This is the home page of " + this.props.data.site.siteMetadata.author}
@@ -32,15 +31,16 @@ class NotFound extends React.Component
           site_name={"Homepage of " + this.props.data.site.siteMetadata.author}
           twitter_username={this.props.data.site.siteMetadata.social.twitter.username}
         />
+        <div className="page-title"><i className="fa fa-exclamation fa-1" aria-hidden={"true"}></i>&nbsp;&nbsp;404 - Not found</div>
         <SimpleCard>
           You have landed in a wrong location. Please <a href={this.props.history}>go back</a> (or) head to <a href={this.props.data.site.siteMetadata.siteUrl}>home</a>!!!
         </SimpleCard>
-      </PageLayout>
+      </BaseLayout>
     )
   }
 }
 
-export default NotFound;
+export default Index;
 
 export const query = graphql`
   query LostQuery

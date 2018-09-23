@@ -10,15 +10,14 @@ import Grid from "../components/grid/grid";
 import GridItem from "../components/grid/grid-item";
 import HeadMeta from "../components/head/head-meta";
 import SEO from "../components/head/seo";
-import BaseLayout from "../components/layouts/base";
-import Pagination from "../components/pagination";
+import BaseLayout from "../components/layouts/base-layout";
 
 //export default ({ pageContext, data }) => {
 class BlogIndex extends React.Component
 {
   constructor(props)
   {
-    super(props);
+    super(props)
   }
 
   render()
@@ -27,8 +26,8 @@ class BlogIndex extends React.Component
     let { prevPage, currentPage, nextPage, totalNumberOfPages} = this.props.pageContext;
     let { minNumberOfPages, blogs} = this.props.pageContext;
     let dispPrevPage = prevPage >= 1 ? prevPage : '';
-    //prevPage = prevPage > 1 ? prevPage : '';
-    //nextPage = nextPage <= totalNumberOfPages ? nextPage : '';
+    prevPage = prevPage > 1 ? prevPage : '';
+    nextPage = nextPage <= totalNumberOfPages ? nextPage : '';
 
     return (
       <BaseLayout location={this.props.location}>
@@ -61,14 +60,6 @@ class BlogIndex extends React.Component
           })
         }
         </div>
-        <Pagination
-          base_url={"/blog/"}
-          prev_page={prevPage}
-          next_page={nextPage}
-          last_page={totalNumberOfPages}
-          pages={blogs}
-          current_page={currentPage}
-        />
       </BaseLayout>
     )
   }

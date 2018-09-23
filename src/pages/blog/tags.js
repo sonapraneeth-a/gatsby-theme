@@ -9,7 +9,7 @@ import { graphql } from "gatsby";
 import SimpleCard from "../../components/card/simple-card";
 import HeadMeta from "../../components/head/head-meta";
 import LinkChip from "../../components/chip/link-chip";
-import BaseLayout from "../../components/layouts/base";
+import BaseLayout from "../../components/layouts/base-layout";
 
 /**
  * 
