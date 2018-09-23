@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "gatsby";
 
+import BaseLayout from "base";
 
-class Page extends React.Component
+
+class PageLayout extends React.Component
 {
   constructor(props)
   {
@@ -13,14 +15,26 @@ class Page extends React.Component
   {
     let font_name = "fa fa-1 " + this.props.icon_name;
     return (
-      <div className="page">
-        <div className="page-title"><i className={font_name} aria-hidden={"true"}></i>&nbsp;&nbsp;{this.props.title}</div>
-        <div className="page-content">
-          {this.props.children}
+      <BaseLayout>
+        <div className="page">
+          <h1 className="page-title">
+            { this.props.icon_name !== null &&
+            <span>
+                <i className={font_name} aria-hidden={"true"}></i>
+              &nbsp;&nbsp;{this.props.title}
+              </span>
+            }
+            { this.props.icon_name === null &&
+            this.props.title
+            }
+          </h1>
+          <div className="page-content">
+            {this.props.children}
+          </div>
         </div>
-      </div>
+      </BaseLayout>
     );
   }
 }
 
-export default Page;
+export default PageLayout;
