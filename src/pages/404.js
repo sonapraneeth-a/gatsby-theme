@@ -18,7 +18,7 @@ class NotFound extends React.Component
   render()
   {
     return (
-      <PageLayout location={this.props.location} icon_name={"fa-exclamation"} title={"404 - Not found"}>
+      <BaseLayout location={this.props.location}>
         <HeadMeta
           title={"404 Not found | " + this.props.data.site.siteMetadata.author}
           description={"This is the home page of " + this.props.data.site.siteMetadata.author}
@@ -35,7 +35,7 @@ class NotFound extends React.Component
         <SimpleCard>
           You have landed in a wrong location. Please <a href={this.props.history}>go back</a> (or) head to <a href={this.props.data.site.siteMetadata.siteUrl}>home</a>!!!
         </SimpleCard>
-      </PageLayout>
+      </BaseLayout>
     )
   }
 }
