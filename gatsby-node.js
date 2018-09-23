@@ -36,7 +36,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
   return new Promise((resolve, reject) => {
-  graphql(`
+    graphql(`
     {
       posts: allMarkdownRemark (
         sort: {  fields: [fields___date], order: DESC},
@@ -98,7 +98,6 @@ exports.createPages = ({ graphql, actions }) => {
           {
             per_page
             per_block
-            disp_page_block
           }
           blog
           {
@@ -119,22 +118,55 @@ exports.createPages = ({ graphql, actions }) => {
         for (var i = 0; i < numPages; i++)
         {
           blogsPaginationList[i] = [];
+          let per_block = result.data.config.siteMetadata.pagination.per_block;
+          let j = 1, mul = 1, count = 1;
+          blogsPaginationList[i].push(i === 0 ? 1 : i+1);
+          if(numPages >= per_block)
+          {
+            while (count <= per_block)
+            {
+              if (j % 2 === 1)
+              {
+                let page_no = i + 1 + mul;
+                if (page_no >= 1 && page_no <= numPages)
+                {
+                  blogsPaginationList[i].push(page_no);
+                  count++;
+                }
+              }
+              else
+              {
+                let page_no = i + 1 - mul;
+                if (page_no >= 1 && page_no <= numPages)
+                {
+                  blogsPaginationList[i].unshift(page_no);
+                  count++;
+                }
+                mul++;
+              }
+              j++;
+            }
+          }
+          else
+          {
+            for(j = 1; j <= numPages; j++)
+            {
+              blogsPaginationList[i].push(j);
+            }
+          }
         }
+
 
         result.data.posts.edges.map( function(name, index)
         {
           let dirname = __dirname;
           let fullPath = result.data.posts.edges[index].node.fileAbsolutePath;
-          //console.log("Fullpath: " + fullPath);
-          //console.log("Dirname: " + dirname);
           if(dirname.indexOf("\\") >= 0)
           {
             dirname = dirname.replace(/\\/g, "/");
           }
-          //console.log("Dirname: " + dirname);
           let srcDirname = dirname + "/src/";
           let relativePath = fullPath.substr(srcDirname.length);
-          blogsPaginationList[Math.floor(index/blogsPerPage)].push(index);
           let prevPost = [];
           let nextPost = [];
           let relatedPosts = [];
@@ -148,14 +180,15 @@ exports.createPages = ({ graphql, actions }) => {
             nextPost.push(result.data.posts.edges[index+1].node.frontmatter.title);
             nextPost.push(result.data.posts.edges[index+1].node.fields.slug);
           }
-          console.log("Relativepath: " + relativePath);
-          blogsInfo.push([result.data.posts.edges[index].node.fields.slug, 
-                          prevPost, nextPost, relatedPosts, relativePath]);
+          blogsInfo.push([result.data.posts.edges[index].node.fields.slug,
+            prevPost, nextPost, relatedPosts, relativePath]);
         });
 
         blogsPaginationList.map(function(name, index_i) {
           var blog_path = "/blog/";
           var page_no = index_i+1;
+          var prev_page_no = ((page_no-1) > 1 ? (page_no-1) : '');
+          var next_page_no = ((page_no+1) <= numPages ? (page_no+1) : '');
           if(index_i !== 0) { blog_path = "/blog/"+page_no; }
           createPage({
             path: blog_path,
@@ -165,18 +198,17 @@ exports.createPages = ({ graphql, actions }) => {
               limit: blogsPerPage,
               skip: index_i*blogsPerPage,
               totalNumberOfPages: numPages,
-              prevPage: page_no-1,
+              prevPage: prev_page_no,
               currentPage: page_no,
-              nextPage: page_no+1,
+              nextPage: next_page_no,
               minNumberOfPages: 5,
-              blogs: blogsPaginationList[index_i],
+              blogs: blogsPaginationList[page_no-1],
               excerptLength: blogExcerptLength,
             },
           });
         });
 
         blogsInfo.map(function(name, index_i) {
-          //console.log("Map rp: " + blogsInfo[index_i][3]);
           createPage
           ({
             path: blogsInfo[index_i][0],

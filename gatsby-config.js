@@ -13,8 +13,7 @@ module.exports = {
     pagination: 
     {
       per_page: 5,
-      per_block: 4,
-      disp_page_block: 3,
+      per_block: 3,
     },
     blog:
     {
