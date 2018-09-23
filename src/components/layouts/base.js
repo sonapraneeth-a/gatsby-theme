@@ -23,13 +23,10 @@ class BaseLayout extends React.Component
   updateRevealStatus()
   {
     let current_reveal_status = this.state.reveal_status;
-    //console.log("Main before: " + current_reveal_status);
-    if(current_reveal_status === true) { current_reveal_status = false; }
-    else { current_reveal_status = true; }
+    current_reveal_status = current_reveal_status !== true;
     this.setState({
       reveal_status: current_reveal_status,
     });
-    //console.log("Main after: " + current_reveal_status);
   }
 
   onClose()
