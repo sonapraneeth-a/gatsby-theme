@@ -6,7 +6,7 @@ import Grid from "../../components/grid/grid";
 import GridItem from "../../components/grid/grid-item";
 import ProjectCard from "../../components/card/project-card";
 import HeadMeta from "../../components/head/head-meta";
-import BaseLayout from "../../components/layouts/base-layout";
+import BaseLayout from "../../components/layouts/base";
 
 //export default ({ data }) => {
 class ProjectIndex extends React.Component
