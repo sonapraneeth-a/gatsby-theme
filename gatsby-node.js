@@ -121,53 +121,52 @@ exports.createPages = ({ graphql, actions }) => {
           let per_block = result.data.config.siteMetadata.pagination.per_block;
           let j = 1, mul = 1, count = 1;
           blogsPaginationList[i].push(i === 0 ? 1 : i+1);
-          //console.log("numpages: " + numPages);
-          if(numPages >= per_block) {
-            while (count <= per_block) {
-              if (j % 2 === 1) {
+          if(numPages >= per_block)
+          {
+            while (count <= per_block)
+            {
+              if (j % 2 === 1)
+              {
                 let page_no = i + 1 + mul;
-                if (page_no >= 1 && page_no <= numPages) {
+                if (page_no >= 1 && page_no <= numPages)
+                {
                   blogsPaginationList[i].push(page_no);
                   count++;
                 }
-                //console.log("page_no: " + page_no);
               }
-              else {
+              else
+              {
                 let page_no = i + 1 - mul;
-                if (page_no >= 1 && page_no <= numPages) {
+                if (page_no >= 1 && page_no <= numPages)
+                {
                   blogsPaginationList[i].unshift(page_no);
                   count++;
                 }
-                //console.log("page_no: " + page_no);
                 mul++;
               }
               j++;
-              //console.log("Index: " + i + ", Count: " + count + ", j: " + j);
             }
           }
-          else {
-            for(j = 1; j <= numPages; j++) {
+          else
+          {
+            for(j = 1; j <= numPages; j++)
+            {
               blogsPaginationList[i].push(j);
             }
           }
         }
 
-        //console.log(blogsPaginationList);
 
         result.data.posts.edges.map( function(name, index)
         {
           let dirname = __dirname;
           let fullPath = result.data.posts.edges[index].node.fileAbsolutePath;
-          //console.log("Fullpath: " + fullPath);
-          //console.log("Dirname: " + dirname);
           if(dirname.indexOf("\\") >= 0)
           {
             dirname = dirname.replace(/\\/g, "/");
           }
-          //console.log("Dirname: " + dirname);
           let srcDirname = dirname + "/src/";
           let relativePath = fullPath.substr(srcDirname.length);
-          //blogsPaginationList[Math.floor(index/blogsPerPage)].push(index);
           let prevPost = [];
           let nextPost = [];
           let relatedPosts = [];
@@ -181,8 +180,7 @@ exports.createPages = ({ graphql, actions }) => {
             nextPost.push(result.data.posts.edges[index+1].node.frontmatter.title);
             nextPost.push(result.data.posts.edges[index+1].node.fields.slug);
           }
-          console.log("Relativepath: " + relativePath);
-          blogsInfo.push([result.data.posts.edges[index].node.fields.slug, 
+          blogsInfo.push([result.data.posts.edges[index].node.fields.slug,
                           prevPost, nextPost, relatedPosts, relativePath]);
         });
 
@@ -191,10 +189,6 @@ exports.createPages = ({ graphql, actions }) => {
           var page_no = index_i+1;
           var prev_page_no = ((page_no-1) > 1 ? (page_no-1) : '');
           var next_page_no = ((page_no+1) <= numPages ? (page_no+1) : '');
-          /*console.log("PP: " + prev_page_no);
-          console.log("NP: " + next_page_no);
-          console.log(index_i);
-          console.log(blogsPaginationList[index_i]);*/
           if(index_i !== 0) { blog_path = "/blog/"+page_no; }
           createPage({
             path: blog_path,
@@ -215,7 +209,6 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         blogsInfo.map(function(name, index_i) {
-          //console.log("Map rp: " + blogsInfo[index_i][3]);
           createPage
           ({
             path: blogsInfo[index_i][0],
