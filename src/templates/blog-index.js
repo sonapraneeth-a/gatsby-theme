@@ -29,6 +29,7 @@ class BlogIndex extends React.Component
     let dispPrevPage = prevPage >= 1 ? prevPage : '';
     //prevPage = prevPage > 1 ? prevPage : '';
     //nextPage = nextPage <= totalNumberOfPages ? nextPage : '';
+    console.log(blogs);
 
     return (
       <BaseLayout location={this.props.location}>
