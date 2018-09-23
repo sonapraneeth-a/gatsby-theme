@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 import ProfileCard from "../components/card/profile-card.js";
 import HeadMeta from "../components/head/head-meta";
 import SEO from "../components/head/seo";
-import BaseLayout from "../components/layouts/base.js";
+import BaseLayout from "../components/layouts/base";
 
 import HomePageImage from "../assets/home/sonapraneeth-full.png";
 
