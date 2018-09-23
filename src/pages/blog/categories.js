@@ -8,6 +8,7 @@ import SimpleCard from "../../components/card/simple-card";
 import LinkChip from "../../components/chip/link-chip";
 import HeadMeta from "../../components/head/head-meta";
 import BaseLayout from "../../components/layouts/base";
+import PageLayout from "../../components/layouts/page";
 
 // Imports
 const _ = require('lodash')
@@ -93,13 +94,12 @@ class BlogCategoryPage extends React.Component
     let category_info = this.blog_category_info.category_info;
     let blogs = this.blog_category_info.blogs;
     return (
-      <BaseLayout location={this.props.location}>
+      <PageLayout location={this.props.location} icon_name={"fa-folder-open"} title={"Blog - Categories"}>
         <HeadMeta
           title={"Blogs - Categories | " + this.props.data.site.siteMetadata.author}
           description={"This page contains the details of all the categories for the blogs undertaken by " + this.props.data.site.siteMetadata.author}
           keywords={"blogs, categories, " + this.props.data.site.siteMetadata.author}
         />
-        <div className="page-title"><i className="fa fa-folder-open fa-1" aria-hidden={"true"}></i>&nbsp;&nbsp;Blog - Categories</div>
         <div style={{display: 'inline-flex', flexWrap: 'wrap'}}>
         {/* Generates the list of categories and their counts in all the blog posts */}
         {
@@ -154,7 +154,7 @@ class BlogCategoryPage extends React.Component
           })
         }
         </div>
-      </BaseLayout>
+      </PageLayout>
     )
   }
 }

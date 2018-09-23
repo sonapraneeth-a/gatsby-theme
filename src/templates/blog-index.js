@@ -12,6 +12,7 @@ import HeadMeta from "../components/head/head-meta";
 import SEO from "../components/head/seo";
 import BaseLayout from "../components/layouts/base";
 import Pagination from "../components/pagination";
+import PageLayout from "../components/layouts/page";
 
 //export default ({ pageContext, data }) => {
 class BlogIndex extends React.Component
@@ -32,13 +33,12 @@ class BlogIndex extends React.Component
     console.log(blogs);
 
     return (
-      <BaseLayout location={this.props.location}>
+      <PageLayout location={this.props.location} icon_name={"fa-pencil-alt"} title={"Blog"}>
         <HeadMeta
           title={"Blog | " + this.props.data.site.siteMetadata.author}
           description={"This page contains the details of blogs written by " + this.props.data.site.siteMetadata.author}
           keywords={"blogs, " + this.props.data.site.siteMetadata.author}
         />
-        <div className="page-title"><i className="fa fa-pencil-alt fa-1" aria-hidden={"true"}></i>&nbsp;&nbsp;Blog</div>
         <div>
           { edges != null &&
           edges.map(({ node }) => {
@@ -70,7 +70,7 @@ class BlogIndex extends React.Component
           pages={blogs}
           current_page={currentPage}
         />
-      </BaseLayout>
+      </PageLayout>
     )
   }
 }

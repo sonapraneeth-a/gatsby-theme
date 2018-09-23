@@ -8,6 +8,7 @@ import SimpleCard from "../../components/card/simple-card";
 import LinkChip from "../../components/chip/link-chip";
 import HeadMeta from "../../components/head/head-meta";
 import BaseLayout from "../../components/layouts/base";
+import PageLayout from "../../components/layouts/page";
 
 // Imports
 const _ = require('lodash')
@@ -93,13 +94,12 @@ class ProjectCategoryPage extends React.Component
     let category_info = this.project_category_info.category_info;
     let projects = this.project_category_info.projects;
     return (
-      <BaseLayout location={this.props.location}>
+      <PageLayout location={this.props.location} icon_name={"fa-folder-open"} title={"Projects - Categories"}>
         <HeadMeta
           title={"Projects - Categories | " + this.props.data.site.siteMetadata.author}
           description={"This page contains the details of all the categories for the projects undertaken by " + this.props.data.site.siteMetadata.author}
           keywords={"projects, categories, " + this.props.data.site.siteMetadata.author}
         />
-        <div className="page-title"><i className="fa fa-folder-open fa-1" aria-hidden={"true"}></i>&nbsp;&nbsp;Projects - Categories</div>
         <div style={{display: 'inline-flex', flexWrap: 'wrap'}}>
         {/* Generates the list of categories and their counts in all the project posts */}
         {
@@ -153,7 +153,7 @@ class ProjectCategoryPage extends React.Component
           })
         }
         </div>
-      </BaseLayout>
+      </PageLayout>
     )
   }
 }

@@ -10,6 +10,7 @@ import SimpleCard from "../../components/card/simple-card";
 import HeadMeta from "../../components/head/head-meta";
 import LinkChip from "../../components/chip/link-chip";
 import BaseLayout from "../../components/layouts/base";
+import PageLayout from "../../components/layouts/page";
 
 /**
  * 
@@ -92,13 +93,12 @@ class BlogTagPage extends React.Component
     let tag_info = this.blog_tag_info.tag_info;
     let blogs = this.blog_tag_info.blogs;
     return (
-      <BaseLayout location={this.props.location}>
+      <PageLayout location={this.props.location} icon_name={"fa-tag"} title={"Blog - Tags"}>
         <HeadMeta
           title={"Blog - Tags | " + this.props.data.site.siteMetadata.author}
           description={"This page contains the details of all the tags for the blogs written by " + this.props.data.site.siteMetadata.author}
           keywords={"blogs, tags, " + this.props.data.site.siteMetadata.author}
         />
-        <div className="page-title"><i className="fa fa-tag fa-1" aria-hidden={"true"}></i>&nbsp;&nbsp;Projects - Tags</div>
         <div style={{display: 'inline-flex', flexWrap: 'wrap'}}>
         {/* Generates the list of tags and their counts in all the blog posts */}
         {
@@ -152,7 +152,7 @@ class BlogTagPage extends React.Component
           })
         }
         </div>
-      </BaseLayout>
+      </PageLayout>
     )
   }
 }

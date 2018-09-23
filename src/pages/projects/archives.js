@@ -8,6 +8,7 @@ import SimpleCard from "../../components/card/simple-card";
 import LinkChip from "../../components/chip/link-chip";
 import HeadMeta from "../../components/head/head-meta";
 import BaseLayout from "../../components/layouts/base";
+import PageLayout from "../../components/layouts/page";
 
 // Imports
 const _ = require('lodash')
@@ -83,13 +84,12 @@ class ProjectArchivePage extends React.Component
     let year_info = this.project_year_info.year_info;
     let projects = this.project_year_info.projects;
     return (
-      <BaseLayout location={this.props.location}>
+      <PageLayout location={this.props.location} icon_name={"fa-file-archive"} title={"Projects - Archives"}>
         <HeadMeta
           title={"Projects - Archives | " + this.props.data.site.siteMetadata.author}
           description={"This page contains the details of all the tags for the projects undertaken by " + this.props.data.site.siteMetadata.author}
           keywords={"projects, archives, " + this.props.data.site.siteMetadata.author}
         />
-        <div className="page-title"><i className="fa fa-file-archive fa-1" aria-hidden={"true"}></i>&nbsp;&nbsp;Project - Archives</div>
         <div style={{display: 'inline-flex', flexWrap: 'wrap'}}>
         {/* Generates the list of years and their counts in all the project posts */}
         {
@@ -143,7 +143,7 @@ class ProjectArchivePage extends React.Component
           })
         }
         </div>
-      </BaseLayout>
+      </PageLayout>
     )
   }
 }

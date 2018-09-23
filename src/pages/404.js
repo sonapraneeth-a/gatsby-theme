@@ -1,12 +1,12 @@
-import React from "react"
+import React from "react";
 import { Link } from "gatsby";
 import { graphql } from "gatsby";
 
-import SimpleCard from "../components/card/simple-card.js"
+import SimpleCard from "../components/card/simple-card.js";
 import HeadMeta from "../components/head/head-meta";
 import SEO from "../components/head/seo";
 import PageLayout from "../components/layouts/page";
-import BaseLayout from "../components/layouts/base.js";
+import BaseLayout from "../components/layouts/base";
 
 class NotFound extends React.Component
 {

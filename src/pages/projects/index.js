@@ -7,6 +7,7 @@ import GridItem from "../../components/grid/grid-item";
 import ProjectCard from "../../components/card/project-card";
 import HeadMeta from "../../components/head/head-meta";
 import BaseLayout from "../../components/layouts/base";
+import PageLayout from "../../components/layouts/page";
 
 //export default ({ data }) => {
 class ProjectIndex extends React.Component
@@ -19,7 +20,7 @@ class ProjectIndex extends React.Component
   render()
   {
     return (
-      <BaseLayout location={this.props.location}>
+      <PageLayout location={this.props.location} icon_name={"fa-file-code"} title={"Projects"}>
         <HeadMeta
           title={"Projects | " + this.props.data.site.siteMetadata.author}
           description={"This page contains the details of projects undertaken by " + this.props.data.site.siteMetadata.author}
@@ -47,7 +48,7 @@ class ProjectIndex extends React.Component
           )
         }
         </Grid>
-      </BaseLayout>
+      </PageLayout>
     );
   }
 }

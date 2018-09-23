@@ -10,6 +10,7 @@ import SimpleCard from "../../components/card/simple-card";
 import LinkChip from "../../components/chip/link-chip";
 import HeadMeta from "../../components/head/head-meta";
 import BaseLayout from "../../components/layouts/base";
+import PageLayout from "../../components/layouts/page";
 
 // Imports
 const _ = require('lodash');
@@ -85,13 +86,12 @@ class BlogArchivePage extends React.Component
     let year_info = this.blog_year_info.year_info;
     let blogs = this.blog_year_info.blogs;
     return (
-      <BaseLayout location={this.props.location}>
+      <PageLayout location={this.props.location} icon_name={"fa-file-archive"} title={"Blog - Archives"}>
         <HeadMeta
           title={"Blogs - Archives | " + this.props.data.site.siteMetadata.author}
           description={"This page contains the details of all the archives for the blogs undertaken by " + this.props.data.site.siteMetadata.author}
           keywords={"blogs, archives, " + this.props.data.site.siteMetadata.author}
         />
-        <div className="page-title"><i className="fa fa-file-archive fa-1" aria-hidden={"true"}></i>&nbsp;&nbsp;Blog - Archives</div>
         <div style={{display: 'inline-flex', flexWrap: 'wrap'}}>
         {/* Generates the list of years and their counts in all the blog posts */}
         {
@@ -145,7 +145,7 @@ class BlogArchivePage extends React.Component
           })
         }
         </div>
-      </BaseLayout>
+      </PageLayout>
     )
   }
 }

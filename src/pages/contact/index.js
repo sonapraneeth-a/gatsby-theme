@@ -5,6 +5,7 @@ import { graphql } from "gatsby";
 import HeadMeta from "../../components/head/head-meta";
 import SEO from "../../components/head/seo";
 import BaseLayout from "../../components/layouts/base";
+import PageLayout from "../../components/layouts/page";
 
 //export default ({ data }) => {
 
@@ -18,7 +19,7 @@ class ContactIndex extends React.Component
   render()
   {
     return (
-      <BaseLayout location={this.props.location}>
+      <PageLayout location={this.props.location} icon_name={"fa-mobile-alt"} title={"Contact"}>
         <HeadMeta
           title={"Contact | " + this.props.data.site.siteMetadata.author}
           description={"This is the contact page of " + this.props.data.site.siteMetadata.author}
@@ -33,7 +34,6 @@ class ContactIndex extends React.Component
           twitter_username={this.props.data.site.siteMetadata.social.twitter.username}
         />
         {/*<h2 style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'center', verticalAlign: 'middle'}}><i className="material-icons">call</i>&nbsp;&nbsp;<span>Contact</span></h2>*/}
-        <div className="page-title"><i className="fa fa-mobile-alt fa-1" aria-hidden={"true"}></i>&nbsp;&nbsp;Contact</div>
         <form action="https://getsimpleform.com/messages?form_api_token=64314f114eee2fa0a0b0d381d681cb02" method="post">
             <input type="hidden" name="redirect_to" value="/contact/thankyou/" />
             <div className="form-item">
@@ -58,7 +58,7 @@ class ContactIndex extends React.Component
             </div>
             <center><input type="submit" value="Submit" /></center>
         </form>
-      </BaseLayout>
+      </PageLayout>
     )
   }
 }
