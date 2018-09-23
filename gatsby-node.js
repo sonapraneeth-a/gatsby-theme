@@ -229,8 +229,7 @@ exports.createPages = ({ graphql, actions }) => {
       if(result.data.projects != null)
       {
         result.data.projects.edges.forEach(({ node }) => {
-          createPage
-          ({
+          createPage({
             path: node.fields.slug,
             component: path.resolve(`./src/templates/project.js`),
             context: {

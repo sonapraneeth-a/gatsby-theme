@@ -10,7 +10,7 @@ module.exports = {
     copyright: config.site.copyright,
     version: `1.0.0`,
     timezone: `Asia/Kolkata`,
-    pagination: 
+    pagination:
     {
       per_page: 5,
       per_block: 3,

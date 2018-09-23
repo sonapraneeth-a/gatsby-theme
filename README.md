@@ -11,3 +11,5 @@ gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world
 
 execstack -c node_modules/sharp/vendor/lib/librsvg-2.so.2
 https://github.com/gatsbyjs/gatsby/issues/3917
+
+https://stackoverflow.com/questions/44727750/how-do-i-restore-a-previous-version-as-a-new-commit-in-git
