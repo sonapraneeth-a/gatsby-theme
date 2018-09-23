@@ -117,8 +117,8 @@ exports.createPages = ({ graphql, actions }) => {
         let blogsInfo = new Array(result.data.posts.totalCount);
         for (var i = 0; i < numPages; i++)
         {
-          blogsPaginationList[i] = [];
-          let per_block = result.data.config.siteMetadata.pagination.per_block;
+          blogsPaginationList[i] = [1, 2];
+          /*let per_block = result.data.config.siteMetadata.pagination.per_block;
           let j = 1, mul = 1, count = 1;
           blogsPaginationList[i].push(i === 0 ? 1 : i+1);
           if(numPages >= per_block)
@@ -153,7 +153,7 @@ exports.createPages = ({ graphql, actions }) => {
             {
               blogsPaginationList[i].push(j);
             }
-          }
+          }*/
         }
 
 
