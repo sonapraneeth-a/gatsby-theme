@@ -65,18 +65,13 @@ class BlogPost extends React.Component
     const timeToRead = post.timeToRead;
     const next_post = this.props.pageContext.next_post;
     const prev_post = this.props.pageContext.prev_post;
-    console.log("Prev Post: " + prev_post[0]);
-    console.log("Next Post: " + next_post[0]);
     const base_url = this.props.data.site.siteMetadata.siteUrl;
     const twitter_username = this.props.data.site.siteMetadata.social.twitter.username;
     const show_toc = this.state.show_toc;
-    //console.log("Render: " + show_toc);
     let modifiedTime = "";
     _.each(post_helper.edges, edge => {
       modifiedTime = edge.node.modifiedTime;
-      //console.log("MT: " + edge.node.modifiedTime);
     });
-    //console.log("RP: " + this.props.pageContext.relativePath);
     return (
       <BaseLayout location={this.props.location}>
         <article>

@@ -73,14 +73,10 @@ class BaseLayout extends React.Component
         `}
         render={data => {
           const {author, copyright, menu, version} = data.config.siteMetadata;
-          /*console.log(this.props);
-          console.log(this.props.location);*/
-          console.log("Sidebar reveal type: " + config.ui.sidebar_reveal);
           let content_class_name = "content";
           let sidebar_toggle_class_name = "sidebar-toggle";
           if(config.ui.sidebar_reveal === "push")
           {
-            console.log("Reveal status: " + this.state.reveal_status);
             if(this.state.reveal_status === true)
             {
               content_class_name += " off";
