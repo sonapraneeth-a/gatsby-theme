@@ -121,22 +121,34 @@ exports.createPages = ({ graphql, actions }) => {
           let per_block = result.data.config.siteMetadata.pagination.per_block;
           let j = 1, mul = 1, count = 1;
           blogsPaginationList[i].push(i === 0 ? 1 : i+1);
-          while( count !== per_block)
-          {
-            if(j%2 === 1) {
-              let page_no = i + 1 + mul;
-              if (page_no >= 1 && page_no <= numPages) {
-                blogsPaginationList[i].push(page_no); count++;
+          //console.log("numpages: " + numPages);
+          if(numPages >= per_block) {
+            while (count <= per_block) {
+              if (j % 2 === 1) {
+                let page_no = i + 1 + mul;
+                if (page_no >= 1 && page_no <= numPages) {
+                  blogsPaginationList[i].push(page_no);
+                  count++;
+                }
+                //console.log("page_no: " + page_no);
               }
-            }
-            else {
-              let page_no = i + 1 - mul;
-              if (page_no >= 1 && page_no <= numPages) {
-                blogsPaginationList[i].unshift(page_no); count++;
+              else {
+                let page_no = i + 1 - mul;
+                if (page_no >= 1 && page_no <= numPages) {
+                  blogsPaginationList[i].unshift(page_no);
+                  count++;
+                }
+                //console.log("page_no: " + page_no);
+                mul++;
               }
-              mul++;
+              j++;
+              //console.log("Index: " + i + ", Count: " + count + ", j: " + j);
             }
-            j++;
+          }
+          else {
+            for(j = 1; j <= numPages; j++) {
+              blogsPaginationList[i].push(j);
+            }
           }
         }
 
