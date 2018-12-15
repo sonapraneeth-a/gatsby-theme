@@ -1,9 +1,0 @@
-.container
-{
-    margin: 0 auto;
-    position: relative;
-    @include laptop
-    {
-        width: $laptop;
-    }
-}
